@@ -7,6 +7,8 @@ from wagtail.core.fields import RichTextField
 from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, InlinePanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
+from wagtail.api import APIField
+
 
 
 class BlogPage(Page):
@@ -45,12 +47,11 @@ class BlogPage(Page):
         ImageChooserPanel('feed_image'),
     ]
 
-
-    # Parent page / subpage type rules
-
-    parent_page_types = ['blog.BlogIndex']
-    subpage_types = []
-
+    api_fields = [
+        APIField('body'),
+        APIField('date'),
+        APIField('feed_images'),
+        APIField('related_links'),    ]
 
 class BlogPageRelatedLink(Orderable):
     page = ParentalKey(BlogPage, on_delete=models.CASCADE, related_name='related_links')
@@ -60,4 +61,9 @@ class BlogPageRelatedLink(Orderable):
     panels = [
         FieldPanel('name'),
         FieldPanel('url'),
+    ]
+
+    api_fields = [
+        APIField('name'),
+        APIField('url'),
     ]
