@@ -18,7 +18,7 @@ import SearchIcon from '@mui/icons-material/Search';
 const pages = ['กิจกรรม', 'ประวัติการเข้าร่วม', 'ติดต่อ'];
 const settings = ['Name : ', 'Email : ', 'Logout'];
 
-const ResponsiveAppBar = () => {
+const PannAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -39,9 +39,9 @@ const ResponsiveAppBar = () => {
   const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    backgroundColor: alpha(theme.palette.common.black, 0.15),
     '&:hover': {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
+      backgroundColor: alpha(theme.palette.common.black, 0.25),
     },
     marginLeft: 0,
     width: '100%',
@@ -49,56 +49,56 @@ const ResponsiveAppBar = () => {
       marginLeft: theme.spacing(1),
       width: 'auto',
     },
-  }));
-  
-  const SearchIconWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }));
-  
-  const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'inherit',
-    '& .MuiInputBase-input': {
-      padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-      transition: theme.transitions.create('width'),
-      width: '100%',
-      [theme.breakpoints.up('sm')]: {
-        width: '12ch',
-        '&:focus': {
-          width: '20ch',
-        },
+}));
+
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+  padding: theme.spacing(0, 2),
+  height: '100%',
+  position: 'absolute',
+  pointerEvents: 'none',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: 'inherit',
+  '& .MuiInputBase-input': {
+    padding: theme.spacing(1, 1, 1, 0),
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      width: '20ch',
+      '&:focus': {
+        width: '30ch',
       },
     },
-  }));
+  },
+}));
 
-  return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-          >
-            Fancier
-          </Typography>
+return (
+  <AppBar position="static" color='grey'>
+    <Container maxWidth="x2">
+      <Toolbar disableGutters>
+        <Typography
+          variant="h6"
+          noWrap
+          component="div"
+          sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+          color="black"
+        >
+          Fancier
+        </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
+        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleOpenNavMenu}
+            color="inherit"
             >
               <MenuIcon />
             </IconButton>
@@ -140,7 +140,7 @@ const ResponsiveAppBar = () => {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'black', display: 'block' }}
               >
                 {page}
               </Button>
@@ -148,7 +148,7 @@ const ResponsiveAppBar = () => {
           </Box>
           <Search>
                 <SearchIconWrapper>
-                    <SearchIcon />
+                <SearchIcon />
                 </SearchIconWrapper>
                 <StyledInputBase
                     placeholder="Search…"
@@ -157,7 +157,7 @@ const ResponsiveAppBar = () => {
           </Search>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 1.5 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
@@ -189,34 +189,4 @@ const ResponsiveAppBar = () => {
     </AppBar>
   );
 };
-export default ResponsiveAppBar;
-home.js
-import { Box } from "@mui/system";
-import PannAppBar from "../components/pann-app-bar";
-
-function Home(){
-    return(
-        <Box sx={{ flexGrow: 1}}>
-            <PannAppBar/>
-        </Box>
-    )
-}
-
-export default Home;
-App.js
-import './App.css';
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Home from "./pages/home";
-
-function App(){
-  return(
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Navigate replace to="/home"/>}/>
-        <Route path="/home" element={<Home/>}/>
-      </Routes>
-    </BrowserRouter>
-  );
-}
-
-export default App;
+export default PannAppBar;
