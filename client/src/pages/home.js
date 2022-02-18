@@ -1,10 +1,12 @@
 import { Box } from "@mui/system";
+import ActivateDisplayArea from "../components/home/activity-display-area";
 import PannAppBar from "../components/home/pann-app-bar";
 
 function Home(){
     return(
         <Box sx={{ flexGrow: 1}}>
             <PannAppBar/>
+            <ActivateDisplayArea/>
         </Box>
     )
 }
