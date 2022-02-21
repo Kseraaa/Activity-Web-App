@@ -1,6 +1,6 @@
 import { Box } from "@mui/system";
 import ActivateDisplayArea from "../components/home/activity-display-area";
-import PannAppBar from "../components/home/pann-app-bar";
+import PannAppBar from "../components/app-bar/pann-app-bar";
 
 function Home(){
     return(

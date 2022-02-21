@@ -11,7 +11,7 @@ import { Button } from "@mui/material";
 export default function ActivateDisplayArea() {
 
   return(
-          <Card sx={{ maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
+          <Card sx={{ mx:'auto', maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
                 <CardMedia
                       component="img"
                       height="270"
