@@ -1,6 +1,6 @@
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
-import { Box, IconButton, Typography } from '@mui/material';
+import { Box, Card, IconButton, Typography } from '@mui/material';
 
 function ContactCard() {
     return(
@@ -8,20 +8,21 @@ function ContactCard() {
                 sx={{ 
                     display: 'flex',
                     flexDirection:'row',
-                    border: '1px dashed grey',
+                    border: '',
                     p: 0,
                     m: 4,
                     width: 400,
-                    bottom: 750,
-                    left: '50%',
+                    
                 }}
             >
-                <Box 
+                <Card 
                     sx={{ 
                         display: 'flex',
                         flexDirection:'column',
                         width: '100%',
-                        
+                        position: 'relative',
+                        top: 30,
+                        left: '7%',
                     }}
                 >
                     <IconButton aria-label='phone' sx={{mx: 'auto'}}>
@@ -31,13 +32,16 @@ function ContactCard() {
                     Phone:<br />
                     098 7654321<br />
                     </Typography>
-                </Box>
+                </Card>
                 
-                <Box 
+                <Card 
                     sx={{ 
                         display: 'flex',
                         flexDirection:'column',
                         width: '100%',
+                        position: 'relative',
+                        top: 30,
+                        left: '20%',
                     }}
                 >
                     <IconButton aria-label='phone' sx={{mx: 'auto'}}>
@@ -47,7 +51,7 @@ function ContactCard() {
                     Email:<br />
                     6410110xxx@psu.ac.th<br />
                     </Typography>
-                </Box>
+                </Card>
             </Box>  
     )
 }
