@@ -90,9 +90,7 @@ return (
 
                             {/* FANCIER button */}
                             <Button 
-                                onClick={() => {
-                                    navigate("/home");
-                                }}
+                                onClick={() => {navigate("/home");}}
                             >
                                 <Avatar
                                     sx={{ width: 70, height: 65 }}
@@ -141,22 +139,19 @@ return (
                                 }}
                             >
                                 <MenuItem onClick={handleCloseNavMenu}>
-                                    <Box onClick={() => {
-                                        navigate("/home");}}>
+                                    <Box onClick={() => {navigate("/home");}}>
                                         <Typography textAlign="center" color="black">กิจกรรม</Typography>
                                     </Box>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
-                                    <Box onClick={() => {
-                                        navigate("/history");}}>
+                                    <Box onClick={() => {navigate("/history");}}>
                                         <Typography textAlign="center" color="black">ประวัติการเข้าร่วม</Typography>
                                     </Box>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
-                                    <Box onClick={() => {
-                                        navigate("/contact");}}>
+                                    <Box onClick={() => {navigate("/contact");}}>
                                         <Typography textAlign="center" color="black">ติดต่อ</Typography>
                                     </Box>
                                 </MenuItem>
