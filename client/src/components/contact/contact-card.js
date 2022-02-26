@@ -52,8 +52,8 @@ function ContactCard() {
                     6410110xxx@psu.ac.th<br />
                     </Typography>
                 </Card>
-            </Box>  
+            </Box>
     )
-}
+};
 
 export default ContactCard

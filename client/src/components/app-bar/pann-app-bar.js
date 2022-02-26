@@ -15,6 +15,7 @@ import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 
+
 const pages = ['กิจกรรม', 'ประวัติการเข้าร่วม', 'ติดต่อ'];
 const settings = ['Name : ', 'Email : ', 'Logout'];
 
@@ -133,7 +134,7 @@ return (
                     component="div"
                     sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
                 >
-                    LOGO
+                    Fancier
                 </Typography>
                 <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                     {pages.map((page) => (
