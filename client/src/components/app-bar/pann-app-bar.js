@@ -17,6 +17,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from "react-router-dom";
 import Popover from '@mui/material/Popover';
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
+import { Card, CardContent, CardMedia } from '@mui/material';
 
 const settings = ['Name : ', 'Email : ', 'Logout'];
 
@@ -39,9 +40,7 @@ const PannAppBar = () => {
         setAnchorElUser(null);
     };
 
-    const Home = useNavigate();
-    const History = useNavigate();
-    const Contact = useNavigate();
+    const navigate = useNavigate();
         
     const Search = styled('div')(({ theme }) => ({
         position: 'relative',
@@ -86,24 +85,31 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 return (
             <AppBar position="static" color='grey'>
-                <Container maxWidth="x2">
+                <Container maxWidth="x1">
                     <Toolbar disableGutters>
+
+                            {/* FANCIER button */}
                             <Button 
                                 onClick={() => {
-                                    Home("/home");
+                                    navigate("/home");
                                 }}
                             >
-                                <Typography
-                                    variant="h6"
-                                    noWrap
-                                    component="div"
-                                    sx={{ fontSize: 30 , fontWeight:600 , mr: 4, display: { xs: 'none', md: 'flex' } }}
-                                    color="black"
-                                >
-                                    Fancier
-                                </Typography>  
+                                <Avatar
+                                    sx={{ width: 70, height: 65 }}
+                                    variant="square"
+                                    src="/img/fancierlogo1.png"
+                                />
+                                <Avatar
+                                    sx={{ width: 130, height: 65 }}
+                                    variant=""
+                                    src="/img/fancierlogo2.png"
+                                />
                             </Button> 
+
+                        {/* Box for menu (when minimized window) */}
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                            
+                            {/* menuicon */}
                             <IconButton
                                 size="large"
                                 aria-label="account of current user"
@@ -114,6 +120,8 @@ return (
                             >
                                 <MenuIcon />
                             </IconButton>
+
+                            {/* menu */}
                             <Menu
                                 id="menu-appbar"
                                 anchorEl={anchorElNav}
@@ -134,28 +142,30 @@ return (
                             >
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {
-                                        Home("/home");}}>
+                                        navigate("/home");}}>
                                         <Typography textAlign="center" color="black">กิจกรรม</Typography>
                                     </Box>
                                 </MenuItem>
+
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {
-                                        Home("/history");}}>
+                                        navigate("/history");}}>
                                         <Typography textAlign="center" color="black">ประวัติการเข้าร่วม</Typography>
                                     </Box>
                                 </MenuItem>
+
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {
-                                        Home("/contact");}}>
+                                        navigate("/contact");}}>
                                         <Typography textAlign="center" color="black">ติดต่อ</Typography>
                                     </Box>
                                 </MenuItem>
-                        </Menu>
+
+                            </Menu>
                         </Box>
-                        <Button onClick={() => {
-                                    Home("/home");
-                                }}
-                                >
+
+                        {/* FANCIER button (minimized window) */}
+                        <Button onClick={() => {navigate("/home");}}>
                             <Typography
                                 variant="h6"
                                 noWrap
@@ -166,74 +176,80 @@ return (
                                 Fancier
                             </Typography>
                         </Button>
+
+                        {/* box for app bar buttons */}
                         <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' } }}>
+                                
                                 <Button
-                                    onClick= {() => {
-                                        Home("/home");
-                                    }}
+                                    onClick= {() => {navigate("/home");}}
                                     sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
-                                กิจกรรม
+                                    กิจกรรม
                                 </Button>
+
                                 <Button
-                                    onClick= {() => {
-                                        History("/history");
-                                    }}
+                                    onClick= {() => {navigate("/history");}}
                                     sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
-                                ประวัติการเข้าร่วม
+                                    ประวัติการเข้าร่วม
                                 </Button>
+
                                 <Button
-                                    onClick= {() => {
-                                        Contact("/contact");
-                                    }}
+                                    onClick= {() => {navigate("/contact");}}
                                     sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
-                                ติดต่อ
+                                    ติดต่อ
                                 </Button>
+
                                 <PopupState variant="popover" popupId="demo-popup-popover">
                                     {(popupState) => (
                                         <div>
-                                        <Button sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }} {...bindTrigger(popupState)}>
-                                            วิธีใช้
-                                        </Button>
-                                        <Popover
-                                            {...bindPopover(popupState)}
-                                            anchorOrigin={{
-                                            vertical: 'bottom',
-                                            horizontal: 'center',
-                                            }}
-                                            transformOrigin={{
-                                            vertical: 'top',
-                                            horizontal: 'center',
-                                            }}
-                                        >
-                                            <Typography sx={{ p: 2 }}>
-                                                เว็บไซต์นี้เป็นเว็บไซต์สำหรับลงทะเบียนกิจกรรมที่ท่านสนใจ <br />
-                                                มีการลงทะเบียน2รูปแบบ คือ <br />
-                                                First come First serve [ลงทะเบียนก่อนมีสิทธิ์ก่อน] <br />
-                                                Candidate [ทางผู้จัดเป็นคนคัดเลือกผู้เข้าร่วม] 
-                                            </Typography>
-                                        </Popover>
+                                            <Button sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }} {...bindTrigger(popupState)}>
+                                                วิธีใช้
+                                            </Button>
+                                            <Popover
+                                                {...bindPopover(popupState)}
+                                                anchorOrigin={{
+                                                vertical: 'bottom',
+                                                horizontal: 'center',
+                                                }}
+                                                transformOrigin={{
+                                                vertical: 'top',
+                                                horizontal: 'center',
+                                                }}
+                                            >
+                                                <Typography sx={{ p: 2 }}>
+                                                    เว็บไซต์นี้เป็นเว็บไซต์สำหรับลงทะเบียนกิจกรรมที่ท่านสนใจ <br />
+                                                    มีการลงทะเบียน2รูปแบบ คือ <br />
+                                                    First come First serve [ลงทะเบียนก่อนมีสิทธิ์ก่อน] <br />
+                                                    Candidate [ทางผู้จัดเป็นคนคัดเลือกผู้เข้าร่วม] 
+                                                </Typography>
+                                            </Popover>
                                         </div>
                                     )}
                                 </PopupState>
                         </Box>
+
+                        {/* search */}
                         <Search>
                             <SearchIconWrapper>
                                 <SearchIcon />
                             </SearchIconWrapper>
+
                             <StyledInputBase
                                 placeholder="Search…"
                                 inputProps={{ 'aria-label': 'search' }}
                             />
                         </Search>
+
+                        {/* box for user profile */}                        
                         <Box sx={{ flexGrow: 0 }}>
                             <Tooltip title="Open settings">
                                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 1.5 }}>
                                     <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
                                 </IconButton>
                             </Tooltip>
+                            
                             <Menu
                                 sx={{ mt: '45px' }}
                                 id="menu-appbar"

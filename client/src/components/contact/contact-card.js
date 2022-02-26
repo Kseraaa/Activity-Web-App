@@ -41,7 +41,7 @@ function ContactCard() {
                 }}
             >
                 <IconButton aria-label='phone' sx={{mx: 'auto'}}>
-                    <PhoneIcon/>
+                    <EmailIcon/>
                 </IconButton>
                 <Typography sx={{textAlign: 'center'}}>
                     Email: 6410110xxx@psu.ac.th
@@ -49,6 +49,6 @@ function ContactCard() {
             </Box>
         </Box> 
     )
-}
+};
 
 export default ContactCard
