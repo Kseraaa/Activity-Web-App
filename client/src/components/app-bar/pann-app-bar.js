@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -14,23 +15,34 @@ import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from "react-router-dom";
+import Popover from '@mui/material/Popover';
+import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 
 const settings = ['Name : ', 'Email : ', 'Logout'];
 
 const PannAppBar = () => {
-
+    const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
+    const handleOpenNavMenu = (event) => {
+        setAnchorElNav(event.currentTarget);
+    };
     const handleOpenUserMenu = (event) => {
         setAnchorElUser(event.currentTarget);
+    };
+
+    const handleCloseNavMenu = () => {
+        setAnchorElNav(null);
     };
 
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
     };
 
-    let navigate = useNavigate();
-
+    const Home = useNavigate();
+    const History = useNavigate();
+    const Contact = useNavigate();
+        
     const Search = styled('div')(({ theme }) => ({
         position: 'relative',
         borderRadius: theme.shape.borderRadius,
@@ -38,112 +50,216 @@ const PannAppBar = () => {
         '&:hover': {
         backgroundColor: alpha(theme.palette.common.black, 0.25),
         },
-        left: 1260,
-    }));
+        marginLeft: 0,
+        width: '100%',
+        [theme.breakpoints.up('sm')]: {
+        marginLeft: theme.spacing(1),
+        width: 'auto',
+    },
+}));
 
-    const SearchIconWrapper = styled('div')(({ theme }) => ({
-        padding: theme.spacing(0, 2),
-        height: '100%',
-        position: 'absolute',
-        pointerEvents: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-    }));
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+    padding: theme.spacing(0, 2),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+}));
 
-    const StyledInputBase = styled(InputBase)(({ theme }) => ({
-        color: 'inherit',
-            paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+    color: 'inherit',
+    '& .MuiInputBase-input': {
+        padding: theme.spacing(1, 1, 1, 0),
+        paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+        transition: theme.transitions.create('width'),
+        width: '100%',
+        [theme.breakpoints.up('sm')]: {
+        width: '15ch',
+        '&:focus': {
             width: '20ch',
-
-    }));
-
+        },
+        },
+    },
+}));
 
 return (
-    <AppBar position="static" color='grey'>
-        <Container maxWidth="x1">
-            <Toolbar disableGutters>
-                <Typography
-                    variant="h6"
-                    sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-                    color="black"
-                    onClick={() => {navigate("/home")}}
-                >
-                    Fancier
-                </Typography>
-
-                <Box sx={{width: 'auto'}}>
-                    <Button 
-                        onClick={() => {navigate("/home")}}
-                    >
-                        <Typography color= "black">
-                            กิจกรรม
-                        </Typography>
-                    </Button>
-                </Box>
-
-                <Box sx={{width: 'auto'}}>
-                    <Button 
-                        onClick={() => {navigate("/history")}}
-                    >
-                        <Typography color= "black">
-                            ประวัติการเข้าร่วม
-                        </Typography>
-                    </Button>
-                </Box>
-
-                <Box sx={{width: 'auto'}}>
-                    <Button 
-                        onClick={() => {navigate("/contact")}}
-                    >
-                        <Typography color= "black">
-                            ติดต่อ
-                        </Typography>
-                    </Button>
-                </Box>
-                
-                <Search>
-                    <SearchIconWrapper>
-                        <SearchIcon />
-                    </SearchIconWrapper>
-                    <StyledInputBase
-                        placeholder="Search…"
-                        inputProps={{ 'aria-label': 'search' }}
-                    />
-                </Search>
-
-                <Tooltip title="Open settings">
-                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 1.5 , left: 1260}}>
-                        <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                    </IconButton>
-                </Tooltip>
-
-                <Menu
-                    sx={{ mt: '45px' }}
-                    id="menu-appbar"
-                    anchorEl={anchorElUser}
-                    anchorOrigin={{
-                        vertical: 'top',
-                        horizontal: 'right',
-                    }}
-                    keepMounted
-                    transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'right',
-                    }}
-                    open={Boolean(anchorElUser)}
-                    onClose={handleCloseUserMenu}
-                >
-                    {settings.map((setting) => (
-                        <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                            <Typography textAlign="center">{setting}</Typography>
-                        </MenuItem>
-                    ))}
-                    
-                </Menu>
-            </Toolbar>
-        </Container>
-    </AppBar>
+            <AppBar position="static" color='grey'>
+                <Container maxWidth="x2">
+                    <Toolbar disableGutters>
+                            <Button 
+                                onClick={() => {
+                                    Home("/home");
+                                }}
+                            >
+                                <Typography
+                                    variant="h6"
+                                    noWrap
+                                    component="div"
+                                    sx={{ fontSize: 30 , fontWeight:600 , mr: 4, display: { xs: 'none', md: 'flex' } }}
+                                    color="black"
+                                >
+                                    Fancier
+                                </Typography>  
+                            </Button> 
+                        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                            <IconButton
+                                size="large"
+                                aria-label="account of current user"
+                                aria-controls="menu-appbar"
+                                aria-haspopup="true"
+                                onClick={handleOpenNavMenu}
+                                color="inherit"
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                            <Menu
+                                id="menu-appbar"
+                                anchorEl={anchorElNav}
+                                anchorOrigin={{
+                                    vertical: 'bottom',
+                                    horizontal: 'left',
+                                }}
+                                keepMounted
+                                transformOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'left',
+                                }}
+                                open={Boolean(anchorElNav)}
+                                onClose={handleCloseNavMenu}
+                                sx={{
+                                    display: { xs: 'block', md: 'none' },
+                                }}
+                            >
+                                <MenuItem onClick={handleCloseNavMenu}>
+                                    <Box onClick={() => {
+                                        Home("/home");}}>
+                                        <Typography textAlign="center" color="black">กิจกรรม</Typography>
+                                    </Box>
+                                </MenuItem>
+                                <MenuItem onClick={handleCloseNavMenu}>
+                                    <Box onClick={() => {
+                                        Home("/history");}}>
+                                        <Typography textAlign="center" color="black">ประวัติการเข้าร่วม</Typography>
+                                    </Box>
+                                </MenuItem>
+                                <MenuItem onClick={handleCloseNavMenu}>
+                                    <Box onClick={() => {
+                                        Home("/contact");}}>
+                                        <Typography textAlign="center" color="black">ติดต่อ</Typography>
+                                    </Box>
+                                </MenuItem>
+                        </Menu>
+                        </Box>
+                        <Button onClick={() => {
+                                    Home("/home");
+                                }}
+                                >
+                            <Typography
+                                variant="h6"
+                                noWrap
+                                component="div"
+                                sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+                                color="black"
+                            >
+                                Fancier
+                            </Typography>
+                        </Button>
+                        <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' } }}>
+                                <Button
+                                    onClick= {() => {
+                                        Home("/home");
+                                    }}
+                                    sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
+                                >   
+                                กิจกรรม
+                                </Button>
+                                <Button
+                                    onClick= {() => {
+                                        History("/history");
+                                    }}
+                                    sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
+                                >   
+                                ประวัติการเข้าร่วม
+                                </Button>
+                                <Button
+                                    onClick= {() => {
+                                        Contact("/contact");
+                                    }}
+                                    sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
+                                >   
+                                ติดต่อ
+                                </Button>
+                                <PopupState variant="popover" popupId="demo-popup-popover">
+                                    {(popupState) => (
+                                        <div>
+                                        <Button sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }} {...bindTrigger(popupState)}>
+                                            วิธีใช้
+                                        </Button>
+                                        <Popover
+                                            {...bindPopover(popupState)}
+                                            anchorOrigin={{
+                                            vertical: 'bottom',
+                                            horizontal: 'center',
+                                            }}
+                                            transformOrigin={{
+                                            vertical: 'top',
+                                            horizontal: 'center',
+                                            }}
+                                        >
+                                            <Typography sx={{ p: 2 }}>
+                                                เว็บไซต์นี้เป็นเว็บไซต์สำหรับลงทะเบียนกิจกรรมที่ท่านสนใจ <br />
+                                                มีการลงทะเบียน2รูปแบบ คือ <br />
+                                                First come First serve [ลงทะเบียนก่อนมีสิทธิ์ก่อน] <br />
+                                                Candidate [ทางผู้จัดเป็นคนคัดเลือกผู้เข้าร่วม] 
+                                            </Typography>
+                                        </Popover>
+                                        </div>
+                                    )}
+                                </PopupState>
+                        </Box>
+                        <Search>
+                            <SearchIconWrapper>
+                                <SearchIcon />
+                            </SearchIconWrapper>
+                            <StyledInputBase
+                                placeholder="Search…"
+                                inputProps={{ 'aria-label': 'search' }}
+                            />
+                        </Search>
+                        <Box sx={{ flexGrow: 0 }}>
+                            <Tooltip title="Open settings">
+                                <IconButton onClick={handleOpenUserMenu} sx={{ p: 1.5 }}>
+                                    <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                </IconButton>
+                            </Tooltip>
+                            <Menu
+                                sx={{ mt: '45px' }}
+                                id="menu-appbar"
+                                anchorEl={anchorElUser}
+                                anchorOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'right',
+                                }}
+                                keepMounted
+                                transformOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'right',
+                                }}
+                                open={Boolean(anchorElUser)}
+                                onClose={handleCloseUserMenu}
+                            >
+                                {settings.map((setting) => (
+                                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                                        <Typography textAlign="center">{setting}</Typography>
+                                    </MenuItem>
+                                ))}
+                            </Menu>
+                        </Box>
+                    </Toolbar>
+                </Container>
+            </AppBar>
     );
 };
 export default PannAppBar;

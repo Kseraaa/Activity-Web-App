@@ -49,6 +49,6 @@ function ContactCard() {
             </Box>
         </Box> 
     )
-};
+}
 
 export default ContactCard

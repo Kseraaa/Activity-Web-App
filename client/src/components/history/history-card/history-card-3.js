@@ -13,7 +13,7 @@ function HistoryCard3() {
                     component="img"
                     height="140"
                     image="/static/images/cards/contemplative-reptile.jpg"
-                    alt="green iguana"
+                    alt="his3"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
