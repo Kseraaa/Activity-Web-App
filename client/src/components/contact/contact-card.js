@@ -8,7 +8,10 @@ function ContactCard() {
             sx={{ 
                 display: 'flex',
                 flexDirection:'row',
-                width: 500,
+                width: 600,
+                mx: "auto",
+                bottom: '50%',
+                border: '1px dashed grey',
             }}
         >
             <Box
@@ -16,17 +19,15 @@ function ContactCard() {
                     display: 'flex',
                     flexDirection:'column',
                     width: '100%',
-                    position: 'relative',
-                    left: 660,
-                    top: 800,
+                    height: 'auto',
+                    border: '1px dashed grey',
                 }}
             >
                 <IconButton aria-label='phone' sx={{mx: 'auto'}}>
                     <PhoneIcon/>
                 </IconButton>
                 <Typography sx={{textAlign: 'center'}}>
-                    Phone:
-                    098 7654321
+                    Phone: 098 7654321
                 </Typography>
             </Box>
             
@@ -35,9 +36,8 @@ function ContactCard() {
                     display: 'flex',
                     flexDirection:'column',
                     width: '100%',
-                    position: 'relative',
-                    left: 660,
-                    top: 800,
+                    height: 'auto',
+                    border: '1px dashed grey',
                 }}
             >
                 <IconButton aria-label='phone' sx={{mx: 'auto'}}>
