@@ -7,7 +7,7 @@ import { CardActionArea } from '@mui/material';
 
 function HistoryCard3() {
     return (
-        <Card sx={{ maxWidth: 360 }}>
+        <Card sx={{ maxWidth: 'auto' }}>
             <CardActionArea>
                 <CardMedia
                     component="img"

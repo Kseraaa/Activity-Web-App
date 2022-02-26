@@ -30,26 +30,26 @@ function ContactCard() {
                 </Typography>
                 </Box>
                 
-            <Box
-                sx={{ 
-                    display: 'flex',
-                    flexDirection:'column',
-                    width: '100%',
-                    position: 'relative',
-                    left: 670,
-                    top: 800,
-                }}
-            >
-                <IconButton aria-label='phone' sx={{mx: 'auto'}}>
-                    <EmailIcon/>
-                </IconButton>
-                <Typography sx={{textAlign: 'center'}}>
-                    Email:
-                    6410110xxx@psu.ac.th
-                </Typography>
+                <Card 
+                    sx={{ 
+                        display: 'flex',
+                        flexDirection:'column',
+                        width: '100%',
+                        position: 'relative',
+                        top: 30,
+                        left: '20%',
+                    }}
+                >
+                    <IconButton aria-label='phone' sx={{mx: 'auto'}}>
+                        <EmailIcon/>
+                    </IconButton>
+                    <Typography sx={{textAlign: 'center'}}>
+                    Email:<br />
+                    6410110xxx@psu.ac.th<br />
+                    </Typography>
+                </Card>
             </Box>
-        </Box>
     )
-}
+};
 
 export default ContactCard

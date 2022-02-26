@@ -4,7 +4,7 @@ import Home from "./pages/home";
 import Contact from "./pages/contact";
 import History from './pages/history';
 import Register from './pages/register';
-import V2Register from './pages/V2register';
+import Newregis from './pages/newregis'
 
 function App(){
   return(
@@ -15,7 +15,9 @@ function App(){
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/history" element={<History/>}/>
         <Route path="/register" element={<Register/>}/>
-        <Route path="/v2register" element={<V2Register/>}/>
+        <Route path="/newregis" element={<Newregis/>}>
+
+        </Route>
       </Routes>
     </BrowserRouter>
   );
