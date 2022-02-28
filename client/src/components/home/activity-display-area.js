@@ -40,8 +40,8 @@ function ActivateDisplayArea() {
           <source src={Videoplayback} type="video/mp4" />
         </video>
 
-        <div>
-        {/* // การ์ดใบที่1 */}
+        <Box sx={{ mx: 'auto', mt: 115 }}>
+        {/* การ์ดใบที่1 */}
           <Card sx={{ mx:'auto', my:3,maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
                 <CardMedia
                       component="img"
@@ -106,8 +106,7 @@ function ActivateDisplayArea() {
                 </Box>
           </Card>
 
-          {/* // การ์ดใบที่2 */}
-
+          {/* การ์ดใบที่2 */}
           <Card sx={{ mx:'auto', my:3,maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
                 <CardMedia
                       component="img"
@@ -167,8 +166,7 @@ function ActivateDisplayArea() {
                 </Box>
           </Card>
 
-          {/* // การ์ดใบที่3 */}
-
+          {/* การ์ดใบที่3 */}
           <Card sx={{ mx:'auto', my:3,maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
                 <CardMedia
                       component="img"
@@ -232,7 +230,7 @@ function ActivateDisplayArea() {
                     </Typography>
                 </Box>
           </Card>
-        </div>
+        </Box>
       </div>
 
   );
