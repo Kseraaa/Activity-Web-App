@@ -1,4 +1,4 @@
-import { CardHeader } from "@mui/material"
+import { CardHeader, Dialog, DialogActions, DialogTitle, Stack } from "@mui/material"
 import React from "react";
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
@@ -9,7 +9,16 @@ import { Box, width } from "@mui/system";
 import { Button } from "@mui/material";
 import Videoplayback from "../video/videoplayback.mp4";
 
-export default function ActivateDisplayArea() {
+function ActivateDisplayArea() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return(
       <div>
@@ -30,7 +39,9 @@ export default function ActivateDisplayArea() {
         >
           <source src={Videoplayback} type="video/mp4" />
         </video>
+
         <div>
+        {/* // การ์ดใบที่1 */}
           <Card sx={{ mx:'auto', my:3,maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
                 <CardMedia
                       component="img"
@@ -42,7 +53,7 @@ export default function ActivateDisplayArea() {
                 <Box sx={{ display:'flex', flexDirection:'column' }}>
                     <CardHeader
                       titleTypographyProps={{fontSize: 36,}}
-                      title="กิจกรรมแข่งพิมพ์เร็ว"
+                      title="กิจกรรมแข่งพิมพ์เร็ว(FirstComeFirstServe)"
                       subheaderTypographyProps={{fontSize: 18}}
                       subheader=
                       "กิจกรรมแข่งพิมพ์เร็ว เป็นกิจกรรมที่จัดขึ้นเพื่อหาตัวแทนที่จะไปแข่งขันต่อในระดับจังหวัด โดยจัดขึ้นที่โรงเรียนหาดใหญ่วิทยาลัยสมบูรณ์กุลกันยา ณ ชั้น 6 อาคารปิ่นเกรียงไกร"
@@ -57,15 +68,46 @@ export default function ActivateDisplayArea() {
                         สถานะ : รอการพิจารณา
                       </Typography>
                     </CardContent>
+
+                    {/* ปุ่มลงทะเบียนและป็อปอัพ */}
                     <CardActions>
-                      <Box>
-                        <Button sx = {{ fontSize: 20 , fontWeight: 300 , my:2}}>
-                          ลงทะเบียนกิจกรรม ♥
-                        </Button>
-                      </Box>
+                        <Stack spacing={2} direction="row">
+                          <Button variant="contained" onClick={handleClickOpen}>
+                            ลงทะเบียน
+                          </Button>
+                          <Dialog
+                            open={open}
+                            onClose={handleClose}
+                            aria-labelledby="alert-dialog-title"
+                            aria-describedby="alert-dialog-description"
+                            maxWidth= 'md'
+                          >
+                            <DialogTitle id="alert-dialog-title" gutterBottom variant="h1" sx={{color: '#004AAD'}}>
+                              <Typography sx={{ fontSize: '50px'}} >
+                                <h1>ลงทะเบียนสำเร็จ!!</h1>
+                              </Typography>
+                            </DialogTitle>
+                            <DialogActions >
+                              <Button sx={{ fontSize: '30px'}} onClick={handleClose} >กลับสู่หน้าหลัก </Button>
+                            </DialogActions>
+                          </Dialog>
+                        </Stack>
+
+                      <Typography gutterBottom variant="h8" component="div">
+                          จำนวนที่นั่งเหลือ: 2
+                      </Typography>
                     </CardActions>
+
+                    <Typography variant="h6" color='error.main'>
+                      จำนวนที่นั่งเหลือ 0 ท่านยังสามารถลงทะเบียนเป็นที่นั่งสำรองได้
+                      <br />
+                      หากต้องการสละสิทธิ์ กรุณาติดต่อช่องทางใดช่องทางหนึ่ง
+                    </Typography>
                 </Box>
           </Card>
+
+          {/* // การ์ดใบที่2 */}
+
           <Card sx={{ mx:'auto', my:3,maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
                 <CardMedia
                       component="img"
@@ -92,15 +134,41 @@ export default function ActivateDisplayArea() {
                         สถานะ : รอการพิจารณา
                       </Typography>
                     </CardContent>
+
+                    {/* ปุ่มลงทะเบียนและป็อปอัพ */}
                     <CardActions>
-                      <Box>
-                        <Button sx = {{ fontSize: 20 , fontWeight: 300 , my:2}}>
-                          ลงทะเบียนกิจกรรม ♥
-                        </Button>
-                      </Box>
+                        <Stack spacing={2} direction="row">
+                          <Button variant="contained" onClick={handleClickOpen}>
+                            ลงทะเบียน
+                          </Button>
+                          <Dialog
+                            open={open}
+                            onClose={handleClose}
+                            aria-labelledby="alert-dialog-title"
+                            aria-describedby="alert-dialog-description"
+                            maxWidth= 'md'
+                          >
+                            <DialogTitle id="alert-dialog-title" gutterBottom variant="h1" sx={{color: '#004AAD'}}>
+                              <Typography sx={{ fontSize: '50px'}} >
+                                <h1>ลงทะเบียนสำเร็จ!!</h1>
+                              </Typography>
+                            </DialogTitle>
+                            <DialogActions >
+                              <Button sx={{ fontSize: '30px'}} onClick={handleClose} >กลับสู่หน้าหลัก </Button>
+                            </DialogActions>
+                          </Dialog>
+                        </Stack>
+
                     </CardActions>
+
+                    <Typography variant="h6" color='error.main'>
+                      หากต้องการสละสิทธิ์ กรุณาติดต่อช่องทางใดช่องทางหนึ่ง
+                    </Typography>
                 </Box>
           </Card>
+
+          {/* // การ์ดใบที่3 */}
+
           <Card sx={{ mx:'auto', my:3,maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
                 <CardMedia
                       component="img"
@@ -112,7 +180,7 @@ export default function ActivateDisplayArea() {
                 <Box sx={{ display:'flex', flexDirection:'column' }}>
                     <CardHeader
                       titleTypographyProps={{fontSize: 36,}}
-                      title="กิจกรรมแข่งพิมพ์เร็ว"
+                      title="กิจกรรมแข่งพิมพ์เร็ว(FirstComeFirstServe)"
                       subheaderTypographyProps={{fontSize: 18}}
                       subheader=
                       "กิจกรรมแข่งพิมพ์เร็ว เป็นกิจกรรมที่จัดขึ้นเพื่อหาตัวแทนที่จะไปแข่งขันต่อในระดับจังหวัด โดยจัดขึ้นที่โรงเรียนหาดใหญ่วิทยาลัยสมบูรณ์กุลกันยา ณ ชั้น 6 อาคารปิ่นเกรียงไกร"
@@ -127,13 +195,41 @@ export default function ActivateDisplayArea() {
                         สถานะ : รอการพิจารณา
                       </Typography>
                     </CardContent>
+
+                    {/* ปุ่มลงทะเบียนและป็อปอัพ */}
                     <CardActions>
-                      <Box>
-                        <Button sx = {{ fontSize: 20 , fontWeight: 300 , my:2}}>
-                          ลงทะเบียนกิจกรรม ♥
-                        </Button>
-                      </Box>
+                        <Stack spacing={2} direction="row">
+                          <Button variant="contained" onClick={handleClickOpen}>
+                            ลงทะเบียน
+                          </Button>
+                          <Dialog
+                            open={open}
+                            onClose={handleClose}
+                            aria-labelledby="alert-dialog-title"
+                            aria-describedby="alert-dialog-description"
+                            maxWidth= 'md'
+                          >
+                            <DialogTitle id="alert-dialog-title" gutterBottom variant="h1" sx={{color: '#004AAD'}}>
+                              <Typography sx={{ fontSize: '50px'}} >
+                                <h1>ลงทะเบียนสำเร็จ!!</h1>
+                              </Typography>
+                            </DialogTitle>
+                            <DialogActions >
+                              <Button sx={{ fontSize: '30px'}} onClick={handleClose} >กลับสู่หน้าหลัก </Button>
+                            </DialogActions>
+                          </Dialog>
+                        </Stack>
+
+                      <Typography gutterBottom variant="h8" component="div">
+                          จำนวนที่นั่งเหลือ: 2
+                      </Typography>
                     </CardActions>
+
+                    <Typography variant="h6" color='error.main'>
+                      จำนวนที่นั่งเหลือ 0 ท่านยังสามารถลงทะเบียนเป็นที่นั่งสำรองได้
+                      <br />
+                      หากต้องการสละสิทธิ์ กรุณาติดต่อช่องทางใดช่องทางหนึ่ง
+                    </Typography>
                 </Box>
           </Card>
         </div>
@@ -141,3 +237,5 @@ export default function ActivateDisplayArea() {
 
   );
 }
+
+export default ActivateDisplayArea ;
