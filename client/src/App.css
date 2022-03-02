@@ -13,6 +13,13 @@
   }
 }
 
+.page-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -40,4 +47,14 @@
 body.AnErrorHasOccured
 {
   background: rgb(63, 62, 62);
+}
+
+.main-footer{
+  color:white ;
+  background-color: rgba(0, 0, 0, 0.596);
+  padding-bottom: 1cm;
+  padding-top: 1cm;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
