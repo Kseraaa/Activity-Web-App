@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardActionArea, CardMedia, IconButton, Typography, Grid } from '@mui/material';
+import { Box, Card, CardContent, CardActionArea, CardMedia, Typography, Grid } from '@mui/material';
 
 function ContactStudentCard() {
     return(

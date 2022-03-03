@@ -17,7 +17,6 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from "react-router-dom";
 import Popover from '@mui/material/Popover';
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
-import { Card, CardContent, CardMedia } from '@mui/material';
 
 document.body.className = "AnErrorHasOccured";
 
