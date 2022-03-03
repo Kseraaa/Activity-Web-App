@@ -2,11 +2,9 @@ import { Container, Box } from '@mui/material';
 import React from 'react';
 import './footer.css'
 import Avatar from '@mui/material/Avatar';
+import styled from 'styled-components'
 
-
-export default function FooterBar() {
-
-
+function FooterBar() {
     return(
         <div className="main-footer">
             <div className='container'>
@@ -52,16 +50,16 @@ export default function FooterBar() {
 
                             {/* column3 */}
                             <td>
-                            <Container maxWidth="auto">
+                            <FooterContainer maxWidth="auto">
                                 <div className='col'>
                                     <h3>About Us</h3>
                                     <ul className='list-unstyled'>
-                                        <div>กิจกรรม</div>
-                                        <div>ประวัติการเข้าร่วมกิจกรรม</div>
-                                        <div>ติดต่อ</div>
+                                        <div style={{ textDecoration: 'none' }}><a href='/home'>กิจกรรม</a></div><br/>
+                                        <div style={{ textDecoration: 'none' }}><a href='/history'>ประวัติการเข้าร่วมกิจกรรม</a></div><br/>
+                                        <div style={{ textDecoration: 'none' }}><a href='/contact'>ติดต่อ</a></div>
                                     </ul>
                                 </div>
-                            </Container>
+                            </FooterContainer>
                             </td>
                         </tr>
                     </table>
@@ -69,4 +67,16 @@ export default function FooterBar() {
             </div>
         </div>
     )
-}
+};
+
+export default FooterBar ;
+
+const FooterContainer = styled.footer`
+    a {
+        text-decoration: none;
+        color:  var(--mainWhite);
+    }
+    a:hover {
+        color:  var(--mainWhite);
+    }
+    `;

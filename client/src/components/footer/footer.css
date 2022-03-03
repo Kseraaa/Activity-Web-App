@@ -7,3 +7,7 @@
     bottom: 0;
     width: 100%;
 }
+
+:root {
+    --mainWhite: #fff;
+  }
