@@ -7,7 +7,7 @@ import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import { Box } from "@mui/system";
 import { Button } from "@mui/material";
-import One from "../video/one.mov";
+import ProjectClip from "../video/Project-Clip.mp4";
 
 function ActivateDisplayArea() {
   const [open, setOpen] = React.useState(false);
@@ -37,7 +37,7 @@ function ActivateDisplayArea() {
             zIndex: "-1"
           }}
         >
-          <source src={One} type="video/mp4" />
+          <source src={ProjectClip} type="video/mp4" />
         </video>
 
         <Box sx={{ mx: 'auto', mt: 115 }}>

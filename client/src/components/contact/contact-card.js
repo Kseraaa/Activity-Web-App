@@ -10,6 +10,7 @@ function ContactCard() {
                 flexDirection:'row',
                 width: 600,
                 mx: "auto",
+                p: 2,
                 bottom: '50%',
                 border: '1px dashed grey',
             }}
