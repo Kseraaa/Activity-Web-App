@@ -7,7 +7,7 @@ import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import { Box } from "@mui/system";
 import { Button } from "@mui/material";
-import Videoplayback from "../video/videoplayback.mp4";
+import One from "../video/one.mov";
 
 function ActivateDisplayArea() {
   const [open, setOpen] = React.useState(false);
@@ -28,16 +28,16 @@ function ActivateDisplayArea() {
           muted
           style={{
             position: "absolute",
-            width: "100%",
+            width: "auto",
             left: "50%",
-            top: "50%",
-            height: "100%",
+            top: "59%",
+            height: "auto",
             objectFit: "cover",
             transform: "translate(-50%, -50%)",
             zIndex: "-1"
           }}
         >
-          <source src={Videoplayback} type="video/mp4" />
+          <source src={One} type="video/mp4" />
         </video>
 
         <Box sx={{ mx: 'auto', mt: 115 }}>
