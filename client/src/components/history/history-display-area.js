@@ -36,7 +36,7 @@ export default function RowAndColumnSpacing() {
             <Grid item xs={3}>
             <Item><HistoryCard4/></Item>
             </Grid>
-          </Grid>
+          </Grid><br/ >
         </Container>
     );
 } 
