@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import { Box } from "@mui/system";
 import { Button } from "@mui/material";
 import ProjectClip from "../video/Project-Clip.mp4";
+import { Text, StyleSheet } from 'react-native';
 
 function ActivateDisplayArea() {
   const [open, setOpen] = React.useState(false);
@@ -19,6 +20,32 @@ function ActivateDisplayArea() {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const styles = StyleSheet.create({
+    baseText: {
+      fontSize: '18px',
+      fontWeight: 'bold',
+      color:'#0B46FF'
+      
+    },
+    passText: {
+      fontSize: '18px',
+      fontWeight: 'bold',
+      color:'green'
+    },
+
+    notpassText: {
+      fontSize: '18px',
+      fontWeight: 'bold',
+      color:'red'
+    },
+
+    waitText: {
+      fontSize: '18px',
+      fontWeight: 'bold',
+      color:'grey'
+    },
+  });
 
   return(
       <div>
@@ -52,21 +79,26 @@ function ActivateDisplayArea() {
                     />
                 <Box sx={{ display:'flex', flexDirection:'column' }}>
                     <CardHeader
-                      titleTypographyProps={{fontSize: 36,}}
+                      titleTypographyProps={{fontSize: 36}}
                       title="กิจกรรมแข่งพิมพ์เร็ว(FirstComeFirstServe)"
                       subheaderTypographyProps={{fontSize: 18}}
                       subheader=
                       "กิจกรรมแข่งพิมพ์เร็ว เป็นกิจกรรมที่จัดขึ้นเพื่อหาตัวแทนที่จะไปแข่งขันต่อในระดับจังหวัด โดยจัดขึ้นที่โรงเรียนหาดใหญ่วิทยาลัยสมบูรณ์กุลกันยา ณ ชั้น 6 อาคารปิ่นเกรียงไกร"
                     />
                     <CardContent sx={{ width:650 }}>
-                      <Typography variant="body1" sx={{ fontSize:18 }}>
+                      <Typography 
+                        variant="body1" 
+                        sx={{ fontSize:18 }}>
                         ลงทะเบียน    : เริ่ม 01/11/2022 | สิ้นสุด 05/11/2022<br />
                         กิจกรรม      : เริ่ม 07/11/2022  | สิ้นสุด 08/11/2022<br />
                         จำนวนผู้เข้าร่วมสูงสุด : 80 คน
                       </Typography>
-                      <Typography variant="body1" sx={{ fontSize:18 , fontWeight:600 }}>
-                        สถานะ : รอการพิจารณา
-                      </Typography>
+                  
+                      <Text style={styles.baseText}>
+                        สถานะ :
+                        <Text style={styles.waitText}> รอการพิจารณา</Text>
+                      </Text>
+                        
                     </CardContent>
 
                     {/* ปุ่มลงทะเบียนและป็อปอัพ */}
@@ -98,7 +130,7 @@ function ActivateDisplayArea() {
                       </Typography>
                     </CardActions>
 
-                    <Typography variant="h6" color='error.main'>
+                    <Typography variant="h6" color='error.main' sx={{ fontSize:16 }}>
                       จำนวนที่นั่งเหลือ 0 ท่านยังสามารถลงทะเบียนเป็นที่นั่งสำรองได้
                       <br />
                       หากต้องการสละสิทธิ์ กรุณาติดต่อช่องทางใดช่องทางหนึ่ง
@@ -124,14 +156,19 @@ function ActivateDisplayArea() {
                       "กิจกรรมแข่งพิมพ์เร็ว เป็นกิจกรรมที่จัดขึ้นเพื่อหาตัวแทนที่จะไปแข่งขันต่อในระดับจังหวัด โดยจัดขึ้นที่โรงเรียนหาดใหญ่วิทยาลัยสมบูรณ์กุลกันยา ณ ชั้น 6 อาคารปิ่นเกรียงไกร"
                     />
                     <CardContent sx={{ width:650 }}>
-                      <Typography variant="body1" sx={{ fontSize:18 }}>
+                      <Typography 
+                        variant="body1" 
+                        sx={{ fontSize:18 }}>
                         ลงทะเบียน    : เริ่ม 01/11/2022 | สิ้นสุด 05/11/2022<br />
                         กิจกรรม      : เริ่ม 07/11/2022  | สิ้นสุด 08/11/2022<br />
                         จำนวนผู้เข้าร่วมสูงสุด : 80 คน
                       </Typography>
-                      <Typography variant="body1" sx={{ fontSize:18 , fontWeight:600 }}>
-                        สถานะ : รอการพิจารณา
-                      </Typography>
+
+                      <Text style={styles.baseText}>
+                        สถานะ :
+                        <Text style={styles.notpassText}> ไม่ผ่านการคัดเลือก</Text>
+                      </Text>
+
                     </CardContent>
 
                     {/* ปุ่มลงทะเบียนและป็อปอัพ */}
@@ -160,7 +197,7 @@ function ActivateDisplayArea() {
 
                     </CardActions>
 
-                    <Typography variant="h6" color='error.main'>
+                    <Typography variant="h6" color='error.main' sx={{ fontSize:16 }}>
                       หากต้องการสละสิทธิ์ กรุณาติดต่อช่องทางใดช่องทางหนึ่ง
                     </Typography>
                 </Box>
@@ -184,14 +221,19 @@ function ActivateDisplayArea() {
                       "กิจกรรมแข่งพิมพ์เร็ว เป็นกิจกรรมที่จัดขึ้นเพื่อหาตัวแทนที่จะไปแข่งขันต่อในระดับจังหวัด โดยจัดขึ้นที่โรงเรียนหาดใหญ่วิทยาลัยสมบูรณ์กุลกันยา ณ ชั้น 6 อาคารปิ่นเกรียงไกร"
                     />
                     <CardContent sx={{ width:650 }}>
-                      <Typography variant="body1" sx={{ fontSize:18 }}>
+                      <Typography 
+                        variant="body1" 
+                        sx={{ fontSize:18 }}>
                         ลงทะเบียน    : เริ่ม 01/11/2022 | สิ้นสุด 05/11/2022<br />
                         กิจกรรม      : เริ่ม 07/11/2022  | สิ้นสุด 08/11/2022<br />
                         จำนวนผู้เข้าร่วมสูงสุด : 80 คน
                       </Typography>
-                      <Typography variant="body1" sx={{ fontSize:18 , fontWeight:600 }}>
-                        สถานะ : รอการพิจารณา
-                      </Typography>
+
+                      <Text style={styles.baseText}>
+                        สถานะ :
+                        <Text style={styles.passText}> ผ่านการคัดเลือก</Text>
+                      </Text>
+  
                     </CardContent>
 
                     {/* ปุ่มลงทะเบียนและป็อปอัพ */}
@@ -223,7 +265,7 @@ function ActivateDisplayArea() {
                       </Typography>
                     </CardActions>
 
-                    <Typography variant="h6" color='error.main'>
+                    <Typography variant="h6" color='error.main' sx={{ fontSize:16 }}>
                       จำนวนที่นั่งเหลือ 0 ท่านยังสามารถลงทะเบียนเป็นที่นั่งสำรองได้
                       <br />
                       หากต้องการสละสิทธิ์ กรุณาติดต่อช่องทางใดช่องทางหนึ่ง
