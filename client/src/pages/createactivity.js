@@ -2,7 +2,7 @@ import { Box } from "@mui/system";
 import CreateAdmin from "../components/create-activity/createadmin"
 import AdminAppBar from "../components/app-bar/admin-app-bar";
 
-function adminHome(){
+function AdminHome(){
     return(
         <Box sx={{ flexGrow: 1}}>
             <AdminAppBar/>
@@ -11,4 +11,4 @@ function adminHome(){
     )
 }
 
-export default adminHome;
+export default AdminHome;
