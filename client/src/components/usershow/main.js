@@ -25,7 +25,7 @@ function UserList() {
 
                 <Box sx={{ display:'flex', flexDirection:'column' }}>
                     <CardHeader
-                      titleTypographyProps={{fontSize: 30,}}
+                      titleTypographyProps={{fontSize: 36,}}
                       title="ผู้ใช้งาน"
                     />
 

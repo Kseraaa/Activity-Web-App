@@ -24,9 +24,10 @@ function UserAct() {
 
                 <Box sx={{ display:'flex', flexDirection:'column' }}>
                     <CardHeader
-                      titleTypographyProps={{fontSize: 36,}}
-                      title="พี"
-
+                      titleTypographyProps={{fontSize: 30,}}
+                      title="นาย ธีรวีร์ ปฐมธนินพัฒน์"
+                      subheaderTypographyProps={{fontSize: 20}}
+                      subheader="กิจกรรมที่เคยเข้าร่วม"            
                     />
                     <CardContent sx={{ width:650 }}>
   
