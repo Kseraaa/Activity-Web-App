@@ -9,7 +9,7 @@ import { Button } from "@mui/material";
 import { Text, StyleSheet } from 'react-native';
 
 
-function UserList() {
+function UserAct() {
 
   
   
@@ -25,10 +25,11 @@ function UserList() {
                 <Box sx={{ display:'flex', flexDirection:'column' }}>
                     <CardHeader
                       titleTypographyProps={{fontSize: 36,}}
-                      title="ผู้ใช้งาน"
+                      title="พี"
+
                     />
                     <CardContent sx={{ width:650 }}>
-
+  
                     </CardContent>
 
                     {/* ปุ่มลงทะเบียนและป็อปอัพ */}
@@ -44,4 +45,4 @@ function UserList() {
   );
 }
 
-export default UserList;
+export default UserAct;

@@ -90,7 +90,7 @@ function CreateAdmin() {
                 <Box sx={{ display:'flex', flexDirection:'column' }}>
                     <CardHeader
                       titleTypographyProps={{fontSize: 36,}}
-                      title="สำหรับการสร้างActivity"
+                      title="สำหรับการสร้างกิจกรรม"
 
 
                     />
@@ -265,7 +265,7 @@ function CreateAdmin() {
                             </Button>
                           </label>
                         </Stack>              
-                        
+
                         <Stack spacing={2} direction="row">               
                           <Button variant="contained" color="success" onClick={handleClickOpen}>
                             บันทึก
@@ -279,14 +279,16 @@ function CreateAdmin() {
                           >
                             <DialogTitle id="alert-dialog-title" gutterBottom variant="h1" sx={{color: '#4aad00'}}>
                               <Typography sx={{ fontSize: '50px'}} >
-                                <h1>บันทึกสำเร็จ!!</h1>
+                                <h1>บันทึกสำเร็จ</h1>
                               </Typography>
                             </DialogTitle>
                             <DialogActions >
                               <Button sx={{ fontSize: '30px',color: '#4aad00'}} onClick={handleClose} >ย้อนกลับ </Button>
                             </DialogActions>
                           </Dialog>
+
                           <Button variant="outlined" color="error" >cancle</Button>
+
                         </Stack>
                     </CardActions>
                 </Box>

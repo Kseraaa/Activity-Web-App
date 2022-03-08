@@ -9,7 +9,8 @@ import ScrollIndicator from './components/scrollindicator/indicator-index';
 import Login from './pages/login';
 import Register from './pages/register';
 import ActivityAdmin from './pages/activityadmin';
-import UserShow from './pages/usershow';
+import UserName from './pages/username';
+import OneUser from './pages/oneuser'
 
 function App(){
   return(
@@ -25,7 +26,8 @@ function App(){
               <Route path="/contact" element={<Contact/>}/>
 
               <Route path="/adminhome" element={<AdminHome/>}/>
-              <Route path="/usershow" element={<UserShow/>}/>
+              <Route path="/username" element={<UserName/>}/>
+              <Route path="/oneuser" element={<OneUser/>}/>
 
               <Route path="/login" element={<Login/>}/>
               <Route path="/register" element={<Register/>}/>

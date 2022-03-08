@@ -144,7 +144,7 @@ return (
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
-                                    <Box onClick={() => {navigate("/usershow");}}>
+                                    <Box onClick={() => {navigate("/username");}}>
                                         <Typography textAlign="center" color="black">รายชื่อผู้ใช้</Typography>
                                     </Box>
                                 </MenuItem>
@@ -183,7 +183,7 @@ return (
                                 </Button>
 
                                 <Button
-                                    onClick= {() => {navigate("/usershow");}}
+                                    onClick= {() => {navigate("/username");}}
                                     sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
                                     รายชื่อผู้ใช้
