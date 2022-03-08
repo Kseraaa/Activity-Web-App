@@ -1,29 +1,51 @@
+import { CardHeader, Dialog, DialogActions, DialogTitle, Stack } from "@mui/material"
 import React from "react";
-import Stack from '@mui/material/Stack';
-import TextField from '@mui/material/TextField';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import DateTimePicker from '@mui/lab/DateTimePicker';
-
-import { CardHeader } from "@mui/material"
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { Box } from "@mui/system";
 import { StyleSheet } from 'react-native';
+import TextField from '@mui/material/TextField';
+
+
+
+
+
 
 function CreateAdmin() {
 
-          {/* กำหนดเวลา */}
-    const [value, setValue] = React.useState(new Date('2014-08-18T21:11:54'));
-    const handleChange = (newValue) => {
-      setValue(newValue);
-    };
+          {/* กำนหดเวลา */}
   
-
+    const styles = StyleSheet.create({
+      baseText: {
+        fontSize: '18px',
+        fontWeight: 'bold',
+        color:'#0B46FF'
+        
+      },
+      passText: {
+        fontSize: '18px',
+        fontWeight: 'bold',
+        color:'green'
+      },
+  
+      notpassText: {
+        fontSize: '18px',
+        fontWeight: 'bold',
+        color:'red'
+      },
+  
+      waitText: {
+        fontSize: '18px',
+        fontWeight: 'bold',
+        color:'grey'
+      },
+    });
   
     return(
         <div>
+
+
         <Box sx={{ mx: 'auto', mt: 10 }}>
 
           {/* การ์ดใบที่3 */}
@@ -81,20 +103,9 @@ function CreateAdmin() {
                         ระยะเวลาเปิดลงทะเบียน
                     </Typography>
                     <Box>
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                      <Stack spacing={3}>
-                        <DateTimePicker
-                          label="Date&Time picker"
-                          value={value}
-                          onChange={handleChange}
-                          renderInput={(params) => <TextField {...params} />}
-                        />
-                      </Stack>
-                    </LocalizationProvider>
-                    </Box>
 
+                    </Box>
                     </CardContent>
-                    
                 </Box>
           </Card>
         </Box>
