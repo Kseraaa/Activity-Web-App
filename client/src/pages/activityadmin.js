@@ -1,14 +1,14 @@
 import { Box } from "@mui/system";
+import ActivateList from "../components/activitylist/activitylist";
 import AdminAppBar from "../components/app-bar/admin-app-bar";
-import UserList from "../components/usershow/userlist";
 
-function UserShow(){
+function ActivityAdmin(){
     return(
         <Box sx={{ flexGrow: 1}}>
             <AdminAppBar/>
-            <UserList/>
+            <ActivateList/>
         </Box>
     )
 }
 
-export default UserShow;
+export default ActivityAdmin;
