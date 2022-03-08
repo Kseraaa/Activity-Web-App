@@ -17,6 +17,9 @@ import CardActions from '@mui/material/CardActions';
 import { Button } from "@mui/material";
 import { Dialog, DialogActions, DialogTitle } from "@mui/material"
 
+import { styled } from '@mui/material/styles';
+
+
          {/* ประเภท */}
 const currencies = [
   {
@@ -29,6 +32,12 @@ const currencies = [
   },
 
 ];
+
+
+        {/* ปุ่มupload */}
+const Input = styled('input')({
+  display: 'none',
+});
 
 function CreateAdmin() {
 
@@ -69,6 +78,7 @@ function CreateAdmin() {
     const handleClose = () => {
       setOpen(false);
     };
+
 
     return(
         <div>
@@ -247,8 +257,17 @@ function CreateAdmin() {
 
                     {/* ปุ่มบันทึกและป็อปอัพ */}
                     <CardActions>
-                        <Stack spacing={2} direction="row">
-                          <Button variant="contained" onClick={handleClickOpen}>
+                        <Stack direction="row" alignItems="center" spacing={2}>
+                          <label htmlFor="contained-button-file">
+                            <Input accept="image/*" id="contained-button-file" multiple type="file" />
+                            <Button variant="contained" component="span">
+                              Upload
+                            </Button>
+                          </label>
+                        </Stack>              
+                        
+                        <Stack spacing={2} direction="row">               
+                          <Button variant="contained" color="success" onClick={handleClickOpen}>
                             บันทึก
                           </Button>
                           <Dialog
@@ -258,16 +277,16 @@ function CreateAdmin() {
                             aria-describedby="alert-dialog-description"
                             maxWidth= 'md'
                           >
-                            <DialogTitle id="alert-dialog-title" gutterBottom variant="h1" sx={{color: '#004AAD'}}>
+                            <DialogTitle id="alert-dialog-title" gutterBottom variant="h1" sx={{color: '#4aad00'}}>
                               <Typography sx={{ fontSize: '50px'}} >
                                 <h1>บันทึกสำเร็จ!!</h1>
                               </Typography>
                             </DialogTitle>
                             <DialogActions >
-                              <Button sx={{ fontSize: '30px'}} onClick={handleClose} >ย้อนกลับ </Button>
+                              <Button sx={{ fontSize: '30px',color: '#4aad00'}} onClick={handleClose} >ย้อนกลับ </Button>
                             </DialogActions>
                           </Dialog>
-                          <Button variant="contained">cancle</Button>
+                          <Button variant="outlined" color="error" >cancle</Button>
                         </Stack>
                     </CardActions>
                 </Box>
