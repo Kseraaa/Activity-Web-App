@@ -20,6 +20,7 @@ import { Dialog, DialogActions, DialogTitle } from "@mui/material"
 import { styled } from '@mui/material/styles';
 
 
+
          {/* ประเภท */}
 const currencies = [
   {
@@ -91,9 +92,8 @@ function CreateAdmin() {
                     <CardHeader
                       titleTypographyProps={{fontSize: 36,}}
                       title="สำหรับการสร้างกิจกรรม"
-
-
                     />
+
                     <CardContent sx={{ width:650 }}>
 
 
@@ -181,7 +181,7 @@ function CreateAdmin() {
                           label="ประเภทของกิจกรรม"
                           value={currency}
                           onChange={handleChange}
-                          helperText="กรุณากรอกประเภทของกิจกรรม"
+                          //helperText="กรุณากรอกประเภทของกิจกรรม"
                         >
                           {currencies.map((option) => (
                             <MenuItem key={option.value} value={option.value}>
@@ -252,6 +252,12 @@ function CreateAdmin() {
                       </Stack>
                     </LocalizationProvider>
                     </Box>
+                    <br />
+                    <Typography variant="h6" color='error.main' sx={{ fontSize:16 }}>
+                          กรุณาตรวจสอบข้อมูลที่กรอกให้ถูกต้องก่อนทำการบันทึก เนื่องจากบันทึกเเล้วไม่สามารถเเก้ไขได้
+                          <br />
+                          หากเกิดข้อผิดพลาด เเอดมินจะทำการลบกิจกรรมได้ที่หน้า รายชื่อกิจกรรม
+                    </Typography>
                     </CardContent>
 
 
@@ -261,7 +267,7 @@ function CreateAdmin() {
                           <label htmlFor="contained-button-file">
                             <Input accept="image/*" id="contained-button-file" multiple type="file" />
                             <Button variant="contained" component="span">
-                              Upload
+                              Upload📸
                             </Button>
                           </label>
                         </Stack>              
@@ -286,9 +292,6 @@ function CreateAdmin() {
                               <Button sx={{ fontSize: '30px',color: '#4aad00'}} onClick={handleClose} >ย้อนกลับ </Button>
                             </DialogActions>
                           </Dialog>
-
-                          <Button variant="outlined" color="error" >cancle</Button>
-
                         </Stack>
                     </CardActions>
                 </Box>

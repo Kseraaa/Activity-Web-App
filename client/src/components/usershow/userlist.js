@@ -1,13 +1,11 @@
-import { CardHeader, Dialog, DialogActions, DialogTitle, Stack } from "@mui/material"
+import { CardHeader } from "@mui/material"
 import React from "react";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import { Box } from "@mui/system";
+import Stack from '@mui/material/Stack';
 import { Button } from "@mui/material";
-import { Text, StyleSheet } from 'react-native';
-
 import { useNavigate } from "react-router-dom";
 
 function UserList() {
@@ -23,7 +21,7 @@ function UserList() {
           {/* การ์ดใบที่3 */}
           <Card sx={{ mx:'auto', my:3,maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
 
-                <Box sx={{ display:'flex', flexDirection:'column' }}>
+                <Box >
                     <CardHeader
                       titleTypographyProps={{fontSize: 30,}}
                       title="ผู้ใช้งาน"
@@ -31,11 +29,17 @@ function UserList() {
 
                     <CardContent sx={{ width:500  }} >
 
+                    <Stack  alignItems="center" >
                         <Box onClick={() => {navigate("/oneuser");}}>
-                            <Typography   textAlign="center" color="black" variant="body1" sx={{ fontSize:20 }} >
+                          <Button>
+                          <Box textAlign="left" >
+                            <Typography    color="black" variant="body1" sx={{ fontSize:20 }} >
                               นาย ธีรวีร์ ปฐมธนินพัฒน์
                             </Typography>
+                          </Box>
+                          </Button>
                         </Box>
+                    </Stack> 
 
                     </CardContent>
 

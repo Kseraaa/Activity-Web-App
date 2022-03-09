@@ -1,13 +1,13 @@
-import { CardHeader, Dialog, DialogActions, DialogTitle, Stack } from "@mui/material"
+import { CardHeader } from "@mui/material"
 import React from "react";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
-import Typography from '@mui/material/Typography';
-import { Box } from "@mui/system";
-import { Button } from "@mui/material";
-import { Text, StyleSheet } from 'react-native';
 
+import { Box } from "@mui/system";
+
+import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
 
 function UserAct() {
 
@@ -22,18 +22,28 @@ function UserAct() {
           {/* การ์ดใบที่3 */}
           <Card sx={{ mx:'auto', my:3,maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
 
-                <Box sx={{ display:'flex', flexDirection:'column' }}>
+                <Box >
                     <CardHeader
                       titleTypographyProps={{fontSize: 30,}}
                       title="นาย ธีรวีร์ ปฐมธนินพัฒน์"
                       subheaderTypographyProps={{fontSize: 20}}
                       subheader="กิจกรรมที่เคยเข้าร่วม"            
                     />
-                    <CardContent sx={{ width:650 }}>
-  
+                    <CardContent  sx={{ width:650 }}>
+                    <Stack  alignItems="center" >
+                    <Box  >
+                      <Typography 
+                        variant="body1" 
+                        sx={{ fontSize:18 }}>
+                        กิจกรรม...............<br />
+                        กิจกรรม...............<br />
+                        กิจกรรม...............<br />
+                        กิจกรรม...............<br />
+                      </Typography>
+                      </Box>
+                    </Stack>
                     </CardContent>
-
-                    {/* ปุ่มลงทะเบียนและป็อปอัพ */}
+                    {/* ปุ่ม */}
                     <CardActions>
 
                     </CardActions>
