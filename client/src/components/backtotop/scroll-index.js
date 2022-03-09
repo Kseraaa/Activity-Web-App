@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useWindowScroll } from "react-use";
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
 const ScrollToTop = () => {
     const { y: pageYOffset } = useWindowScroll();
@@ -24,7 +25,7 @@ const ScrollToTop = () => {
             className="scroll-to-top cursor-pointer text-center"
             onClick={scrollToTop}
         >
-            
+            <ArrowDropUpIcon/>
         </div>
     );
 };

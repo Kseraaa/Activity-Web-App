@@ -5,7 +5,7 @@ import AdminAppBar from "../components/app-bar/admin-app-bar";
 function ActivityAdmin(){
     return(
         <Box sx={{ flexGrow: 1}}>
-            <AdminAppBar/>
+            <AdminAppBar/><br/>
             <ActivateList/>
         </Box>
     )

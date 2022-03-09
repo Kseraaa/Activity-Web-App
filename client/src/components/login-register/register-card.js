@@ -7,8 +7,12 @@ import Typography from '@mui/material/Typography';
 import { Box } from "@mui/system";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import { useNavigate } from "react-router-dom";
 
 function RegisterCard() {
+    
+    const navigate = useNavigate();
+
     return(
         <div>
         <Box>    
@@ -16,13 +20,13 @@ function RegisterCard() {
                 <Box sx={{ display:'flex', flexDirection:'column' }}>
                     <CardHeader
                     titleTypographyProps={{fontSize: 36,}}
-                    title="Register"
+                    title="สร้างบัญชี"
                     />
                     <CardContent sx={{ width:650 }}>
                     <Typography 
                         variant="body1" 
                         sx={{ fontSize:16 }}>
-                        Name
+                        ชื่อ
                     </Typography>
                     <Box
                     component="form"
@@ -32,15 +36,15 @@ function RegisterCard() {
                     noValidate
                     autoComplete="off"
                     >
-                    <TextField id="outlined-basic" label="Name" variant="outlined" />
-                    <TextField id="outlined-basic" label="Sername" variant="outlined" />
+                    <TextField id="outlined-basic" label="ชื่อ" variant="outlined" />
+                    <TextField id="outlined-basic" label="นามสกุล" variant="outlined" />
                     </Box>
 
 
                     <Typography 
                         variant="body1" 
                         sx={{ fontSize:16 }}>
-                        Email
+                        อีเมล
                     </Typography>
                     <Box
                     component="form"
@@ -50,14 +54,14 @@ function RegisterCard() {
                     noValidate
                     autoComplete="off"
                     >
-                    <TextField id="outlined-basic" label="Email" variant="outlined" />
+                    <TextField id="outlined-basic" label="อีเมล" variant="outlined" />
                     </Box>
 
 
                     <Typography 
                         variant="body1" 
                         sx={{ fontSize:16 }}>
-                        Password
+                        รหัสผ่าน
                     </Typography>
                     <Box
                     component="form"
@@ -69,7 +73,7 @@ function RegisterCard() {
                     >
                     <TextField
                         id="outlined-password-input"
-                        label="Password"
+                        label="รหัสผ่าน"
                         type="password"
                         autoComplete="current-password"
                     />
@@ -77,7 +81,7 @@ function RegisterCard() {
                     <Typography 
                         variant="body1" 
                         sx={{ fontSize:16 }}>
-                        Confirm password
+                        ยืนยันรหัสผ่าน
                     </Typography>
                     <Box
                     component="form"
@@ -89,6 +93,7 @@ function RegisterCard() {
                     >
                     <TextField
                         id="outlined-password-input"
+                        label="ยืนยันรหัสผ่าน"
                         type="password"
                         autoComplete="current-password"
                     />
@@ -97,8 +102,8 @@ function RegisterCard() {
 
                     <br />
                     <Stack spacing={2} direction="row">
-                        <Button variant="contained">Finish</Button>
-                        <Button variant="outLine">cancle</Button>
+                        <Button variant="contained" onClick={() => {navigate("/login");}}>เสร็จสิ้น</Button>
+                        <Button variant="outLine" onClick={() => {navigate("/login");}}>ยกเลิก</Button>
                     </Stack> 
                     </CardContent>     
                 </Box>

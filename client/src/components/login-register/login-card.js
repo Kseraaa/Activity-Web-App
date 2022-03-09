@@ -7,8 +7,12 @@ import Typography from '@mui/material/Typography';
 import { Box } from "@mui/system";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import { useNavigate } from "react-router-dom";
 
 function LoginCard() {
+
+    const navigate = useNavigate();
+    
     return(
         <div>
         <Box>    
@@ -16,7 +20,7 @@ function LoginCard() {
                 <Box sx={{ display:'flex', flexDirection:'column' }}>
                     <CardHeader
                     titleTypographyProps={{fontSize: 36,}}
-                    title="Login"
+                    title="เข้าสู่ระบบ"
                     />
                     <CardContent sx={{ width:650 }}>
 
@@ -24,7 +28,7 @@ function LoginCard() {
                     <Typography 
                         variant="body1" 
                         sx={{ fontSize:16 }}>
-                        Email
+                        อีเมล
                     </Typography>
                     <Box
                     component="form"
@@ -34,14 +38,14 @@ function LoginCard() {
                     noValidate
                     autoComplete="off"
                     >
-                    <TextField id="outlined-basic" label="Email" variant="outlined" />
+                    <TextField id="outlined-basic" label="อีเมล" variant="outlined" />
                     </Box>
 
 
                     <Typography 
                         variant="body1" 
                         sx={{ fontSize:16 }}>
-                        Password
+                        รหัสผ่าน
                     </Typography>
                     <Box
                     component="form"
@@ -53,7 +57,7 @@ function LoginCard() {
                     >
                     <TextField
                         id="outlined-password-input"
-                        label="Password"
+                        label="รหัสผ่าน"
                         type="password"
                         autoComplete="current-password"
                     />
@@ -62,14 +66,11 @@ function LoginCard() {
                     
                     <br />
                     <Stack spacing={2} direction="row">
-                        <Button variant="contained">Login</Button>
+                        <Button variant="contained">เข้าสู่ระบบ</Button>
                         <Button variant="outLine">ลืมรหัสผ่าน</Button>
+                        <Button variant="outLine" onClick={() => {navigate("/register");}}>สร้างบัญชี</Button>
                     </Stack>
-                    <br/>
-                    <Stack spacing={2} direction="row">
-                        <Button variant="outLine">register</Button>
-                    </Stack> 
-                    </CardContent>     
+                    </CardContent>
                 </Box>
             </Card>
         </Box>
