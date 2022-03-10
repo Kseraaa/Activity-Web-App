@@ -4,27 +4,21 @@ import TextField from '@mui/material/TextField';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DateTimePicker from '@mui/lab/DateTimePicker';
-
 import { CardHeader } from "@mui/material"
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { Box } from "@mui/system";
-
 import MenuItem from '@mui/material/MenuItem';
-
 import CardActions from '@mui/material/CardActions';
 import { Button } from "@mui/material";
 import { Dialog, DialogActions, DialogTitle } from "@mui/material"
-
 import { styled } from '@mui/material/styles';
-
-
 
          {/* ประเภท */}
 const currencies = [
   {
-    value: 'FCF',
+    value: 'FCFS',
     label: 'FirstComeFirstServe',
   },
   {
@@ -33,7 +27,6 @@ const currencies = [
   },
 
 ];
-
 
         {/* ปุ่มupload */}
 const Input = styled('input')({
@@ -80,7 +73,6 @@ function CreateAdmin() {
       setOpen(false);
     };
 
-
     return(
         <div>
         <Box sx={{ mx: 'auto', mt: 10 }}>
@@ -93,9 +85,7 @@ function CreateAdmin() {
                       titleTypographyProps={{fontSize: 36,}}
                       title="สำหรับการสร้างกิจกรรม"
                     />
-
                     <CardContent sx={{ width:650 }}>
-
 
                     {/* กรอกข้อความชื่อกิจกรรม */}
                       <Typography 
@@ -193,7 +183,6 @@ function CreateAdmin() {
                     </Box>
                     <br/>
 
-
                     {/* กำหนดเวลา */}
                     <Typography 
                         variant="body1" 
@@ -201,27 +190,27 @@ function CreateAdmin() {
                         ระยะเวลาเปิดลงทะเบียน
                     </Typography>
                     <Box>
-                    <br/>
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                      <Stack spacing={3}>
-                        <DateTimePicker
-                          label="เริ่มเวลา"
-                          value={value1}
-                          onChange={handleChange1}
-                          renderInput={(params) => <TextField {...params} />}
-                        />
-                      </Stack>
-                    </LocalizationProvider><br/>
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                      <Stack spacing={3}>
-                        <DateTimePicker
-                          label="สิ้นสุดเวลา"
-                          value={value2}
-                          onChange={handleChange2}
-                          renderInput={(params) => <TextField {...params} />}
-                        />
-                      </Stack>
-                    </LocalizationProvider>
+                      <br/>
+                      <LocalizationProvider dateAdapter={AdapterDateFns}>
+                        <Stack spacing={3}>
+                          <DateTimePicker
+                            label="เริ่มเวลา"
+                            value={value1}
+                            onChange={handleChange1}
+                            renderInput={(params) => <TextField {...params} />}
+                          />
+                        </Stack>
+                      </LocalizationProvider><br/>
+                      <LocalizationProvider dateAdapter={AdapterDateFns}>
+                        <Stack spacing={3}>
+                          <DateTimePicker
+                            label="สิ้นสุดเวลา"
+                            value={value2}
+                            onChange={handleChange2}
+                            renderInput={(params) => <TextField {...params} />}
+                          />
+                        </Stack>
+                      </LocalizationProvider>
                     </Box>
                     <br/>
                     <Typography 
@@ -230,36 +219,35 @@ function CreateAdmin() {
                         ระยะเวลากิจกรรม
                     </Typography>
                     <Box>
-                    <br/>
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                      <Stack spacing={3}>
-                        <DateTimePicker
-                          label="เริ่มเวลา"
-                          value={value3}
-                          onChange={handleChange3}
-                          renderInput={(params) => <TextField {...params} />}
-                        />
-                      </Stack>
-                    </LocalizationProvider><br/>
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                      <Stack spacing={3}>
-                        <DateTimePicker
-                          label="สิ้นสุดเวลา"
-                          value={value4}
-                          onChange={handleChange4}
-                          renderInput={(params) => <TextField {...params} />}
-                        />
-                      </Stack>
-                    </LocalizationProvider>
+                      <br/>
+                      <LocalizationProvider dateAdapter={AdapterDateFns}>
+                        <Stack spacing={3}>
+                          <DateTimePicker
+                            label="เริ่มเวลา"
+                            value={value3}
+                            onChange={handleChange3}
+                            renderInput={(params) => <TextField {...params} />}
+                          />
+                        </Stack>
+                      </LocalizationProvider><br/>
+                      <LocalizationProvider dateAdapter={AdapterDateFns}>
+                        <Stack spacing={3}>
+                          <DateTimePicker
+                            label="สิ้นสุดเวลา"
+                            value={value4}
+                            onChange={handleChange4}
+                            renderInput={(params) => <TextField {...params} />}
+                          />
+                        </Stack>
+                      </LocalizationProvider>
                     </Box>
                     <br />
                     <Typography variant="h6" color='error.main' sx={{ fontSize:16 }}>
-                          กรุณาตรวจสอบข้อมูลที่กรอกให้ถูกต้องก่อนทำการบันทึก เนื่องจากบันทึกเเล้วไม่สามารถเเก้ไขได้
-                          <br />
-                          หากเกิดข้อผิดพลาด เเอดมินจะทำการลบกิจกรรมได้ที่หน้า รายชื่อกิจกรรม
+                      กรุณาตรวจสอบข้อมูลที่กรอกให้ถูกต้องก่อนทำการบันทึก เนื่องจากบันทึกเเล้วไม่สามารถเเก้ไขได้
+                      <br />
+                      หากเกิดข้อผิดพลาด เเอดมินจะทำการลบกิจกรรมได้ที่หน้า รายชื่อกิจกรรม
                     </Typography>
                     </CardContent>
-
 
                     {/* ปุ่มบันทึกและป็อปอัพ */}
                     <CardActions>
