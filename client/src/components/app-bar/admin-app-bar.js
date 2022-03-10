@@ -86,11 +86,6 @@ return (
             <AppBar position="static" color='grey'>
                 <Container maxWidth="x1">
                     <Toolbar disableGutters>
-
-                            {/* FANCIER button */}
-                            <Button 
-                                onClick={() => {navigate("/home");}}
-                            >
                                 <Avatar
                                     sx={{ width: 70, height: 65 }}
                                     variant="square"
@@ -101,7 +96,6 @@ return (
                                     variant=""
                                     src="/img/fancierlogo2.png"
                                 />
-                            </Button> 
 
                         {/* Box for menu (when minimized window) */}
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -138,19 +132,19 @@ return (
                                 }}
                             >
                                 <MenuItem onClick={handleCloseNavMenu}>
-                                    <Box onClick={() => {navigate("/home");}}>
+                                    <Box onClick={() => {navigate("/adminhome");}}>
                                         <Typography textAlign="center" color="black">สร้าง</Typography>
                                     </Box>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
-                                    <Box onClick={() => {navigate("/history");}}>
+                                    <Box onClick={() => {navigate("/activityadmin");}}>
                                         <Typography textAlign="center" color="black">รายชื่อกิจกรรม</Typography>
                                     </Box>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
-                                    <Box onClick={() => {navigate("/contact");}}>
+                                    <Box onClick={() => {navigate("/username");}}>
                                         <Typography textAlign="center" color="black">รายชื่อผู้ใช้</Typography>
                                     </Box>
                                 </MenuItem>
@@ -175,21 +169,21 @@ return (
                         <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' } }}>
                                 
                                 <Button
-                                    onClick= {() => {navigate("/home");}}
+                                    onClick= {() => {navigate("/adminhome");}}
                                     sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
                                     สร้าง
                                 </Button>
 
                                 <Button
-                                    onClick= {() => {navigate("/history");}}
+                                    onClick= {() => {navigate("/activityadmin");}}
                                     sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
                                     รายชื่อกิจกรรม
                                 </Button>
 
                                 <Button
-                                    onClick= {() => {navigate("/contact");}}
+                                    onClick= {() => {navigate("/username");}}
                                     sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
                                     รายชื่อผู้ใช้

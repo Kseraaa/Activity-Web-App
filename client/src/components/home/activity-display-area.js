@@ -7,8 +7,8 @@ import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import { Box } from "@mui/system";
 import { Button } from "@mui/material";
-import ProjectClip from "../video/Project-Clip.mp4";
 import { Text, StyleSheet } from 'react-native';
+import Video from "../video/video";
 
 function ActivateDisplayArea() {
   const [open, setOpen] = React.useState(false);
@@ -49,24 +49,7 @@ function ActivateDisplayArea() {
 
   return(
       <div>
-        <video
-          autoPlay
-          loop
-          muted
-          style={{
-            position: "absolute",
-            width: "auto",
-            left: "50%",
-            top: "59%",
-            height: "auto",
-            objectFit: "cover",
-            transform: "translate(-50%, -50%)",
-            zIndex: "-1"
-          }}
-        >
-          <source src={ProjectClip} type="video/mp4" />
-        </video>
-
+        <Video/>
         <Box sx={{ mx: 'auto', mt: 115 }}>
         {/* การ์ดใบที่1 */}
           <Card sx={{ mx:'auto', my:3,maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
