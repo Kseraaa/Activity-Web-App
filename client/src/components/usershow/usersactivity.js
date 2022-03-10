@@ -9,10 +9,10 @@ import { Box } from "@mui/system";
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 
+import { useNavigate } from "react-router-dom";
+import Button from '@mui/material/Button';
 function UserAct() {
-
-  
-  
+  const navigate = useNavigate();
     return(
         <div>
 
@@ -30,20 +30,36 @@ function UserAct() {
                       subheader="กิจกรรมที่เคยเข้าร่วม"            
                     />
                     <CardContent  sx={{ width:650 }}>
-                    <Stack  alignItems="center" >
-                    <Box  >
-                      <Typography 
-                        variant="body1" 
-                        sx={{ fontSize:18 }}>
-                        กิจกรรม...............<br />
-                        กิจกรรม...............<br />
-                        กิจกรรม...............<br />
-                        กิจกรรม...............<br />
-                      </Typography>
+                    <Stack  alignItems="center"  >
+                      <Box  >
+                        <Typography 
+                          variant="body1" 
+                          sx={{ fontSize:18 }}>
+                          กิจกรรม...............<br />
+                          กิจกรรม...............<br />
+                          กิจกรรม...............<br />
+                          กิจกรรม...............<br />
+                          กิจกรรม...............<br />
+                          กิจกรรม...............<br />
+                          กิจกรรม...............<br />
+                          กิจกรรม...............<br />
+                          กิจกรรม...............<br />
+                          กิจกรรม...............<br />
+                          กิจกรรม...............<br />
+                          กิจกรรม...............<br />
+                        </Typography>
                       </Box>
                     </Stack>
+                    <br />
+                    <br />
+                    <Stack spacing={2} direction="row">
+                    <Box onClick={() => {navigate("/username");}}>
+                      <Button variant="contained">◀ ย้อนกลับ</Button>
+                    </Box>
+                    </Stack>
+
                     </CardContent>
-                    {/* ปุ่ม */}
+
                     <CardActions>
 
                     </CardActions>

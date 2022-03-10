@@ -255,7 +255,7 @@ function CreateAdmin() {
                           <label htmlFor="contained-button-file">
                             <Input accept="image/*" id="contained-button-file" multiple type="file" />
                             <Button variant="contained" component="span">
-                              Upload📸
+                              Upload 📸
                             </Button>
                           </label>
                         </Stack>              
