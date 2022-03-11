@@ -82,7 +82,7 @@ function CreateAdmin() {
 
                 <Box sx={{ display:'flex', flexDirection:'column' }}>
                     <CardHeader
-                      titleTypographyProps={{fontSize: 36,}}
+                      titleTypographyProps={{fontFamily:"Sarabun",fontSize: 36,}}
                       title="สำหรับการสร้างกิจกรรม"
                     />
                     <CardContent sx={{ width:650 }}>
@@ -272,7 +272,7 @@ function CreateAdmin() {
                             maxWidth= 'md'
                           >
                             <DialogTitle id="alert-dialog-title" gutterBottom variant="h1" sx={{color: '#4aad00'}}>
-                              <Typography sx={{ fontSize: '50px'}} >
+                              <Typography sx={{ fontFamily:"Sarabun",fontSize: '50px'}} >
                                 <h1>บันทึกสำเร็จ</h1>
                               </Typography>
                             </DialogTitle>

@@ -170,7 +170,7 @@ return (
                                 
                                 <Button
                                     onClick= {() => {navigate("/adminhome");}}
-                                    sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
+                                    sx={{fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
                                     สร้าง
                                 </Button>

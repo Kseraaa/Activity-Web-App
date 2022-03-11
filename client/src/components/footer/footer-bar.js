@@ -41,10 +41,10 @@ function FooterBar() {
                             {/* column2 */}
                             <td>
                             <Container maxWidth="auto">
-                                <h2 sx={{ mx: "auto"}}>
-                                    อยากลอง อยากทำ</h2>
-                                <h2 sx={{ mx: "auto" }}>
-                                    เลือกกิจกรรมที่ Fancier</h2>
+                                <Box sx={{fontSize:25,fontFamily:"Sarabun" ,mx: "auto" }}>
+                                    อยากลอง อยากทำ</Box>
+                                <Box sx={{fontSize:25,mx: "auto" }}>
+                                    เลือกกิจกรรมที่ Fancier</Box>
                             </Container>
                             </td>
 

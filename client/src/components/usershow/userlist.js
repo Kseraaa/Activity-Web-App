@@ -23,7 +23,7 @@ function UserList() {
 
                 <Box >
                     <CardHeader
-                      titleTypographyProps={{fontSize: 30,}}
+                      titleTypographyProps={{fontFamily:"Sarabun",fontSize: 30,}}
                       title="ผู้ใช้งาน"
                     />
 
@@ -32,8 +32,8 @@ function UserList() {
                     <Stack  alignItems="center" >
                         <Box onClick={() => {navigate("/oneuser");}}>
                           <Button>
-                          <Box textAlign="left" >
-                            <Typography    color="black" variant="body1" sx={{ fontSize:20 }} >
+                          <Box  textAlign="left" >
+                            <Typography  color="black" variant="body1" sx={{ fontSize:20 }} >
                               นาย ธีรวีร์ ปฐมธนินพัฒน์
                             </Typography>
                           </Box>
