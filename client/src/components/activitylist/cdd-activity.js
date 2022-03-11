@@ -37,7 +37,7 @@ export default function CddActivity() {
             
                 <Box sx={{ display:'flex', flexDirection:'column' }}>
                     <CardHeader
-                    titleTypographyProps={{fontSize: 36,}}
+                    titleTypographyProps={{fontFamily: 'Sarabun', fontSize: 36}}
                     title="กิจกรรม CDD"
                     />
                     <CardContent sx={{ width:1000 }} >

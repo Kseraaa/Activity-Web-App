@@ -16,7 +16,7 @@ function RegisterCard() {
     return(
         <div>
         <Box>    
-            <Card sx={{ mx:'auto', my:3,maxWidth: 700 , display: 'flex' , bgcolor: 'grey'}} >
+            <Card sx={{ mx:'auto', my: 1, maxWidth: 700 , display: 'flex' , bgcolor: 'grey'}} >
                 <Box sx={{ display:'flex', flexDirection:'column' }}>
                     <CardMedia
                         component="img"
@@ -26,7 +26,7 @@ function RegisterCard() {
                         alt="logo"
                     />
                     <CardHeader
-                    titleTypographyProps={{fontSize: 36,}}
+                    titleTypographyProps={{fontFamily: 'Sarabun', fontSize: 36,}}
                     title="สร้างบัญชี"
                     />
                     <CardContent sx={{ width:650 }}>

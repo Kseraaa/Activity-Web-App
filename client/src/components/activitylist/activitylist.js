@@ -19,7 +19,7 @@ function ActivityList() {
             <Card sx={{ mx:'auto', my:3,maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
                 <Box sx={{ display:'flex', flexDirection:'column' }}>
                     <CardHeader
-                    titleTypographyProps={{fontSize: 36,}}
+                    titleTypographyProps={{ fontFamily: 'Sarabun', fontSize: 36 }}
                     title="รายชื่อกิจกรรม"
                     />
                     <CardContent sx={{ width:500  }} >

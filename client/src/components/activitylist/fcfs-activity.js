@@ -44,7 +44,7 @@ export default function FcfsActivity() {
             
                 <Box sx={{ display:'flex', flexDirection:'column' }}>
                     <CardHeader
-                    titleTypographyProps={{fontSize: 36,}}
+                    titleTypographyProps={{fontFamily: 'Sarabun', fontSize: 36}}
                     title="กิจกรรม FCFS"
                     />
                     <CardContent sx={{ width:1000 }} >
@@ -54,7 +54,7 @@ export default function FcfsActivity() {
                             ระยะเวลาเปิดลงทะเบียน:....<br />
                             ระยะเวลากิจกรรม:....<br />
                         </Typography>
-                        <Typography color="black" variant="body1" sx={{ fontSize:20 }} >
+                        <Typography color="black" variant="body1" sx={{ fontFamily: 'Sarabun', fontSize:20 }} >
                             รายชื่อคนผ่าน
                         </Typography>
                         <Box
@@ -70,7 +70,7 @@ export default function FcfsActivity() {
                             {renderRow1}
                             </FixedSizeList>
                             <br />
-                        <Typography color="black" variant="body1" sx={{ fontSize:20 }} >
+                        <Typography color="black" variant="body1" sx={{ fontFamily: 'Sarabun', fontSize:20 }} >
                             คิวสำรอง
                         </Typography>
                             <FixedSizeList

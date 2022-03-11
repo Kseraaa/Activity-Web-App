@@ -72,7 +72,7 @@ return(
                   />
                   <Box sx={{ display:'flex', flexDirection:'column' }}>
                       <CardHeader
-                        titleTypographyProps={{fontSize: 36}}
+                        titleTypographyProps={{ fontFamily: 'Sarabun', fontSize: 36}}
                         title={activitycard.name}
                         subheaderTypographyProps={{fontSize: 18}}
                         subheader={activitycard.description}
