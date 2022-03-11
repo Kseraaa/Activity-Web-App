@@ -9,7 +9,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
@@ -18,9 +17,9 @@ import { useNavigate } from "react-router-dom";
 import Popover from '@mui/material/Popover';
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 
-document.body.className = "AnErrorHasOccured";
+import Stack from '@mui/material/Stack';
 
-const settings = ['Name : ', 'Email : ', 'Logout'];
+document.body.className = "AnErrorHasOccured";
 
 const PublicAppBar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -58,31 +57,8 @@ const PublicAppBar = () => {
     },
 }));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-}));
 
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'inherit',
-    '& .MuiInputBase-input': {
-        padding: theme.spacing(1, 1, 1, 0),
-        paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-        transition: theme.transitions.create('width'),
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-        width: '15ch',
-        '&:focus': {
-            width: '20ch',
-        },
-        },
-    },
-}));
+
 
 return (
             <AppBar position="static" color='grey'>
@@ -136,13 +112,13 @@ return (
                                 }}
                             >
                                 <MenuItem onClick={handleCloseNavMenu}>
-                                    <Box onClick={() => {navigate("/home");}}>
+                                    <Box onClick={() => {navigate("/publichome");}}>
                                         <Typography textAlign="center" color="black">กิจกรรม</Typography>
                                     </Box>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
-                                    <Box onClick={() => {navigate("/contact");}}>
+                                    <Box onClick={() => {navigate("/contact2");}}>
                                         <Typography textAlign="center" color="black">ติดต่อ</Typography>
                                     </Box>
                                 </MenuItem>
@@ -151,7 +127,7 @@ return (
                         </Box>
 
                         {/* FANCIER button (minimized window) */}
-                        <Button onClick={() => {navigate("/home");}}>
+                        <Button onClick={() => {navigate("/publichome");}}>
                             <Typography
                                 variant="h6"
                                 noWrap
@@ -167,7 +143,7 @@ return (
                         <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' } }}>
                                 
                                 <Button
-                                    onClick= {() => {navigate("/home");}}
+                                    onClick= {() => {navigate("/publichome");}}
                                     sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
                                     กิจกรรม
@@ -175,7 +151,7 @@ return (
 
 
                                 <Button
-                                    onClick= {() => {navigate("/contact");}}
+                                    onClick= {() => {navigate("/contact2");}}
                                     sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
                                     ติดต่อ
@@ -210,48 +186,13 @@ return (
                                 </PopupState>
                         </Box>
 
-                        {/* search */}
-                        <Search>
-                            <SearchIconWrapper>
-                                <SearchIcon />
-                            </SearchIconWrapper>
-
-                            <StyledInputBase
-                                placeholder="Search…"
-                                inputProps={{ 'aria-label': 'search' }}
-                            />
-                        </Search>
-
-                        {/* box for user profile */}                        
+                        {/* ปุ่มสมัครสมาชิก */}                        
                         <Box sx={{ flexGrow: 0 }}>
-                            <Tooltip title="Open settings">
-                                <IconButton onClick={handleOpenUserMenu} sx={{ p: 1.5 }}>
-                                    <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                                </IconButton>
-                            </Tooltip>
-                            
-                            <Menu
-                                sx={{ mt: '45px' }}
-                                id="menu-appbar"
-                                anchorEl={anchorElUser}
-                                anchorOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                                keepMounted
-                                transformOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                                open={Boolean(anchorElUser)}
-                                onClose={handleCloseUserMenu}
-                            >
-                                {settings.map((setting) => (
-                                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                        <Typography textAlign="center">{setting}</Typography>
-                                    </MenuItem>
-                                ))}
-                            </Menu>
+                        <Stack spacing={2} direction="row">
+                            <Box onClick={() => {navigate("/login");}}>
+                            <Button variant="contained">LOGIN</Button>
+                            </Box>
+                        </Stack>
                         </Box>
                     </Toolbar>
                 </Container>
