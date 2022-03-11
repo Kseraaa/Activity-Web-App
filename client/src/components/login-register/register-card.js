@@ -1,6 +1,6 @@
 import React from "react";
 import TextField from '@mui/material/TextField';
-import { CardHeader } from "@mui/material"
+import { CardHeader, CardMedia } from "@mui/material"
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -16,8 +16,15 @@ function RegisterCard() {
     return(
         <div>
         <Box>    
-            <Card sx={{ mx:'auto', my:3,maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
+            <Card sx={{ mx:'auto', my:3,maxWidth: 700 , display: 'flex' , bgcolor: 'grey'}} >
                 <Box sx={{ display:'flex', flexDirection:'column' }}>
+                    <CardMedia
+                        component="img"
+                        height="40%"
+                        width="40%"
+                        image="/img/123.png"
+                        alt="logo"
+                    />
                     <CardHeader
                     titleTypographyProps={{fontSize: 36,}}
                     title="สร้างบัญชี"

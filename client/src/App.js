@@ -13,6 +13,8 @@ import UserName from './pages/username';
 import OneUser from './pages/oneuser'
 import PubHome from './pages/pubhome';
 import Contact2 from './pages/contact2';
+import Activityfcfs from './pages/activityfcfs';
+import Activitycdd from './pages/activitycdd';
 function App(){
   return(
     <>
@@ -35,6 +37,8 @@ function App(){
               <Route path="/login" element={<Login/>}/>
               <Route path="/register" element={<Register/>}/>
               <Route path="/activityadmin" element={<ActivityAdmin/>}/>
+              <Route path="/activityfcfs" element={<Activityfcfs/>}/>
+              <Route path="/activityadmin" element={<Activitycdd/>}/>
             </Routes>
           </BrowserRouter>
         </div>
