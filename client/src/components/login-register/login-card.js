@@ -16,7 +16,7 @@ function LoginCard() {
     return(
         <div>
         <Box>
-            <Card sx={{ mx:'auto', my:8,maxWidth: 700 , display: 'flex' , bgcolor: 'grey'}} >
+            <Card sx={{ mx:'auto', my: 1, maxWidth: 700 , display: 'flex' , bgcolor: 'grey'}} >
                 <Box sx={{ display:'flex', flexDirection:'column' }}>
                     <CardMedia
                         component="img"
@@ -26,7 +26,7 @@ function LoginCard() {
                         alt="logo"
                     />
                     <CardHeader
-                    titleTypographyProps={{fontSize: 36,}}
+                    titleTypographyProps={{fontFamily: 'Sarabun', fontSize: 36}}
                     title="เข้าสู่ระบบ"
                     />
                     <table width="100%" >
@@ -104,8 +104,12 @@ function LoginCard() {
                         <Stack spacing={2} direction="row">
                             <Button variant="contained">เข้าสู่ระบบ</Button>
                             <Button variant="outLine">ลืมรหัสผ่าน</Button>
-                            <Button variant="outLine" onClick={() => {navigate("/register");}}>สร้างบัญชี</Button>
+                            
                         </Stack>
+                        <br />
+                        <Typography>หากไม่มีบัญชี <Button onClick={() => {navigate("/register");}}>สร้างบัญชี</Button></Typography>
+                            
+
                     </CardContent>
                     
                 </Box>

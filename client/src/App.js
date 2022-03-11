@@ -38,7 +38,7 @@ function App(){
               <Route path="/register" element={<Register/>}/>
               <Route path="/activityadmin" element={<ActivityAdmin/>}/>
               <Route path="/activityfcfs" element={<Activityfcfs/>}/>
-              <Route path="/activityadmin" element={<Activitycdd/>}/>
+              <Route path="/activitycdd" element={<Activitycdd/>}/>
             </Routes>
           </BrowserRouter>
         </div>
