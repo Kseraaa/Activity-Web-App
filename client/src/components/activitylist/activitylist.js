@@ -16,7 +16,7 @@ function ActivityList() {
     return(
         <div>
         <Box>    
-            <Card sx={{ mx:'auto', my:3,maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
+            <Card sx={{ mx:'auto', my:7,maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
                 <Box sx={{ display:'flex', flexDirection:'column' }}>
                     <CardHeader
                     titleTypographyProps={{ fontFamily: 'Sarabun', fontSize: 36 }}

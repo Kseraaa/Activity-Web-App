@@ -17,14 +17,13 @@ function UserAct() {
         <div>
 
 
-        <Box sx={{ mx: 'auto', mt: 10 }}>
 
           {/* การ์ดใบที่3 */}
-          <Card sx={{ mx:'auto', my:3,maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
+          <Card sx={{ mx:'auto', my:9,maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
 
                 <Box >
                     <CardHeader
-                      titleTypographyProps={{fontFamily:"Sarabun" ,fontSize: 30,}}
+                      titleTypographyProps={{fontFamily:"Sarabun" ,fontSize: 36,}}
                       title="นาย ธีรวีร์ ปฐมธนินพัฒน์"
                       subheaderTypographyProps={{fontFamily:"Sarabun" ,fontSize: 20}}
                       subheader="กิจกรรมที่เคยเข้าร่วม"            
@@ -66,7 +65,6 @@ function UserAct() {
 
                 </Box>
           </Card>
-        </Box>
       </div>
 
   );
