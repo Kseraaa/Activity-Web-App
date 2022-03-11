@@ -11,6 +11,7 @@ import Register from './pages/register';
 import ActivityAdmin from './pages/activityadmin';
 import UserName from './pages/username';
 import OneUser from './pages/oneuser'
+import PubHome from './pages/acthome';
 
 function App(){
   return(
@@ -24,6 +25,7 @@ function App(){
               <Route path="/home" element={<Home/>}/>
               <Route path="/history" element={<History/>}/>
               <Route path="/contact" element={<Contact/>}/>
+              <Route path="/publichome" element={<PubHome/>}/>
 
               <Route path="/adminhome" element={<AdminHome/>}/>
               <Route path="/username" element={<UserName/>}/>
