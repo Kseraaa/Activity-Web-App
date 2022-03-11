@@ -25,12 +25,12 @@ function App(){
               <Route path="/home" element={<Home/>}/>
               <Route path="/history" element={<History/>}/>
               <Route path="/contact" element={<Contact/>}/>
-              <Route path="/contact2" element={<Contact2/>}/>
-              <Route path="/publichome" element={<PubHome/>}/>
 
               <Route path="/adminhome" element={<AdminHome/>}/>
               <Route path="/username" element={<UserName/>}/>
               <Route path="/oneuser" element={<OneUser/>}/>
+              <Route path="/contact2" element={<Contact2/>}/>
+              <Route path="/publichome" element={<PubHome/>}/>
 
               <Route path="/login" element={<Login/>}/>
               <Route path="/register" element={<Register/>}/>
