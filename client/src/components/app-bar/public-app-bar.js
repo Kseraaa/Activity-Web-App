@@ -37,7 +37,10 @@ return (
                     <Toolbar disableGutters>
 
                             {/* FANCIER button */}
-                            <Avatar
+                            <Button 
+                                onClick={() => {navigate("/publichome");}}
+                            >
+                                <Avatar
                                     sx={{ width: 70, height: 65 }}
                                     variant="square"
                                     src="/img/fancierlogo1.png"
@@ -47,6 +50,7 @@ return (
                                     variant=""
                                     src="/img/fancierlogo2.png"
                                 />
+                            </Button> 
 
                         {/* Box for menu (when minimized window) */}
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -115,7 +119,7 @@ return (
                                 
                                 <Button
                                     onClick= {() => {navigate("/publichome");}}
-                                    sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
+                                    sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
                                     กิจกรรม
                                 </Button>
@@ -123,7 +127,7 @@ return (
 
                                 <Button
                                     onClick= {() => {navigate("/contact2");}}
-                                    sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
+                                    sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
                                     ติดต่อ
                                 </Button>
@@ -131,7 +135,7 @@ return (
                                 <PopupState variant="popover" popupId="demo-popup-popover">
                                     {(popupState) => (
                                         <div>
-                                            <Button sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }} {...bindTrigger(popupState)}>
+                                            <Button sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }} {...bindTrigger(popupState)}>
                                                 วิธีใช้
                                             </Button>
                                             <Popover

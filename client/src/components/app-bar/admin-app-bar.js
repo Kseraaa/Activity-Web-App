@@ -170,21 +170,21 @@ return (
                                 
                                 <Button
                                     onClick= {() => {navigate("/adminhome");}}
-                                    sx={{fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
+                                    sx={{fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
                                     สร้าง
                                 </Button>
 
                                 <Button
                                     onClick= {() => {navigate("/activityadmin");}}
-                                    sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
+                                    sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
                                     รายชื่อกิจกรรม
                                 </Button>
 
                                 <Button
                                     onClick= {() => {navigate("/username");}}
-                                    sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
+                                    sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
                                     รายชื่อผู้ใช้
                                 </Button>
