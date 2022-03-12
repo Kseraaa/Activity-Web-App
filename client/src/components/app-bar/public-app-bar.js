@@ -37,7 +37,10 @@ return (
                     <Toolbar disableGutters>
 
                             {/* FANCIER button */}
-                            <Avatar
+                            <Button 
+                                onClick={() => {navigate("/publichome");}}
+                            >
+                                <Avatar
                                     sx={{ width: 70, height: 65 }}
                                     variant="square"
                                     src="/img/fancierlogo1.png"
@@ -47,6 +50,7 @@ return (
                                     variant=""
                                     src="/img/fancierlogo2.png"
                                 />
+                            </Button> 
 
                         {/* Box for menu (when minimized window) */}
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
