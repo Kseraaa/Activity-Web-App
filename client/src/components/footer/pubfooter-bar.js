@@ -4,7 +4,7 @@ import './footer.css'
 import Avatar from '@mui/material/Avatar';
 import styled from 'styled-components'
 
-function FooterBar() {
+function PubFooterBar() {
     return(
         <div className="main-footer">
             <div className='container'>
@@ -54,9 +54,8 @@ function FooterBar() {
                                 <div className='col'>
                                     <h3>About Us</h3>
                                     <ul className='list-unstyled'>
-                                        <div style={{ textDecoration: 'none' }}><a href='/home'>กิจกรรม</a></div><br/>
-                                        <div style={{ textDecoration: 'none' }}><a href='/history'>ประวัติการเข้าร่วมกิจกรรม</a></div><br/>
-                                        <div style={{ textDecoration: 'none' }}><a href='/contact'>ติดต่อ</a></div>
+                                        <div style={{ textDecoration: 'none' }}><a href='/publichome'>กิจกรรม</a></div><br/>
+                                        <div style={{ textDecoration: 'none' }}><a href='/contact2'>ติดต่อ</a></div>
                                     </ul>
                                 </div>
                             </FooterContainer>
@@ -69,7 +68,7 @@ function FooterBar() {
     )
 };
 
-export default FooterBar ;
+export default PubFooterBar ;
 
 const FooterContainer = styled.footer`
     a {

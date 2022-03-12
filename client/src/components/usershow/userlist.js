@@ -16,14 +16,14 @@ function UserList() {
         <div>
 
 
-        <Box sx={{ mx: 'auto', mt: 10 }}>
+
 
           {/* การ์ดใบที่3 */}
-          <Card sx={{ mx:'auto', my:3,maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
+          <Card sx={{ mx:'auto', my:9,maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
 
                 <Box >
                     <CardHeader
-                      titleTypographyProps={{fontSize: 30,}}
+                      titleTypographyProps={{fontFamily:"Sarabun",fontSize: 36,}}
                       title="ผู้ใช้งาน"
                     />
 
@@ -32,8 +32,8 @@ function UserList() {
                     <Stack  alignItems="center" >
                         <Box onClick={() => {navigate("/oneuser");}}>
                           <Button>
-                          <Box textAlign="left" >
-                            <Typography    color="black" variant="body1" sx={{ fontSize:20 }} >
+                          <Box  textAlign="left" >
+                            <Typography  color="black" variant="body1" sx={{ fontSize:20 }} >
                               นาย ธีรวีร์ ปฐมธนินพัฒน์
                             </Typography>
                           </Box>
@@ -45,7 +45,7 @@ function UserList() {
 
                 </Box>
           </Card>
-        </Box>
+
       </div>
 
   );
