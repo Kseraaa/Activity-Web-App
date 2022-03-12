@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
@@ -72,6 +72,16 @@ function CreateAdmin() {
     const handleClose = () => {
       setOpen(false);
     };
+
+    const [image, setImage] = useState(null)
+    const [name, setName] = useState("")
+    const [description, setDescription] = useState("")
+    const [max_participant, setMax_participant] = useState("")
+    const [activity_type, setActivity_type] = useState("")
+    const [register_time_start, setRegister_time_start] = useState("")
+    const [register_time_end, setRegister_time_end] = useState("")
+    const [activity_time_start, setActivity_time_start] = useState("")
+    const [activity_time_end, setActivity_time_end] = useState("")
 
     return(
         <div>
