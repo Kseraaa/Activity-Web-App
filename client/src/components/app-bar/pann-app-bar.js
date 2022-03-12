@@ -178,21 +178,21 @@ return (
                                 
                                 <Button
                                     onClick= {() => {navigate("/home");}}
-                                    sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
+                                    sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
                                     กิจกรรม
                                 </Button>
 
                                 <Button
                                     onClick= {() => {navigate("/history");}}
-                                    sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
+                                    sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
                                     ประวัติการเข้าร่วม
                                 </Button>
 
                                 <Button
                                     onClick= {() => {navigate("/contact");}}
-                                    sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }}
+                                    sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
                                     ติดต่อ
                                 </Button>
@@ -200,7 +200,7 @@ return (
                                 <PopupState variant="popover" popupId="demo-popup-popover">
                                     {(popupState) => (
                                         <div>
-                                            <Button sx={{ fontSize: 18, fontWeight: 550, mx: 2 ,my: 2, color: 'black', display: 'block' }} {...bindTrigger(popupState)}>
+                                            <Button sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }} {...bindTrigger(popupState)}>
                                                 วิธีใช้
                                             </Button>
                                             <Popover
