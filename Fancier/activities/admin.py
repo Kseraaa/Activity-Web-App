@@ -3,7 +3,7 @@ from .models import ActivityCard
 
 class DesignCardAdmin(admin.ModelAdmin):
     list_display=["name","activity_type"]
-    list_per_page=5
+    list_per_page=10
     list_filter=["activity_type"]
     search_fields=["name"]
 
