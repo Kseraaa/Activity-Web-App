@@ -91,11 +91,7 @@ WSGI_APPLICATION = 'Fancier.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-<<<<<<< HEAD
         'NAME': BASE_DIR/'db.sqlite3',
-=======
-        'NAME': BASE_DIR / 'db.sqlite3',
->>>>>>> 59c81b88be85981c22f9f28a17b9b6305aa2d111
     }
 }
 
