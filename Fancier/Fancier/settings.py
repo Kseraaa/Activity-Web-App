@@ -41,10 +41,22 @@ INSTALLED_APPS = [
 
     'activities.apps.ActivitiesConfig',
 
+    'rest_framework_simplejwt',
     'rest_framework',
     'corsheaders',
 
+    'socialauth.apps.SocialauthConfig'
+    
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated'
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
