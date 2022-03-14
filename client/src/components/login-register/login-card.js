@@ -9,6 +9,11 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import { GoogleLogin } from 'react-google-login';
+
+const responseGoogle = (response) => {
+    console.log(response.tokenId);
+}
 
 function LoginCard() {
 
@@ -95,7 +100,6 @@ function LoginCard() {
                                     name="password"
                                     type="password"
                                     autoComplete="current-password"
-                                    autoFocus
                                     onChange={e => setPassword(e.target.value)}
                                 />
                                 <CardContent>
@@ -124,18 +128,15 @@ function LoginCard() {
                                 </td>
                                 <td>
                                 <CardContent sx={{ width:320 }}>
-                                    <Typography 
-                                        variant="body1" 
-                                        sx={{ fontSize:16 }}>
-                                        Google
-                                    </Typography>
-                                    <Button variant="outlined" sx={{ m: 1, height: 55 }} >เข้าสู่ระบบด้วย Google</Button>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
+                                    <div>
+                                        <GoogleLogin
+                                            clientId="888881399412-spgq58e4cmhhs05icgb2uhct4584aenl.apps.googleusercontent.com"
+                                            buttonText="Login with Google"
+                                            onSuccess={responseGoogle}
+                                            onFailure={responseGoogle}
+                                            cookiePolicy={'single_host_origin'}
+                                        />
+                                    </div>
                                 </CardContent>
                             </td>
                         </tr>

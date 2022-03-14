@@ -12,6 +12,9 @@ def validate_id_token(token):
         )
     if not response.ok :
         raise ValidationError('token is invalid')
+
+    if response.json()['aud'] != '888881399412-spgq58e4cmhhs05icgb2uhct4584aenl.apps.googleusercontent.com' :
+        raise ValidationError('Invalid audience')
     
     return {
         'email': response.json()['email'],
