@@ -11,6 +11,5 @@ route.register("", ActivityCardView, basename='activitycardview')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(route.urls)),
-    path('accounts/', include('allauth.urls')),
     path('auth/', include('auth.urls')),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
