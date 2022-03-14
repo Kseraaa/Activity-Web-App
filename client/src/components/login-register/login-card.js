@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import TextField from '@mui/material/TextField';
 import { CardHeader, CardMedia } from "@mui/material";
 import Card from '@mui/material/Card';
@@ -8,10 +8,26 @@ import { Box } from "@mui/system";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 function LoginCard() {
 
     const navigate = useNavigate();
+    const [ username, setUsername ] = useState();
+    const [ password, setPassword ] = useState();
+
+    const handleSubmit = async () => {
+        let result = await axios.post("http://localhost:8000/auth/login/", {
+          username: username,
+          password: password,
+        });
+        console.log("login success");
+        console.log(result.data);
+        if ('accessToken' in result) {
+            localStorage.setItem('accessToken', result.accessToken);
+            window.location.href = "http://localhost:8000/home";
+        }
+      };
     
     return(
         <div>
@@ -36,17 +52,27 @@ function LoginCard() {
                                 <Typography 
                                     variant="body1" 
                                     sx={{ fontSize:16 }}>
-                                    อีเมล
+                                    ชื่อผู้ใช้
                                 </Typography>
                                 <Box
-                                component="form"
-                                sx={{
-                                    '& > :not(style)': { m: 1, width: '25ch' },
-                                }}
-                                noValidate
-                                autoComplete="off"
-                                >
-                                <TextField id="outlined-basic" label="อีเมล" variant="outlined" />
+                                    component="form"
+                                    sx={{
+                                        '& > :not(style)': { m: 1, width: '25ch' },
+                                    }}
+                                    noValidate
+                                    autoComplete="off"
+                                    >
+                                
+                                    <TextField 
+                                        variant="outlined" 
+                                        required
+                                        id="username"
+                                        label="ชื่อผู้ใช้"
+                                        name="username"
+                                        autoComplete="username"
+                                        autoFocus
+                                        onChange={e => setUsername(e.target.value)}
+                                    />
                                 </Box>
                                 <Typography 
                                     variant="body1" 
@@ -54,23 +80,37 @@ function LoginCard() {
                                     รหัสผ่าน
                                 </Typography>
                                 <Box
-                                component="form"
-                                sx={{
-                                    '& > :not(style)': { m: 1, width: '25ch' },
-                                }}
-                                noValidate
-                                autoComplete="off"
-                                >
+                                    component="form"
+                                    sx={{
+                                        '& > :not(style)': { m: 1, width: '25ch' },
+                                    }}
+                                    noValidate
+                                    autoComplete="off"
+                                    >
                                 <TextField
-                                    id="outlined-password-input"
+                                    variant="outlined" 
+                                    required
+                                    id="password"
                                     label="รหัสผ่าน"
+                                    name="password"
                                     type="password"
                                     autoComplete="current-password"
+                                    autoFocus
+                                    onChange={e => setPassword(e.target.value)}
                                 />
+                                <CardContent>
+                                    <Stack spacing={2} direction="row">
+                                        <Button variant="contained" onClick={handleSubmit}>เข้าสู่ระบบ</Button>
+                                        <Button variant="outLine">ลืมรหัสผ่าน</Button>
+                                    </Stack>
+                                    <br />
+                                    <Typography>หากไม่มีบัญชี <Button onClick={() => {navigate("/register");}}>สร้างบัญชี</Button></Typography>
+                                </CardContent>
                                 </Box>
                                 </CardContent>
                                 </td>
                                 <td>
+                                    l
                                     l
                                     l
                                     l
@@ -100,18 +140,6 @@ function LoginCard() {
                             </td>
                         </tr>
                     </table>
-                    <CardContent>
-                        <Stack spacing={2} direction="row">
-                            <Button variant="contained">เข้าสู่ระบบ</Button>
-                            <Button variant="outLine">ลืมรหัสผ่าน</Button>
-                            
-                        </Stack>
-                        <br />
-                        <Typography>หากไม่มีบัญชี <Button onClick={() => {navigate("/register");}}>สร้างบัญชี</Button></Typography>
-                            
-
-                    </CardContent>
-                    
                 </Box>
             </Card>
         </Box>
