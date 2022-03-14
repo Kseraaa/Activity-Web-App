@@ -15,10 +15,19 @@ import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from "react-router-dom";
+import ButtonGroup from '@mui/material/ButtonGroup';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
+import Grow from '@mui/material/Grow';
+import Paper from '@mui/material/Paper';
+import Popper from '@mui/material/Popper';
+import MenuList from '@mui/material/MenuList';
 
 document.body.className = "AnErrorHasOccured";
 
 const settings = ['Name : ', 'Email : ', 'Logout'];
+
+const options = ['ADMIN MODE', 'USER MODE'];
 
 const AdminAppBar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -56,6 +65,31 @@ const AdminAppBar = () => {
     },
 }));
 
+const [open, setOpen] = React.useState(false);
+  const anchorRef = React.useRef(null);
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
+
+  const handleClick = () => {
+    console.info(`You clicked ${options[selectedIndex]}`);
+  };
+
+  const handleMenuItemClick = (event, index) => {
+    setSelectedIndex(index);
+    setOpen(false);
+  };
+
+  const handleToggle = () => {
+    setOpen((prevOpen) => !prevOpen);
+  };
+
+  const handleClose = (event) => {
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+      return;
+    }
+
+    setOpen(false);
+  };
+
 const SearchIconWrapper = styled('div')(({ theme }) => ({
     padding: theme.spacing(0, 2),
     height: '100%',
@@ -86,6 +120,9 @@ return (
             <AppBar position="static" color='grey'>
                 <Container maxWidth="x1">
                     <Toolbar disableGutters>
+                            <Button 
+                                onClick={() => {navigate("/adminhome");}}
+                            >
                                 <Avatar
                                     sx={{ width: 70, height: 65 }}
                                     variant="square"
@@ -96,7 +133,7 @@ return (
                                     variant=""
                                     src="/img/fancierlogo2.png"
                                 />
-
+                            </Button>
                         {/* Box for menu (when minimized window) */}
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                             
@@ -190,7 +227,7 @@ return (
                                 </Button>
 
                         </Box>
-
+                        <Box sx={{ flexGrow: 0 }}>       
                         {/* search */}
                         <Search>
                             <SearchIconWrapper>
@@ -202,7 +239,59 @@ return (
                                 inputProps={{ 'aria-label': 'search' }}
                             />
                         </Search>
-
+                        </Box>
+                        
+                        <Box sx={{ flexGrow: 0 }}>
+                            <React.Fragment>
+                                <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button">
+                                    <Button onClick={handleClick}>{options[selectedIndex]}</Button>
+                                    <Button
+                                    size="small"
+                                    aria-controls={open ? 'split-button-menu' : undefined}
+                                    aria-expanded={open ? 'true' : undefined}
+                                    aria-label="select merge strategy"
+                                    aria-haspopup="menu"
+                                    onClick={handleToggle}
+                                    >
+                                    <ArrowDropDownIcon />
+                                    </Button>
+                                </ButtonGroup>
+                                <Popper
+                                    open={open}
+                                    anchorEl={anchorRef.current}
+                                    role={undefined}
+                                    transition
+                                    disablePortal
+                                >
+                                    {({ TransitionProps, placement }) => (
+                                    <Grow
+                                        {...TransitionProps}
+                                        style={{
+                                        transformOrigin:
+                                            placement === 'bottom' ? 'center top' : 'center bottom',
+                                        }}
+                                    >
+                                        <Paper>
+                                        <ClickAwayListener onClickAway={handleClose}>
+                                            <MenuList id="split-button-menu">
+                                            {options.map((option, index) => (
+                                                <MenuItem
+                                                key={option}
+                                                disabled={index === 2}
+                                                selected={index === selectedIndex}
+                                                onClick={(event) => handleMenuItemClick(event, index) }
+                                                >
+                                                {option}
+                                                </MenuItem>
+                                            ))}
+                                            </MenuList>
+                                        </ClickAwayListener>
+                                        </Paper>
+                                    </Grow>
+                                    )}
+                                </Popper>
+                            </React.Fragment>
+                        </Box>
                         {/* box for user profile */}                        
                         <Box sx={{ flexGrow: 0 }}>
                             <Tooltip title="Open settings">

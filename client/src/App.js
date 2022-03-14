@@ -23,7 +23,8 @@ function App(){
         <div className="page-container">
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Navigate replace to="/home"/>}/>
+              <Route path="/" element={<Navigate replace to="/public"/>}/>
+              <Route path="/public" element={<PubHome/>}/>
               <Route path="/home" element={<Home/>}/>
               <Route path="/history" element={<History/>}/>
               <Route path="/contact" element={<Contact/>}/>
@@ -32,7 +33,6 @@ function App(){
               <Route path="/username" element={<UserName/>}/>
               <Route path="/oneuser" element={<OneUser/>}/>
               <Route path="/contact2" element={<Contact2/>}/>
-              <Route path="/publichome" element={<PubHome/>}/>
 
               <Route path="/login" element={<Login/>}/>
               <Route path="/register" element={<Register/>}/>

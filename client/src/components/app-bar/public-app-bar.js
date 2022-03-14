@@ -38,7 +38,7 @@ return (
 
                             {/* FANCIER button */}
                             <Button 
-                                onClick={() => {navigate("/publichome");}}
+                                onClick={() => {navigate("/public");}}
                             >
                                 <Avatar
                                     sx={{ width: 70, height: 65 }}
@@ -87,7 +87,7 @@ return (
                                 }}
                             >
                                 <MenuItem onClick={handleCloseNavMenu}>
-                                    <Box onClick={() => {navigate("/publichome");}}>
+                                    <Box onClick={() => {navigate("/public");}}>
                                         <Typography textAlign="center" color="black">กิจกรรม</Typography>
                                     </Box>
                                 </MenuItem>
@@ -102,7 +102,7 @@ return (
                         </Box>
 
                         {/* FANCIER button (minimized window) */}
-                        <Button onClick={() => {navigate("/publichome");}}>
+                        <Button onClick={() => {navigate("/public");}}>
                             <Typography
                                 variant="h6"
                                 noWrap
@@ -118,7 +118,7 @@ return (
                         <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' } }}>
                                 
                                 <Button
-                                    onClick= {() => {navigate("/publichome");}}
+                                    onClick= {() => {navigate("/public");}}
                                     sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
                                     กิจกรรม
