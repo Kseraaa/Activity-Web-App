@@ -69,7 +69,7 @@ function CreateActivity() {
     setMax_participant(event.target.value)
   };
 
-  const [activity_type, setActivity_type] = useState("FirstComeFirstServe");
+  const [activity_type, setActivity_type] = useState("FCFS");
   const handleChangeActivity_type = (event) => {
     setActivity_type(event.target.value)
   };
@@ -117,7 +117,7 @@ function CreateActivity() {
       data: formField
     }).then((response) => {
       console.log(response.data);
-      navigate("/adminhome");
+      navigate("/createactivity");
     })
   };
 

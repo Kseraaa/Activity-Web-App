@@ -3,7 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
 import History from './pages/history';
 import Contact from './pages/contact';
-import AdminHome from './pages/createactivity';
+import CreateActivityAdmin from './pages/createactivity';
 import ScrollToTop from './components/backtotop/scroll-index';
 import ScrollIndicator from './components/scrollindicator/indicator-index';
 import Login from './pages/login';
@@ -29,7 +29,7 @@ function App(){
               <Route path="/history" element={<History/>}/>
               <Route path="/contact" element={<Contact/>}/>
 
-              <Route path="/adminhome" element={<AdminHome/>}/>
+              <Route path="/createactivity" element={<CreateActivityAdmin/>}/>
               <Route path="/username" element={<UserName/>}/>
               <Route path="/oneuser" element={<OneUser/>}/>
               <Route path="/contact2" element={<Contact2/>}/>
