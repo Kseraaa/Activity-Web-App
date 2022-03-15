@@ -65,7 +65,7 @@ return(
         <Video/>
         <Box sx={{ mx: 'auto', mt: 115 }}>
           {activitycards.map((activitycard) => (
-            <Card sx={{ mx:'auto', my:3,maxWidth: 1200 , display: 'flex' , bgcolor: 'grey'}} >
+            <Card key={activitycard.id} sx={{ mx:'auto', my:3,maxWidth: 1200 , display: 'flex' , bgcolor: 'grey'}} >
                   <CardMedia sx={{maxWidth: 500, maxHeight: 'auto'}}
                       component="img"
                       image={activitycard.image}
@@ -81,8 +81,8 @@ return(
                         <Typography 
                           variant="body1" 
                           sx={{ fontSize:18 }}>
-                          ลงทะเบียน    : เริ่ม {activitycard.register_time_start} | สิ้นสุด {activitycard.register_time_end}<br />
-                          กิจกรรม      : เริ่ม {activitycard.activity_time_start}  | สิ้นสุด {activitycard.activity_time_end}<br />
+                          ลงทะเบียน : เริ่ม {activitycard.register_time_start.replace('T',' เวลา ').replace('Z',' ')} | สิ้นสุด {activitycard.register_time_end.replace('T',' เวลา ').replace('Z',' ')}<br />
+                          กิจกรรม : เริ่ม {activitycard.activity_time_start.replace('T',' เวลา ').replace('Z',' ')}  | สิ้นสุด {activitycard.activity_time_end.replace('T',' เวลา ').replace('Z',' ')}<br />
                           จำนวนผู้เข้าร่วมสูงสุด : {activitycard.max_participant} คน
                         </Typography>
                     
