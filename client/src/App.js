@@ -15,32 +15,36 @@ import PubHome from './pages/pubhome';
 import Contact2 from './pages/contact2';
 import Activityfcfs from './pages/activityfcfs';
 import Activitycdd from './pages/activitycdd';
+import { AuthProvider } from './auth';
+
 function App(){
   return(
     <>
         <ScrollIndicator/>
         <ScrollToTop/>
         <div className="page-container">
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Navigate replace to="/public"/>}/>
-              <Route path="/public" element={<PubHome/>}/>
-              <Route path="/home" element={<Home/>}/>
-              <Route path="/history" element={<History/>}/>
-              <Route path="/contact" element={<Contact/>}/>
+          <AuthProvider>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Navigate replace to="/public"/>}/>
+                <Route path="/public" element={<PubHome/>}/>
+                <Route path="/home" element={<Home/>}/>
+                <Route path="/history" element={<History/>}/>
+                <Route path="/contact" element={<Contact/>}/>
 
-              <Route path="/createactivity" element={<CreateActivityAdmin/>}/>
-              <Route path="/username" element={<UserName/>}/>
-              <Route path="/oneuser" element={<OneUser/>}/>
-              <Route path="/contact2" element={<Contact2/>}/>
+                <Route path="/createactivity" element={<CreateActivityAdmin/>}/>
+                <Route path="/username" element={<UserName/>}/>
+                <Route path="/oneuser" element={<OneUser/>}/>
+                <Route path="/contact2" element={<Contact2/>}/>
 
-              <Route path="/login" element={<Login/>}/>
-              <Route path="/register" element={<Register/>}/>
-              <Route path="/activityadmin" element={<ActivityAdmin/>}/>
-              <Route path="/activityfcfs" element={<Activityfcfs/>}/>
-              <Route path="/activitycdd" element={<Activitycdd/>}/>
-            </Routes>
-          </BrowserRouter>
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/register" element={<Register/>}/>
+                <Route path="/activityadmin" element={<ActivityAdmin/>}/>
+                <Route path="/activityfcfs" element={<Activityfcfs/>}/>
+                <Route path="/activitycdd" element={<Activitycdd/>}/>
+              </Routes>
+            </BrowserRouter>
+          </AuthProvider>
         </div>
     </>
   );

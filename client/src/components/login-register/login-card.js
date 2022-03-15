@@ -10,16 +10,34 @@ import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { GoogleLogin } from 'react-google-login';
+import { useAuth } from "../../auth";
 
-const responseGoogle = (response) => {
-    console.log(response.tokenId);
-}
+// const responseGoogle = (response) => {
+//     console.log(response.tokenId);
+// }
 
 function LoginCard() {
 
     const navigate = useNavigate();
     const [ username, setUsername ] = useState();
     const [ password, setPassword ] = useState();
+
+    let auth = useAuth();
+    
+    const responseGoogle = async (response) => {
+        auth.signin(response.tokenId, (newUser) => {
+            console.log('login success.', newUser)
+            if (newUser){
+                if(newUser.isStaff){
+                    console.log('Hi! Admin')
+                    navigate('/createactivity', { replace: true })
+                }else{
+                    console.log('Hi! User')
+                    navigate('/home', { replace: true })
+                }
+            }
+        })
+    }
 
     const handleSubmit = async () => {
         let result = await axios.post("http://localhost:8000/auth/login/", {
