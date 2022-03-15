@@ -17,7 +17,7 @@ function ActivateDisplayArea() {
   const [activitycards, setActivitycards] = useState([])
 
   const getActivityCards = async () => {
-    const response = await axios.get('http://localhost:8000/api/')
+    const response = await axios.get('http://localhost:8000/api/activities')
     console.log(response.data)
     setActivitycards(response.data)
   }
@@ -66,7 +66,7 @@ return(
         <Video/>
         <Box sx={{ mx: 'auto', mt: 115 }}>
           {activitycards.map((activitycard) => (
-            <Card sx={{ mx:'auto', my:3 ,maxWidth: 1200 , display: 'flex' , bgcolor: 'grey'}} >
+            <Card key={activitycard.id} sx={{ mx:'auto', my:3 ,maxWidth: 1200 , display: 'flex' , bgcolor: 'grey'}} >
               <CardMedia sx={{maxWidth: 500, maxHeight: 'auto'}}
                       component="img"
                       image={activitycard.image}

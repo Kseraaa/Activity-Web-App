@@ -1,12 +1,12 @@
 import { Box } from "@mui/system";
-import CreateAdmin from "../components/create-activity/createadmin"
+import CreateActivity from "../components/create-activity/createactivity"
 import AdminAppBar from "../components/app-bar/admin-app-bar";
 
 function AdminHome(){
     return(
         <Box sx={{ flexGrow: 1}}>
             <AdminAppBar/>
-            <CreateAdmin/>
+            <CreateActivity/>
         </Box>
     )
 }

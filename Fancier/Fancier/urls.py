@@ -11,13 +11,13 @@ from rest_framework_simplejwt.views import (
 )
 
 route = routers.DefaultRouter()
-route.register("", ActivityCardView, basename='activitycardview')
+route.register('activities', ActivityCardView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('scauth/', include('socialauth.urls')),
     path('auth/', include('auth.urls')),
-    path('api/', include(route.urls)),
+    path('api/', include('activities.urls')),
     path('api2/token/', SocialAuthorizationView.as_view(), name='token_obtain_pair'),
     path('api2/token/refresh/',TokenRefreshView.as_view(), name='token_refresh'),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
