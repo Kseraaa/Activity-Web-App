@@ -51,6 +51,23 @@ function RegisterCard() {
                     <Typography 
                         variant="body1" 
                         sx={{ fontSize:16 }}>
+                        username
+                    </Typography>
+                    <Box
+                    component="form"
+                    sx={{
+                        '& > :not(style)': { m: 1, width: '25ch' },
+                    }}
+                    noValidate
+                    autoComplete="off"
+                    >
+                    <TextField id="outlined-basic" label="username" variant="outlined" />
+                    </Box>
+
+
+                    <Typography 
+                        variant="body1" 
+                        sx={{ fontSize:16 }}>
                         อีเมล
                     </Typography>
                     <Box
