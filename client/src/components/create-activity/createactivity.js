@@ -98,18 +98,18 @@ function CreateActivity() {
 
   const CreateAdminInfo = async () => {
     let formField = new FormData()
-    // if (image !== null) {
-    //   formField.append('image', image)
-    // }
+    if (image !== null) {
+      formField.append('image', image)
+    }
     formField.append('image', image)
     formField.append('name', name)
     formField.append('description', description)
     formField.append('max_participant', max_participant)
     formField.append('activity_type', activity_type)
-    // formField.append('register_time_start', register_time_start)
-    // formField.append('register_time_end', register_time_end)
-    // formField.append('activity_time_start', activity_time_start)
-    // formField.append('activity_time_end', activity_time_end)
+    formField.append('register_time_start', register_time_start)
+    formField.append('register_time_end', register_time_end)
+    formField.append('activity_time_start', activity_time_start)
+    formField.append('activity_time_end', activity_time_end)
 
     await axios({
       method: 'post',
@@ -160,7 +160,7 @@ function CreateActivity() {
                   <Typography 
                       variant="body1" 
                       sx={{ fontSize:20 }}>
-                      รายละเอียดของกิจกรรม
+                      รายละเอียดกิจกรรม
                   </Typography>
                   <Box
                     component="form"
@@ -182,7 +182,7 @@ function CreateActivity() {
                   <Typography 
                       variant="body1" 
                       sx={{ fontSize:20 }}>
-                      ระบุจำนวนคนเข้าร่วมสูงสุด
+                      จำนวนผู้เข้าร่วมสูงสุด
                   </Typography>
                   <Box
                     component="form"
@@ -212,7 +212,7 @@ function CreateActivity() {
                   <Typography 
                       variant="body1" 
                       sx={{ fontSize:20 }}>
-                      ระบุประเภทชองกิจกรรม
+                      ประเภทของกิจกรรม
                   </Typography>
                   <Box
                     component="form"

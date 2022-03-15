@@ -172,7 +172,7 @@ return (
                         <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' } }}>
                                 
                                 <Button
-                                    onClick= {() => {navigate("/adminhome");}}
+                                    onClick= {() => {navigate("/createactivity");}}
                                     sx={{fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
                                     สร้าง
