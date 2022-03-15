@@ -113,7 +113,7 @@ function CreateActivity() {
 
     await axios({
       method: 'post',
-      url: 'http://localhost:8000/api/activities',
+      url: 'http://localhost:8000/api/activities/',
       data: formField
     }).then((response) => {
       console.log(response.data);
