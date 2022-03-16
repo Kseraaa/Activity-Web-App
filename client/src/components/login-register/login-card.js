@@ -45,11 +45,21 @@ function LoginCard() {
           password: password,
         });
         console.log("login success");
-        console.log(result.data);
-        if ('accessToken' in result) {
-            localStorage.setItem('accessToken', result.accessToken);
-            window.location.href = "http://localhost:8000/home";
+        if (result.status === 200 && result.data) {
+            let response = await axios.get('http://localhost:8000/scauth/gglogin/', {
+                headers: {
+                    'Authorization': `Bearer ${result.data.access}`
+                }
+            })
+        console.log(response.data)
+        if ( response.data.is_staff === true ) {
+            console.log('Hi! Admin')
+            navigate('/createactivity', { replace: true })
+        }else {
+            console.log('Hi! User')
+            navigate('/home', { replace: true })
         }
+      }
       };
     
     return(
@@ -123,7 +133,6 @@ function LoginCard() {
                                 <CardContent>
                                     <Stack spacing={2} direction="row">
                                         <Button variant="contained" onClick={handleSubmit}>เข้าสู่ระบบ</Button>
-                                        <Button variant="outLine">ลืมรหัสผ่าน</Button>
                                     </Stack>
                                     <br />
                                     <Typography>หากไม่มีบัญชี <Button onClick={() => {navigate("/register");}}>สร้างบัญชี</Button></Typography>
