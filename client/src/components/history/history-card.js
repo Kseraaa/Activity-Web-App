@@ -12,7 +12,7 @@ function HistoryCard() {
     const [activitycards, setActivitycards] = useState([])
 
     const getActivityCards = async() => {
-        const response = await axios.get('http://localhost:8000/api/')
+        const response = await axios.get('http://localhost:8000/api/activities')
         setActivitycards(response.data)
     }
 

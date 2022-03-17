@@ -60,9 +60,7 @@ function LoginCard() {
             navigate('/home', { replace: true })
         }
       }
-      };
-      
-    
+    };
     return(
         <div>
         <Box>
