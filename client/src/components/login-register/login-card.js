@@ -28,7 +28,7 @@ function LoginCard() {
         auth.signin(response.tokenId, (newUser) => {
             console.log('login success.', newUser)
             if (newUser){
-                if(newUser.isStaff){
+                if(newUser.is_staff){
                     console.log('Hi! Admin')
                     navigate('/createactivity', { replace: true })
                 }else{
@@ -51,16 +51,17 @@ function LoginCard() {
                     'Authorization': `Bearer ${result.data.access}`
                 }
             })
-        console.log(response.data)
-        if ( response.data.is_staff === true ) {
-            console.log('Hi! Admin')
-            navigate('/createactivity', { replace: true })
-        }else {
-            console.log('Hi! User')
-            navigate('/home', { replace: true })
+            console.log(response.data)
+            if ( response.data.is_staff === true ) {
+                console.log('Hi! Admin')
+                navigate('/createactivity', { replace: true })
+            }else {
+                console.log('Hi! User')
+                navigate('/home', { replace: true })
+            }
         }
-      }
     };
+    
     return(
         <div>
         <Box>

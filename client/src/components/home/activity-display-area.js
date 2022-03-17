@@ -117,13 +117,9 @@ return(
                             </Dialog>
                           </Stack>
 
-                        <Typography gutterBottom variant="h8" component="div">
-                            จำนวนที่นั่งเหลือ: 2
-                        </Typography>
                       </CardActions>
            
                       <Typography variant="h6" color='error.main' sx={{ fontSize:16 }}>
-                        จำนวนที่นั่งเหลือ 0 ท่านยังสามารถลงทะเบียนเป็นที่นั่งสำรองได้
                         <br />
                         หากต้องการสละสิทธิ์ กรุณาติดต่อช่องทางใดช่องทางหนึ่ง
                       </Typography>

@@ -1,8 +1,10 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
+from .serializers import UserSerializer
+
 @api_view()
 def gglogin(request):
-    result = {'username': request.user.username}
-    return Response(result)
+    s = UserSerializer(request.user)
+    return Response(s.data)
 

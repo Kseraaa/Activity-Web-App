@@ -40,6 +40,5 @@ class SocialAuthorizationView(TokenViewBase):
 
             data['refresh'] = str(refresh)
             data['access'] = str(refresh.access_token)
-            data['is_staff'] = user.is_staff
             return data
     serializer_class = CustomSerializer

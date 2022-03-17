@@ -3,14 +3,18 @@ import axios from 'axios';
 
 const appAuthProvider =  {
     isAuthenticated: false,
+    accessToken: null,
+    refreshToken: null,
     async signin(token, callback) {
         appAuthProvider.isAuthenticated = true;
-        // setTimeout(callback, 100); // fake async
         let result = await axios.post('http://localhost:8000/api2/token/', {
             token
         })
         if(result.status === 200 && result.data){
-            callback({isStaff: result.data.is_staff})
+            appAuthProvider.accessToken = result.data.access
+            appAuthProvider.refreshToken = result.data.refresh
+            let user_result = await axios.get('http://localhost:8000/scauth/gglogin/' )
+            callback(user_result.data)
         }else{
             callback(null)
         }
@@ -20,6 +24,13 @@ const appAuthProvider =  {
         setTimeout(callback, 100);
     },
 };
+
+axios.interceptors.request.use(config => {
+  if (appAuthProvider.accessToken){
+    config.headers.authorization = `Bearer ${appAuthProvider.accessToken}`
+  }
+  return config;
+});
 
 let AuthContext = React.createContext(null);
 
