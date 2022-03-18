@@ -51,7 +51,7 @@ function RegisterCard() {
                     <Typography 
                         variant="body1" 
                         sx={{ fontSize:16 }}>
-                        username
+                        บัญชีผู้ใช้
                     </Typography>
                     <Box
                     component="form"
@@ -61,7 +61,7 @@ function RegisterCard() {
                     noValidate
                     autoComplete="off"
                     >
-                    <TextField id="outlined-basic" label="username" variant="outlined" />
+                    <TextField id="outlined-basic" label="บัญชีผู้ใช้" variant="outlined" />
                     </Box>
 
 

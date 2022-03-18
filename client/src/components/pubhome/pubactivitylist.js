@@ -10,11 +10,13 @@ import { Button } from "@mui/material";
 import { Text, StyleSheet } from 'react-native';
 import Video from "../video/video";
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 function PubActivateDisplayArea() {
 
   const [open, setOpen] = React.useState(false);
   const [activitycards, setActivitycards] = useState([])
+  const navigate = useNavigate()
 
   const getActivityCards = async () => {
     const response = await axios.get('http://localhost:8000/api/activities/')
@@ -24,10 +26,6 @@ function PubActivateDisplayArea() {
   useEffect(() => {
     getActivityCards();
   }, []);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
 
   const handleClose = () => {
     setOpen(false);
@@ -95,9 +93,9 @@ return(
                       {/* ปุ่มลงทะเบียนและป็อปอัพ */}
                       <CardActions>
                           <Stack spacing={2} direction="row">
-                            <Button variant="contained" onClick={handleClickOpen}>
+                              <Button variant="contained" onClick={() => {navigate("/login");}}>
                               ลงทะเบียน
-                            </Button>
+                              </Button>
                             <Dialog
                               open={open}
                               onClose={handleClose}
@@ -115,10 +113,6 @@ return(
                               </DialogActions>
                             </Dialog>
                           </Stack>
-
-                        <Typography gutterBottom variant="h8" component="div">
-                            จำนวนที่นั่งเหลือ: 2
-                        </Typography>
                       </CardActions>
            
                       <Typography variant="h6" color='error.main' sx={{ fontSize:16 }}>
