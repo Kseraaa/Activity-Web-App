@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TextField from '@mui/material/TextField';
-import { CardHeader, CardMedia } from "@mui/material"
+import { CardHeader, CardMedia} from "@mui/material"
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -9,6 +9,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
+import { Link } from "react-router-dom";
 
 function RegisterCard() {
     
@@ -152,11 +153,11 @@ function RegisterCard() {
                                 onChange={e => setPassword2(e.target.value)}
                             />
                         </Box>
-
-
                         <br />
                         <Stack spacing={2} direction="row">
-                            <Button variant="contained" onClick={registerSubmit}>เสร็จสิ้น</Button>
+                            <Link to="/login">
+                                <Button variant="contained" onClick={registerSubmit}>บันทึก</Button>
+                            </Link>
                             <Button variant="outLine" onClick={() => {navigate("/login");}}>ยกเลิก</Button>
                         </Stack> 
                     </CardContent>     
@@ -164,7 +165,6 @@ function RegisterCard() {
             </Card>
         </Box>
       </div>
-
   );
 }
 
