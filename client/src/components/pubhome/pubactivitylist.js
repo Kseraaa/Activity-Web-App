@@ -79,9 +79,10 @@ return(
                         <Typography 
                           variant="body1" 
                           sx={{ fontSize:18 }}>
-                          ลงทะเบียน : เริ่ม {activitycard.register_time_start.replace('T',' เวลา ').replace('Z',' ')} | สิ้นสุด {activitycard.register_time_end.replace('T',' เวลา ').replace('Z',' ')}<br />
-                          กิจกรรม : เริ่ม {activitycard.activity_time_start.replace('T',' เวลา ').replace('Z',' ')}  | สิ้นสุด {activitycard.activity_time_end.replace('T',' เวลา ').replace('Z',' ')}<br />
-                          จำนวนผู้เข้าร่วมสูงสุด : {activitycard.max_participant} คน
+                          ลงทะเบียน : เริ่ม {activitycard.register_time_start} | สิ้นสุด {activitycard.register_time_end}<br />
+                          กิจกรรม : เริ่ม {activitycard.activity_time_start}  | สิ้นสุด {activitycard.activity_time_end}<br />
+                          จำนวนผู้เข้าร่วมสูงสุด : {activitycard.max_participant} คน <br/>
+                          ประเภท: {activitycard.activity_type.replace('FCFS','First come first serve').replace('C', 'Candidate')} <br/>
                         </Typography>
                     
                         <Text style={styles.baseText}>
