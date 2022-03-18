@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import TextField from '@mui/material/TextField';
 import { CardHeader, CardMedia } from "@mui/material"
 import Card from '@mui/material/Card';
@@ -8,11 +8,30 @@ import { Box } from "@mui/system";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
+import axios from 'axios'
 
 function RegisterCard() {
     
     const navigate = useNavigate();
 
+    const [ firstname, setFirstname ] = useState();
+    const [ lastname, setLastname ] = useState();
+    const [ username, setUsername ] = useState();
+    const [ email, setEmail ] = useState();
+    const [ password, setPassword ] = useState();
+    const [ password2, setPassword2 ] = useState();
+
+    const registerSubmit = async () => {
+        let result = await axios.post('http://localhost:8000/auth/register/', {
+            first_name: firstname,
+            last_name: lastname,
+            username: username,
+            email: email,
+            password: password,
+            password2: password2,
+        });
+        console.log(result)
+    };
     return(
         <div>
         <Box>    
@@ -30,105 +49,116 @@ function RegisterCard() {
                     title="สร้างบัญชี"
                     />
                     <CardContent sx={{ width:650 }}>
-                    <Typography 
-                        variant="body1" 
-                        sx={{ fontSize:16 }}>
-                        ชื่อ
-                    </Typography>
-                    <Box
-                    component="form"
-                    sx={{
-                        '& > :not(style)': { m: 1, width: '25ch' },
-                    }}
-                    noValidate
-                    autoComplete="off"
-                    >
-                    <TextField id="outlined-basic" label="ชื่อ" variant="outlined" />
-                    <TextField id="outlined-basic" label="นามสกุล" variant="outlined" />
-                    </Box>
+                        <Typography 
+                            variant="body1" 
+                            sx={{ fontSize:16 }}>
+                            ชื่อ
+                        </Typography>
+                        <Box
+                            component="form"
+                            sx={{'& > :not(style)': { m: 1, width: '25ch' },}}
+                            noValidate
+                            autoComplete="off"
+                        >
+                            <TextField 
+                                id="outlined-basic" 
+                                label="ชื่อ" 
+                                variant="outlined" 
+                                onChange={e => setFirstname(e.target.value)}
+                            />
+                            <TextField 
+                                id="outlined-basic" 
+                                label="นามสกุล" 
+                                variant="outlined" 
+                                onChange={e => setLastname(e.target.value)}
+                            />
+                        </Box>
+
+                        <Typography 
+                            variant="body1" 
+                            sx={{ fontSize:16 }}>
+                            บัญชีผู้ใช้
+                        </Typography>
+                        <Box
+                            component="form"
+                            sx={{'& > :not(style)': { m: 1, width: '25ch' }}}
+                            noValidate
+                            autoComplete="off"
+                        >
+                            <TextField 
+                                id="outlined-basic" 
+                                label="บัญชีผู้ใช้" 
+                                variant="outlined" 
+                                onChange={e => setUsername(e.target.value)}
+                            />
+                        </Box>
 
 
-                    <Typography 
-                        variant="body1" 
-                        sx={{ fontSize:16 }}>
-                        บัญชีผู้ใช้
-                    </Typography>
-                    <Box
-                    component="form"
-                    sx={{
-                        '& > :not(style)': { m: 1, width: '25ch' },
-                    }}
-                    noValidate
-                    autoComplete="off"
-                    >
-                    <TextField id="outlined-basic" label="บัญชีผู้ใช้" variant="outlined" />
-                    </Box>
+                        <Typography 
+                            variant="body1" 
+                            sx={{ fontSize:16 }}>
+                            อีเมล
+                        </Typography>
+                        <Box
+                            component="form"
+                            sx={{'& > :not(style)': { m: 1, width: '25ch' }}}
+                            noValidate
+                            autoComplete="off"
+                        >
+                            <TextField 
+                                id="outlined-basic" 
+                                label="อีเมล" 
+                                variant="outlined" 
+                                onChange={e => setEmail(e.target.value)}   
+                            />
+                        </Box>
 
 
-                    <Typography 
-                        variant="body1" 
-                        sx={{ fontSize:16 }}>
-                        อีเมล
-                    </Typography>
-                    <Box
-                    component="form"
-                    sx={{
-                        '& > :not(style)': { m: 1, width: '25ch' },
-                    }}
-                    noValidate
-                    autoComplete="off"
-                    >
-                    <TextField id="outlined-basic" label="อีเมล" variant="outlined" />
-                    </Box>
+                        <Typography 
+                            variant="body1" 
+                            sx={{ fontSize:16 }}>
+                            รหัสผ่าน
+                        </Typography>
+                        <Box
+                            component="form"
+                            sx={{'& > :not(style)': { m: 1, width: '25ch' }}}
+                            noValidate
+                            autoComplete="off"
+                        >
+                            <TextField
+                                id="outlined-password-input"
+                                label="รหัสผ่าน"
+                                type="password"
+                                autoComplete="current-password"
+                                onChange={e => setPassword(e.target.value)}
+                            />
+                        </Box>
+                        <Typography 
+                            variant="body1" 
+                            sx={{ fontSize:16 }}>
+                            ยืนยันรหัสผ่าน
+                        </Typography>
+                        <Box
+                            component="form"
+                            sx={{'& > :not(style)': { m: 1, width: '25ch' }}}
+                            noValidate
+                            autoComplete="off"
+                        >
+                            <TextField
+                                id="outlined-password-input"
+                                label="ยืนยันรหัสผ่าน"
+                                type="password"
+                                autoComplete="current-password"
+                                onChange={e => setPassword2(e.target.value)}
+                            />
+                        </Box>
 
 
-                    <Typography 
-                        variant="body1" 
-                        sx={{ fontSize:16 }}>
-                        รหัสผ่าน
-                    </Typography>
-                    <Box
-                    component="form"
-                    sx={{
-                        '& > :not(style)': { m: 1, width: '25ch' },
-                    }}
-                    noValidate
-                    autoComplete="off"
-                    >
-                    <TextField
-                        id="outlined-password-input"
-                        label="รหัสผ่าน"
-                        type="password"
-                        autoComplete="current-password"
-                    />
-                    </Box>
-                    <Typography 
-                        variant="body1" 
-                        sx={{ fontSize:16 }}>
-                        ยืนยันรหัสผ่าน
-                    </Typography>
-                    <Box
-                    component="form"
-                    sx={{
-                        '& > :not(style)': { m: 1, width: '25ch' },
-                    }}
-                    noValidate
-                    autoComplete="off"
-                    >
-                    <TextField
-                        id="outlined-password-input"
-                        label="ยืนยันรหัสผ่าน"
-                        type="password"
-                        autoComplete="current-password"
-                    />
-                    </Box>
-
-
-                    <br />
-                    <Stack spacing={2} direction="row">
-                        <Button variant="contained" onClick={() => {navigate("/login");}}>เสร็จสิ้น</Button>
-                        <Button variant="outLine" onClick={() => {navigate("/login");}}>ยกเลิก</Button>
-                    </Stack> 
+                        <br />
+                        <Stack spacing={2} direction="row">
+                            <Button variant="contained" onClick={registerSubmit}>เสร็จสิ้น</Button>
+                            <Button variant="outLine" onClick={() => {navigate("/login");}}>ยกเลิก</Button>
+                        </Stack> 
                     </CardContent>     
                 </Box>
             </Card>
