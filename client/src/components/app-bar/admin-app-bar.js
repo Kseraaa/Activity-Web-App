@@ -16,6 +16,9 @@ import { useNavigate } from "react-router-dom";
 document.body.className = "AnErrorHasOccured";
 
 const AdminAppBar = () => {
+
+    const user = JSON.parse(localStorage.getItem('user'));
+
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -35,6 +38,13 @@ const AdminAppBar = () => {
     };
 
     const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem('access');
+        localStorage.removeItem('user');
+        localStorage.removeItem('refresh');
+        navigate("/login");
+    }
 
 return (
             <AppBar position="static" color='grey'>
@@ -174,8 +184,8 @@ return (
                             >
                                 <MenuItem onClick={handleCloseUserMenu}>
                                     <Typography textAlign="center">
-                                        Username : <br />
-                                        <Button onClick= {() => {navigate("/login");}}>Logout</Button> 
+                                        name : {user.username} <br />
+                                        <Button onClick= {handleLogout}>Logout</Button>
                                     </Typography>
                                 </MenuItem>
                             </Menu>

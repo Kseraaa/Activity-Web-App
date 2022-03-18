@@ -18,6 +18,16 @@ import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 document.body.className = "AnErrorHasOccured";
 
 const PannAppBar = () => {
+
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    const handleLogout = () => {
+        localStorage.removeItem('access');
+        localStorage.removeItem('user');
+        localStorage.removeItem('refresh');
+        navigate("/login");
+    }
+
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -206,9 +216,9 @@ return (
                             >
                                 <MenuItem onClick={handleCloseUserMenu}>
                                     <Typography textAlign="center">
-                                        Username : <br />
-                                        <Button onClick= {() => {navigate("/login");}}>Logout</Button> 
-                                    </Typography>
+                                        name : {user.username} 
+                                        <Button onClick= {handleLogout}>Logout</Button>
+                                    </Typography><br />
                                 </MenuItem>
                             </Menu>
                         </Box>
