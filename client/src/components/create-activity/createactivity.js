@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import DateTimePicker from '@mui/lab/DateTimePicker';
 import { CardHeader } from "@mui/material"
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { Box } from "@mui/system";
-import MenuItem from '@mui/material/MenuItem';
 import CardActions from '@mui/material/CardActions';
 import { Button } from "@mui/material";
 import { Dialog, DialogActions, DialogTitle } from "@mui/material"
@@ -18,22 +14,24 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
         //  ประเภท 
-const activitytype = [
-  {
-    value: 'FCFS',
-    label: 'FirstComeFirstServe',
-  },
-  {
-    value: 'C',
-    label: 'Candidate',
-  },
+// const activitytype = [
+//   {
+//     value: 'FCFS',
+//     label: 'FirstComeFirstServe',
+//   },
+//   {
+//     value: 'C',
+//     label: 'Candidate',
+//   },
 
-];
+// ];
 
         //  ปุ่มupload 
 const Input = styled('input')({
   display: 'none',
 });
+
+  
 
 function CreateActivity() {
 
@@ -69,35 +67,110 @@ function CreateActivity() {
     setMax_participant(event.target.value)
   };
 
-  const [activity_type, setActivity_type] = useState("FCFS");
+  const [activity_type, setActivity_type] = useState("");
   const handleChangeActivity_type = (event) => {
     setActivity_type(event.target.value)
   };
 
-  const [register_time_start, setRegister_time_start] = useState("");
-  const handleChangeRegister_time_start = (newRegister_time_start) => {
-      setRegister_time_start(newRegister_time_start);
+  // register time start
+  const [regis_time_start_year, setRegis_time_start_year] = useState("");
+  const handleChangeRegis_time_start_year = (event) => {
+    setRegis_time_start_year(event.target.value)
+  };
+  const [regis_time_start_month, setRegis_time_start_month] = useState("");
+  const handleChangeRegis_time_start_month = (event) => {
+    setRegis_time_start_month(event.target.value)
+  };
+  const [regis_time_start_date, setRegis_time_start_date] = useState("");
+  const handleChangeRegis_time_start_date = (event) => {
+    setRegis_time_start_date(event.target.value)
+  };
+  const [regis_time_start_hour, setRegis_time_start_hour] = useState("");
+  const handleChangeRegis_time_start_hour = (event) => {
+    setRegis_time_start_hour(event.target.value)
+  };
+  const [regis_time_start_minute, setRegis_time_start_minute] = useState("");
+  const handleChangeRegis_time_start_minute = (event) => {
+    setRegis_time_start_minute(event.target.value)
   };
 
-  const [register_time_end, setRegister_time_end] = useState("");
-  const handleChangeRegister_time_end = (newRegister_time_end) => {
-      setRegister_time_end(newRegister_time_end);
+  // register time end
+  const [regis_time_end_year, setRegis_time_end_year] = useState("");
+  const handleChangeRegis_time_end_year = (event) => {
+    setRegis_time_end_year(event.target.value)
+  };
+  const [regis_time_end_month, setRegis_time_end_month] = useState("");
+  const handleChangeRegis_time_end_month = (event) => {
+    setRegis_time_end_month(event.target.value)
+  };
+  const [regis_time_end_date, setRegis_time_end_date] = useState("");
+  const handleChangeRegis_time_end_date = (event) => {
+    setRegis_time_end_date(event.target.value)
+  };
+  const [regis_time_end_hour, setRegis_time_end_hour] = useState("");
+  const handleChangeRegis_time_end_hour = (event) => {
+    setRegis_time_end_hour(event.target.value)
+  };
+  const [regis_time_end_minute, setRegis_time_end_minute] = useState("");
+  const handleChangeRegis_time_end_minute = (event) => {
+    setRegis_time_end_minute(event.target.value)
   };
 
-  const [activity_time_start, setActivity_time_start] = useState("");
-  const handleChangeActivity_time_start = (newActivity_time_start) => {
-    setActivity_time_start(newActivity_time_start);
+  
+  // activity time start
+  const [activity_time_start_year, setActivity_time_start_year] = useState("");
+  const handleChangeActivity_time_start_year = (event) => {
+    setActivity_time_start_year(event.target.value)
+  };
+  const [activity_time_start_month, setActivity_time_start_month] = useState("");
+  const handleChangeActivity_time_start_month = (event) => {
+    setActivity_time_start_month(event.target.value)
+  };
+  const [activity_time_start_date, setActivity_time_start_date] = useState("");
+  const handleChangeActivity_time_start_date = (event) => {
+    setActivity_time_start_date(event.target.value)
+  };
+  const [activity_time_start_hour, setActivity_time_start_hour] = useState("");
+  const handleChangeActivity_time_start_hour = (event) => {
+    setActivity_time_start_hour(event.target.value)
+  };
+  const [activity_time_start_minute, setActivity_time_start_minute] = useState("");
+  const handleChangeActivity_time_start_minute = (event) => {
+    setActivity_time_start_minute(event.target.value)
   };
 
-  const [activity_time_end, setActivity_time_end] = useState("");
-  const handleChangeActivity_time_end = (newActivity_time_end) => {
-    setActivity_time_end(newActivity_time_end);
+  // activity time end
+  const [activity_time_end_year, setActivity_time_end_year] = useState("");
+  const handleChangeActivity_time_end_year = (event) => {
+    setActivity_time_end_year(event.target.value)
   };
+  const [activity_time_end_month, setActivity_time_end_month] = useState("");
+  const handleChangeActivity_time_end_month = (event) => {
+    setActivity_time_end_month(event.target.value)
+  };
+  const [activity_time_end_date, setActivity_time_end_date] = useState("");
+  const handleChangeActivity_time_end_date = (event) => {
+    setActivity_time_end_date(event.target.value)
+  };
+  const [activity_time_end_hour, setActivity_time_end_hour] = useState("");
+  const handleChangeActivity_time_end_hour = (event) => {
+    setActivity_time_end_hour(event.target.value)
+  };
+  const [activity_time_end_minute, setActivity_time_end_minute] = useState("");
+  const handleChangeActivity_time_end_minute = (event) => {
+    setActivity_time_end_minute(event.target.value)
+  };
+
+  const register_time_start = regis_time_start_date+'/'+regis_time_start_month+'/'+regis_time_start_year+' '+regis_time_start_hour+':'+regis_time_start_minute;
+  const register_time_end = regis_time_end_date+'/'+regis_time_end_month+'/'+regis_time_end_year+' '+regis_time_end_hour+':'+regis_time_end_minute;
+  const activity_time_start = activity_time_start_date+'/'+activity_time_start_month+'/'+activity_time_start_year+' '+activity_time_start_hour+':'+activity_time_start_minute;
+  const activity_time_end = activity_time_end_date+'/'+activity_time_end_month+'/'+activity_time_end_year+' '+activity_time_end_hour+':'+activity_time_end_minute;
 
   const navigate = useNavigate();
 
   const CreateAdminInfo = async () => {
     let formField = new FormData()
+    
     if (image !== null) {
       formField.append('image', image)
     }
@@ -110,6 +183,8 @@ function CreateActivity() {
     formField.append('register_time_end', register_time_end)
     formField.append('activity_time_start', activity_time_start)
     formField.append('activity_time_end', activity_time_end)
+
+    window.location.reload(false);
 
     await axios({
       method: 'post',
@@ -145,14 +220,20 @@ function CreateActivity() {
                       component="form"
                       sx={{
                           '& > :not(style)': { m: 1, width: '25ch' },
-                      }}
-                      noValidate
+                        }}
                       autoComplete="off"
                       name="name"
                       value={name}
                       onChange={handleChangeName}
                     >
-                      <TextField id="outlined-basic" label="กรุณากรอกชื่อ" variant="outlined" placeholder="กิจกรรม..."/>
+                      <TextField 
+                        required
+                        noValidate
+                        id="outlined-basic" 
+                        label="กรุณากรอกชื่อ" 
+                        variant="outlined"
+                        defaultValue="กิจกรรม"
+                        />
                     </Box>
 
 
@@ -164,17 +245,18 @@ function CreateActivity() {
                   </Typography>
                   <Box
                     component="form"
-                    sx={{
-                        '& > :not(style)': { m: 1, width: '25ch' },
-                    }}
+                    sx={{ m: 1, width: 'auto' }}
                     noValidate
                     autoComplete="off"
-                    
                   >
-                    <TextField id="outlined-basic" label="กรุณากรอกรายละเอียด" variant="outlined"
-                    name="description"
-                    value={description}
-                    onChange={handleChangeDescription} />
+                    <TextField
+                      id="description"
+                      fullWidth
+                      label="กรุณากรอกรายละเอียด" 
+                      variant="outlined"
+                      name="description"
+                      value={description}
+                      onChange={handleChangeDescription} />
                   </Box>
 
 
@@ -214,6 +296,13 @@ function CreateActivity() {
                       sx={{ fontSize:20 }}>
                       ประเภทของกิจกรรม
                   </Typography>
+                  <Typography 
+                    variant="body3"
+                    color="#949494"
+                    sx={{ fontSize:15 }}>
+                    กิจกรรมประเภท First come first serve ให้ใส่ FCFS <br/>
+                    กิจกรรมประเภท Candidate ให้ใส่ C
+                  </Typography>
                   <Box
                     component="form"
                     sx={{
@@ -224,89 +313,205 @@ function CreateActivity() {
                   >
                     <div>
                       <TextField
-                        id="ประเภท"
-                        select
-                        label="ประเภทของกิจกรรม"
-                        // helperText="กรุณากรอกประเภทของกิจกรรม"
-                      >
-                        {activitytype.map((option) => (
-                          <MenuItem key={option.value} value={option.value} onChange={handleChangeActivity_type}>
-                            {option.label}
-                          </MenuItem>
-                        ))}
-                      </TextField>
-
-                      {/* <select value={activitytypedefault} onChange={handleChangeActivity_type}>
-                        <option value='FC'>first</option>
-                        <option value='C'>can</option>
-                      </select> */}
+                        id="activity-type"
+                        label="FCFS or C"
+                        name="activity_type"
+                        value={activity_type}
+                        onChange={handleChangeActivity_type}
+                      />
                     </div>
                   </Box>
                   <br/>
 
                   {/* กำหนดเวลา */}
                   <Typography 
-                      variant="body1" 
-                      sx={{ fontSize:20 }}>
-                      ระยะเวลาเปิดลงทะเบียน
+                    variant="body1" 
+                    sx={{ fontSize:20, mb:1 }}>
+                    ระยะเวลาเปิดลงทะเบียน
                   </Typography>
-                  <Box>
-                    <br/>
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                      <Stack spacing={3}>
-                        <DateTimePicker
-                          label="เริ่มเวลา"
-                          name="register_time_start"
-                          value={register_time_start}
-                          onChange={handleChangeRegister_time_start}
-                          renderInput={(params) => <TextField {...params} />}
+                  
+                  <Box sx={{ mb:2 }}>
+                    <Box sx={{ mb:1 }}>
+                      <Typography 
+                        variant="body2"
+                        color="#949494"
+                        sx={{ fontSize:15 }}>
+                        เริ่ม
+                      </Typography>
+                      <br/>
+                      <TextField
+                        id="regis-time-start-date"
+                        type="number"
+                        label="ํDATE"
+                        onChange={handleChangeRegis_time_start_date}
                         />
-                      </Stack>
-                    </LocalizationProvider><br/>
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                      <Stack spacing={3}>
-                        <DateTimePicker
-                          label="สิ้นสุดเวลา"
-                          name="register_time_end"
-                          value={register_time_end}
-                          onChange={handleChangeRegister_time_end}
-                          renderInput={(params) => <TextField {...params} />}
+                      <TextField
+                        id="regis-time-start-month"
+                        type="number"
+                        label="MONTH" 
+                        onChange={handleChangeRegis_time_start_month}
                         />
-                      </Stack>
-                    </LocalizationProvider>
+                      <TextField
+                        id="regis-time-start-year"
+                        type="number"
+                        label="YEAR"
+                        defaultValue="2022" 
+                        onChange={handleChangeRegis_time_start_year}
+                        />
+                    </Box>
+                    <Box sx={{ mb:2 }}>
+                      <TextField
+                        id="regis-time-start-hour"
+                        type="number"
+                        label="ํHOUR" 
+                        onChange={handleChangeRegis_time_start_hour}
+                        />
+                      <TextField
+                        id="regis-time-start-minute"
+                        type="number"
+                        label="ํMINUTE" 
+                        onChange={handleChangeRegis_time_start_minute}
+                        />
+                    </Box>
+                    <Box sx={{ mb:1 }}>
+                      <Typography 
+                        variant="body2"
+                        color="#949494"
+                        sx={{ fontSize:15 }}>
+                        สิ้นสุด
+                      </Typography>
+                      <br/>
+                      <TextField
+                        id="regis-time-end-date"
+                        type="number"
+                        label="ํDATE" 
+                        onChange={handleChangeRegis_time_end_date}
+                        />
+                      <TextField
+                        id="regis-time-end-month"
+                        type="number"
+                        label="MONTH" 
+                        onChange={handleChangeRegis_time_end_month}
+                        />
+                      <TextField
+                        id="regis-time-end-year"
+                        type="number"
+                        label="YEAR"
+                        defaultValue="2022" 
+                        onChange={handleChangeRegis_time_end_year}
+                        />
+                    </Box>
+                    <Box>
+                      <TextField
+                        id="regis-time-end-hour"
+                        type="number"
+                        label="ํHOUR" 
+                        onChange={handleChangeRegis_time_end_hour}
+                        />
+                      <TextField
+                        id="regis-time-end-minute"
+                        type="number"
+                        label="ํMINUTE"
+                        onChange={handleChangeRegis_time_end_minute}
+                        />
+                    </Box>
                   </Box>
-                  <br/>
+
                   <Typography 
                     variant="body1" 
-                    sx={{ fontSize:20 }}>
+                    sx={{ fontSize:20, mb:1 }}>
                     ระยะเวลากิจกรรม
                   </Typography>
-                  <Box>
-                    <br/>
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                      <Stack spacing={3}>
-                        <DateTimePicker
-                          label="เริ่มเวลา"
-                          name="activity_time_start"
-                          value={activity_time_start}
-                          onChange={handleChangeActivity_time_start}
-                          renderInput={(params) => <TextField {...params} />}
+
+                  <Box sx={{ mb:2 }}>
+                    <Box sx={{ mb:1 }}>
+                      <Typography 
+                        variant="body2"
+                        color="#949494"
+                        sx={{ fontSize:15 }}>
+                        เริ่ม
+                      </Typography>
+                      <br/>
+                      <TextField
+                        id="activity-time-start-date"
+                        type="number"
+                        label="ํDATE" 
+                        onChange={handleChangeActivity_time_start_date}
                         />
-                      </Stack>
-                    </LocalizationProvider><br/>
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                      <Stack spacing={3}>
-                        <DateTimePicker
-                          label="สิ้นสุดเวลา"
-                          name="activity_time_end"
-                          value={activity_time_end}
-                          onChange={handleChangeActivity_time_end}
-                          renderInput={(params) => <TextField {...params} />}
+                      <TextField
+                        id="activity-time-start-month"
+                        type="number"
+                        label="MONTH" 
+                        onChange={handleChangeActivity_time_start_month}
                         />
-                      </Stack>
-                    </LocalizationProvider>
+                      <TextField
+                        id="activity-time-start-year"
+                        type="number"
+                        label="YEAR"
+                        defaultValue="2022"
+                        onChange={handleChangeActivity_time_start_year}
+                        />
+                    </Box>
+                    <Box sx={{ mb:2 }}>
+                      <TextField
+                        id="activity-time-start-hour"
+                        type="number"
+                        label="ํHOUR" 
+                        onChange={handleChangeActivity_time_start_hour}
+                        />
+                      <TextField
+                        id="activity-time-start-minute"
+                        type="number"
+                        label="ํMINUTE" 
+                        onChange={handleChangeActivity_time_start_minute}
+                        />
+                    </Box>
+                    <Box sx={{ mb:1 }}>
+                      <Typography 
+                        variant="body2"
+                        color="#949494"
+                        sx={{ fontSize:15 }}>
+                        สิ้นสุด
+                      </Typography>
+                      <br/>
+                      <TextField
+                        id="activity-time-end-date"
+                        type="number"
+                        label="ํDATE" 
+                        onChange={handleChangeActivity_time_end_date}
+                        />
+                      <TextField
+                        id="activity-time-end-month"
+                        type="number"
+                        label="MONTH" 
+                        onChange={handleChangeActivity_time_end_month}
+                        />
+                      <TextField
+                        id="activity-time-end-year"
+                        type="number"
+                        label="YEAR"
+                        defaultValue="2022" 
+                        onChange={handleChangeActivity_time_end_year}
+                        />
+                    </Box>
+                    <Box>
+                      <TextField
+                        id="activity-time-end-hour"
+                        type="number"
+                        label="ํHOUR" 
+                        onChange={handleChangeActivity_time_end_hour}
+                        />
+                      <TextField
+                        id="activity-time-end-minute"
+                        type="number"
+                        label="ํMINUTE" 
+                        onChange={handleChangeActivity_time_end_minute}
+                        />
+                    </Box>
                   </Box>
-                  <br />
+
+
+                  {/* คำเตือน */}
                   <Typography variant="h6" color='error.main' sx={{ fontSize:16 }}>
                     กรุณาตรวจสอบข้อมูลที่กรอกให้ถูกต้องก่อนทำการบันทึก เนื่องจากบันทึกเเล้วไม่สามารถเเก้ไขได้
                     <br />
