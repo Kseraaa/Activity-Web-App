@@ -184,7 +184,7 @@ return (
                             >
                                 <MenuItem onClick={handleCloseUserMenu}>
                                     <Typography textAlign="center">
-                                        name : {user.username} <br />
+                                        {/* name : {user.username} <br /> */}
                                         <Button onClick= {handleLogout}>Logout</Button>
                                     </Typography>
                                 </MenuItem>
