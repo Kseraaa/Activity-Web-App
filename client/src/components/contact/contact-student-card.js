@@ -22,7 +22,7 @@ function ContactStudentCard() {
                 sx={{
                     display: 'flex',
                     flexDirection:'row',
-                    border: '1px dashed grey',
+                    // border: '1px dashed grey',
                     align: "center",
                     bgcolor: "#FFF",
                     mx: 2,
@@ -48,8 +48,10 @@ function ContactStudentCard() {
                                 />
                                 <CardContent>
                                     <Typography variant="body1" color="black">
+                                        Name: Nattapong Naksri <br />
+                                        Email: 6410110154@psu.ac.th <br />
                                         Phone: 098 0170180 <br />
-                                        Email: 6410110154@psu.ac.th
+                                        Department of Computer Engineering 
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
@@ -68,8 +70,10 @@ function ContactStudentCard() {
                                 />
                                 <CardContent>
                                     <Typography variant="body1" color="black">
+                                        Name: Thanapat Duongkaew <br />
                                         Phone: 091 8618713 <br />
-                                        Email: 6410110204@psu.ac.th
+                                        Email: 6410110204@psu.ac.th <br />
+                                        Department of Computer Engineering
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
@@ -88,8 +92,10 @@ function ContactStudentCard() {
                                 />
                                 <CardContent>
                                     <Typography variant="body1" color="black">
+                                        Name: Theeravee Pathomthaninphat <br/>
                                         Phone: 099 2310215 <br />
-                                        Email: 6410110238@psu.ac.th
+                                        Email: 6410110238@psu.ac.th <br />
+                                        Department of Computer Engineering
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
@@ -108,8 +114,10 @@ function ContactStudentCard() {
                                 />
                                 <CardContent>
                                     <Typography variant="body1" color="black">
+                                        Name: Patinya Limhao <br/>
                                         Phone: 061 1855153 <br />
-                                        Email: 6410110294@psu.ac.th
+                                        Email: 6410110294@psu.ac.th <br />
+                                        Department of Computer Engineering
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
@@ -128,8 +136,10 @@ function ContactStudentCard() {
                                 />
                                 <CardContent>
                                     <Typography variant="body1" color="black">
+                                        Name: Pattarachai Boriboon <br/>
                                         Phone: 062 3302875 <br />
-                                        Email: 6410110384@psu.ac.th
+                                        Email: 6410110384@psu.ac.th <br/>
+                                        Department of Computer Engineering
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
@@ -159,7 +169,7 @@ function ContactStudentCard() {
                 mx: "auto",
                 p: 2,
                 bottom: '50%',
-                border: '1px dashed grey',
+                // border: '1px dashed grey',
             }}
         >
             <Box
@@ -168,13 +178,13 @@ function ContactStudentCard() {
                     flexDirection:'column',
                     width: '100%',
                     height: 'auto',
-                    border: '1px dashed grey',
+                    // border: '1px dashed grey',
                 }}
             >
-                <IconButton aria-label='phone' sx={{mx: 'auto'}}>
+                <IconButton aria-label='phone' sx={{ mx: 'auto', color: "#FFF"}}>
                     <PhoneIcon/>
                 </IconButton>
-                <Typography sx={{textAlign: 'center'}}>
+                <Typography sx={{ textAlign: 'center', color: "#FFF" }}>
                     Phone: 098 7654321
                 </Typography>
             </Box>
@@ -185,13 +195,13 @@ function ContactStudentCard() {
                     flexDirection:'column',
                     width: '100%',
                     height: 'auto',
-                    border: '1px dashed grey',
+                    // border: '1px dashed grey',
                 }}
             >
-                <IconButton aria-label='phone' sx={{mx: 'auto'}}>
+                <IconButton aria-label='phone' sx={{ mx: 'auto', color: "#FFF" }}>
                     <EmailIcon/>
                 </IconButton>
-                <Typography sx={{textAlign: 'center'}}>
+                <Typography sx={{ textAlign: 'center', color: "#FFF" }}>
                     Email: 6410110xxx@psu.ac.th
                 </Typography>
             </Box>
