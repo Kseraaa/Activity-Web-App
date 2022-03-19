@@ -36,7 +36,7 @@ function RegisterCard() {
     return(
         <div>
         <Box>    
-            <Card sx={{ mx:'auto', my: 1, maxWidth: 700 , display: 'flex' , bgcolor: 'grey'}} >
+            <Card sx={{ mx:'auto', my: 13, maxWidth: 700 , display: 'flex' , bgcolor: 'grey'}} >
                 <Box sx={{ display:'flex', flexDirection:'column' }}>
                     <CardMedia
                         component="img"
