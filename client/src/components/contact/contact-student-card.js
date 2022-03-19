@@ -1,124 +1,198 @@
-import { Box, Card, CardContent, CardActionArea, CardMedia, Typography, Grid } from '@mui/material';
+import { Box, Card, CardContent, CardActionArea, CardMedia, Typography, Grid, IconButton } from '@mui/material';
+import PhoneIcon from '@mui/icons-material/Phone';
+import EmailIcon from '@mui/icons-material/Email';
 
 function ContactStudentCard() {
     return(
-        <Box
-            sx={{
+        <div>
+            <Card sx={{ bgcolor:"#000000" }}>
+                <CardContent>
+                    <Typography  mx="40rem"sx={{ fontSize: 100 }} color="#FFF" gutterBottom>
+                    สมาชิกในทีม
+                    </Typography>
+                </CardContent>
+
+            </Card>
+            
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexDirection:'row',
+                    border: '1px dashed grey',
+                    align: "center",
+                    bgcolor: "#000000",
+                    mx: 2,
+                    mt: 2,
+                    mb: 2,
+                    p: 1,
+                    pt: 2,
+                    pb: 2,
+                    
+                }}
+            >
+                <Grid container spacing={2} justifyContent="center">
+                    <Grid item xs={2.38}>
+                        <Card>
+                            <CardActionArea>
+                                <CardMedia
+                                    component="img"
+                                    height="500"
+                                    width="500"
+                                    image="/img/nat.jpg"
+                                    alt="1"
+                                />
+                                <CardContent>
+                                    <Typography variant="body1" color="black">
+                                        Phone: 098 0170180 <br />
+                                        Email: 6410110154@psu.ac.th
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </Grid>
+
+                    <Grid item xs={2.38}>
+                        <Card>
+                            <CardActionArea>
+                                <CardMedia
+                                    component="img"
+                                    height="500"
+                                    width="500"
+                                    image="/img/bat.png"
+                                    alt="2"
+                                />
+                                <CardContent>
+                                    <Typography variant="body1" color="black">
+                                        Phone: 091 8618713 <br />
+                                        Email: 6410110204@psu.ac.th
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </Grid>
+
+                    <Grid item xs={2.38}>
+                        <Card>
+                            <CardActionArea>
+                                <CardMedia
+                                    component="img"
+                                    height="500"
+                                    width="500"
+                                    image="/img/pea.png"
+                                    alt="3"
+                                />
+                                <CardContent>
+                                    <Typography variant="body1" color="black">
+                                        Phone: 099 2310215 <br />
+                                        Email: 6410110238@psu.ac.th
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </Grid>
+
+                    <Grid item xs={2.38}>
+                        <Card>
+                            <CardActionArea>
+                                <CardMedia
+                                    component="img"
+                                    height="500"
+                                    width="500"
+                                    image="/img/toey.jpg"
+                                    alt="4"
+                                />
+                                <CardContent>
+                                    <Typography variant="body1" color="black">
+                                        Phone: 061 1855153 <br />
+                                        Email: 6410110294@psu.ac.th
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </Grid>
+
+                    <Grid item xs={2.38}>
+                        <Card>
+                            <CardActionArea>
+                                <CardMedia
+                                    component="img"
+                                    height="500"
+                                    width="500"
+                                    image="/img/trai.jpg"
+                                    alt="5"
+                                />
+                                <CardContent>
+                                    <Typography variant="body1" color="black">
+                                        Phone: 062 3302875 <br />
+                                        Email: 6410110384@psu.ac.th
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </Grid>
+
+                </Grid>
+            </Box>
+            
+            <Card sx={{ bgcolor:"#000000" }}>
+                <CardActionArea>
+                    <CardMedia
+                        component="img"
+                        height="700"
+                        width="700"
+                        image="/img/mor.jpg"
+                        alt=""
+                    />
+                </CardActionArea>
+            </Card>
+
+            <Box
+            sx={{ 
                 display: 'flex',
                 flexDirection:'row',
+                width: 600,
+                mx: "auto",
+                p: 2,
+                bottom: '50%',
                 border: '1px dashed grey',
-                align: "center",
-                mx: 2,
-                mt: 2,
-                mb: 40,
-                p: 1,
             }}
         >
-            <Grid container spacing={2} justifyContent="center">
-                <Grid item xs={2}>
-                    <Card>
-                        <CardActionArea>
-                            <CardMedia
-                                component="img"
-                                height="350"
-                                width="350"
-                                image="/img/nat.jpg"
-                                alt="1"
-                            />
-                            <CardContent>
-                                <Typography variant="body1" color="black">
-                                    Phone: 098 0170180 <br />
-                                    Email: 6410110154@psu.ac.th
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </Grid>
-
-                <Grid item xs={2}>
-                    <Card>
-                        <CardActionArea>
-                            <CardMedia
-                                component="img"
-                                height="350"
-                                width="350"
-                                image="/img/bat.png"
-                                alt="2"
-                            />
-                            <CardContent>
-                                <Typography variant="body1" color="black">
-                                    Phone: 091 8618713 <br />
-                                    Email: 6410110204@psu.ac.th
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </Grid>
-
-                <Grid item xs={2}>
-                    <Card>
-                        <CardActionArea>
-                            <CardMedia
-                                component="img"
-                                height="350"
-                                width="350"
-                                image="/img/pea.png"
-                                alt="3"
-                            />
-                            <CardContent>
-                                <Typography variant="body1" color="black">
-                                    Phone: 099 2310215 <br />
-                                    Email: 6410110238@psu.ac.th
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </Grid>
-
-                <Grid item xs={2}>
-                    <Card>
-                        <CardActionArea>
-                            <CardMedia
-                                component="img"
-                                height="350"
-                                width="350"
-                                image="/img/toey.jpg"
-                                alt="4"
-                            />
-                            <CardContent>
-                                <Typography variant="body1" color="black">
-                                    Phone: 061 1855153 <br />
-                                    Email: 6410110294@psu.ac.th
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </Grid>
-
-                <Grid item xs={2}>
-                    <Card>
-                        <CardActionArea>
-                            <CardMedia
-                                component="img"
-                                height="350"
-                                width="350"
-                                image="/img/trai.jpg"
-                                alt="5"
-                            />
-                            <CardContent>
-                                <Typography variant="body1" color="black">
-                                    Phone: 062 3302875 <br />
-                                    Email: 6410110384@psu.ac.th
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </Grid>
-
-            </Grid>
-
-        </Box>
+            <Box
+                sx={{ 
+                    display: 'flex',
+                    flexDirection:'column',
+                    width: '100%',
+                    height: 'auto',
+                    border: '1px dashed grey',
+                }}
+            >
+                <IconButton aria-label='phone' sx={{mx: 'auto'}}>
+                    <PhoneIcon/>
+                </IconButton>
+                <Typography sx={{textAlign: 'center'}}>
+                    Phone: 098 7654321
+                </Typography>
+            </Box>
+            
+            <Box
+                sx={{ 
+                    display: 'flex',
+                    flexDirection:'column',
+                    width: '100%',
+                    height: 'auto',
+                    border: '1px dashed grey',
+                }}
+            >
+                <IconButton aria-label='phone' sx={{mx: 'auto'}}>
+                    <EmailIcon/>
+                </IconButton>
+                <Typography sx={{textAlign: 'center'}}>
+                    Email: 6410110xxx@psu.ac.th
+                </Typography>
+            </Box>
+        </Box> 
+        </div>
     )
 };
 
-export default ContactStudentCard
+export default ContactStudentCard;
