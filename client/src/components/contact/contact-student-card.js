@@ -47,7 +47,7 @@ function ContactStudentCard() {
                                     alt="1"
                                 />
                                 <CardContent>
-                                    <Typography variant="body1" color="#FFF">
+                                    <Typography variant="body1" color="black">
                                         Phone: 098 0170180 <br />
                                         Email: 6410110154@psu.ac.th
                                     </Typography>
