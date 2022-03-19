@@ -1,4 +1,3 @@
-import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,10 +11,15 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from "react-router-dom";
+import TextField from '@mui/material/TextField';
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
+import { Card } from '@mui/material';
+import { CardContent } from '@mui/material';
 
 document.body.className = "AnErrorHasOccured";
-
-const AdminAppBar = () => {
+  
+export default function AdminAppBar(props) {
 
     const user = JSON.parse(localStorage.getItem('user'));
 
@@ -37,14 +41,35 @@ const AdminAppBar = () => {
         setAnchorElUser(null);
     };
 
-    const navigate = useNavigate();
-
     const handleLogout = () => {
         localStorage.removeItem('access');
         localStorage.removeItem('user');
         localStorage.removeItem('refresh');
         navigate("/login");
     }
+
+    const [activitycards, setActivitycards] = useState([])
+    const navigate = useNavigate()
+
+    const getActivityCards = async () => {
+        const response = await axios.get('http://localhost:8000/api/activities/')
+        setActivitycards(response.data)
+    }
+
+    useEffect(() => {
+        getActivityCards();
+    }, []);
+
+    const [filteredActivitycards, setFilteredActivitycards] = useState([])
+    const [search, setSearch] = useState("")
+
+    useEffect(() => {
+        setFilteredActivitycards(
+            activitycards.filter( activitycard => {
+                return activitycard.name.includes(search)
+            })
+        )
+    }, [search, activitycards])
 
 return ( 
             <AppBar position="static" color='grey' >
@@ -115,22 +140,8 @@ return (
                                         <Typography textAlign="center" color="black">รายชื่อผู้ใช้</Typography>
                                     </Box>
                                 </MenuItem>
-
                             </Menu>
                         </Box>
-
-                        {/* FANCIER button (minimized window) */}
-                        <Button >
-                            <Typography
-                                variant="h6"
-                                noWrap
-                                component="div"
-                                sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-                                color="black"
-                            >
-                                Fancier
-                            </Typography>
-                        </Button>
 
                         {/* box for app bar buttons */}
                         <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' } }}>
@@ -156,6 +167,7 @@ return (
                                     รายชื่อผู้ใช้
                                 </Button>
 
+                                
                         </Box>
                         
                         {/* box for user profile */}                        
@@ -190,9 +202,9 @@ return (
                                 </MenuItem>
                             </Menu>
                         </Box>
+
                     </Toolbar>
                 </Container>
             </AppBar>
     );
 };
-export default AdminAppBar;

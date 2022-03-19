@@ -1,14 +1,14 @@
 import { Box } from "@mui/system";
-import FcfsActivity from "../components/activitylist/fcfs-activity";
+import ActivityInfo from "../components/activitylist/activity-info";
 import AdminAppBar from "../components/app-bar/admin-app-bar";
 
-function Activityfcfs(){
+function ActivityInfoPage(){
     return(
         <Box sx={{ flexGrow: 1}}>
             <AdminAppBar/><br/>
-            <FcfsActivity/>
+            <ActivityInfo/>
         </Box>
     )
 }
 
-export default Activityfcfs;
+export default ActivityInfoPage;
