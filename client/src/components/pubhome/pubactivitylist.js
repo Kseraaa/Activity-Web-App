@@ -60,8 +60,24 @@ function PubActivateDisplayArea() {
 
 return(
       <div>
-        <Video/>
-        <Box sx={{ mx: 'auto', mt: 115 }}>
+        <Box sx={{ 
+            border:'1px dashed grey',
+            mt: 10,
+          }}>
+          <Card sx={{ 
+              position: 'relative',
+              left: 200,
+              border:'1px dashed grey',
+              height: 870,
+              width: 1450,
+              bgcolor: "#021442",
+            }}>
+            <CardMedia>
+              <Video/>
+            </CardMedia>
+          </Card>
+        </Box>
+        <Box sx={{ mx: 'auto', my: 10 }}>
           {activitycards.map((activitycard) => (
             <Card key={activitycard.id} sx={{ mx:'auto', my:3,maxWidth: 1200 , display: 'flex' , bgcolor: 'grey'}} >
                   <CardMedia sx={{maxWidth: 500, maxHeight: 'auto'}}

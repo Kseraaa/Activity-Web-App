@@ -7,14 +7,12 @@ function Video() {
             loop
             muted
             style={{
-            position: "absolute",
+            position: "relative",
             width: "auto",
-            left: "50%",
-            top: "59%",
             height: "auto",
-            objectFit: "cover",
-            transform: "translate(-50%, -50%)",
-            zIndex: "-1"
+            left: 88,
+            top: 80,
+            zIndex: "tooltip",
             }}
         >
             <source src={ProjectClip} type="video/mp4" />
