@@ -54,7 +54,7 @@ function PubFooterBar() {
                                 <div className='col'>
                                     <h3>About Us</h3>
                                     <ul className='list-unstyled'>
-                                        <div style={{ textDecoration: 'none' }}><a href='/publichome'>กิจกรรม</a></div><br/>
+                                        <div style={{ textDecoration: 'none' }}><a href='/public'>กิจกรรม</a></div><br/>
                                         <div style={{ textDecoration: 'none' }}><a href='/contact2'>ติดต่อ</a></div>
                                     </ul>
                                 </div>
