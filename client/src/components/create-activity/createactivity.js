@@ -204,7 +204,7 @@ function CreateActivity() {
                     titleTypographyProps={{fontFamily:"Sarabun",fontSize: 36,}}
                     title="สำหรับการสร้างกิจกรรม"
                   />
-                  <CardContent sx={{ width:650 }}>
+                  <CardContent sx={{ width: 700 }}>
 
                   {/* กรอกข้อความชื่อกิจกรรม */}
                     <Typography 
