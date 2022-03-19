@@ -55,7 +55,7 @@ function PubFooterBar() {
                                     <h3>About Us</h3>
                                     <ul className='list-unstyled'>
                                         <div style={{ textDecoration: 'none' }}><a href='/public'>กิจกรรม</a></div><br/>
-                                        <div style={{ textDecoration: 'none' }}><a href='/contact2'>ติดต่อ</a></div>
+                                        <div style={{ textDecoration: 'none' }}><a href='/publiccontact'>ติดต่อ</a></div>
                                     </ul>
                                 </div>
                             </FooterContainer>

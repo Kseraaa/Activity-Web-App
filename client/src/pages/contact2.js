@@ -4,7 +4,7 @@ import ContactStudentCard from "../components/contact/contact-student-card";
 import PubFooterBar from "../components/footer/pubfooter-bar";
 
 
-function Contact2(){
+function PublicContact(){
     return(
         <Box sx={{ flexGrow: 1}}>
             <PubAppBar/>
@@ -14,4 +14,4 @@ function Contact2(){
     )
 }
 
-export default Contact2;
+export default PublicContact;

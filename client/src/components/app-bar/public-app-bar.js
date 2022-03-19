@@ -93,7 +93,7 @@ return (
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
-                                    <Box onClick={() => {navigate("/contact2");}}>
+                                    <Box onClick={() => {navigate("/publiccontact");}}>
                                         <Typography textAlign="center" color="black">ติดต่อ</Typography>
                                     </Box>
                                 </MenuItem>
@@ -126,7 +126,7 @@ return (
 
 
                                 <Button
-                                    onClick= {() => {navigate("/contact2");}}
+                                    onClick= {() => {navigate("/publiccontact");}}
                                     sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
                                 >   
                                     ติดต่อ
