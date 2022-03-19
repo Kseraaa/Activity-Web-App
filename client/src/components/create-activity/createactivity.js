@@ -197,7 +197,7 @@ function CreateActivity() {
       <Box sx={{ mx: 'auto', mt: 10  }}>
       
         {/* การ์ด */}
-        <Card sx={{ mx:'auto', my:3, maxWidth: 1000 , display: 'flex' , bgcolor: 'grey' ,background: 'linear-gradient(45deg, #ffffff 30%, #d1d5de  90%)'}} >
+        <Card sx={{ mx:'auto', my:3, maxWidth: 1000 , display: 'flex' , bgcolor: 'grey' ,background: 'linear-gradient(45deg, #ffffff 30%, #dfe2e8  90%)'}} >
 
               <Box sx={{ display:'flex', flexDirection:'column' }}>
                   <CardHeader
