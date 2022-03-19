@@ -13,6 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from "react-router-dom";
 import Popover from '@mui/material/Popover';
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
+import './hover-underline.css';
 
 import Stack from '@mui/material/Stack';
 
@@ -115,59 +116,36 @@ return (
                         </Button>
 
                         {/* box for app bar buttons */}
-                        <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' } }}>
-                                
-                                <Button
-                                    onClick= {() => {navigate("/public");}}
-                                    sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
-                                >   
-                                    กิจกรรม
-                                </Button>
+                            <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' } }} className="hover-underline">
+                                <nav>
+                                    <a href='/public'>Activities</a>
+                                    <a href='/publiccontact'>Contact</a>
+                                </nav>
+
+                                    {/* <Button
+                                        onClick= {() => {navigate("/public");}}
+                                        sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
+                                    >   
+                                        กิจกรรม
+                                    </Button>
 
 
-                                <Button
-                                    onClick= {() => {navigate("/publiccontact");}}
-                                    sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
-                                >   
-                                    ติดต่อ
-                                </Button>
+                                    <Button
+                                        onClick= {() => {navigate("/publiccontact");}}
+                                        sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
+                                    >   
+                                        ติดต่อ
+                                    </Button> */}
 
-                                <PopupState variant="popover" popupId="demo-popup-popover">
-                                    {(popupState) => (
-                                        <div>
-                                            <Button sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }} {...bindTrigger(popupState)}>
-                                                วิธีใช้
-                                            </Button>
-                                            <Popover
-                                                {...bindPopover(popupState)}
-                                                anchorOrigin={{
-                                                vertical: 'bottom',
-                                                horizontal: 'center',
-                                                }}
-                                                transformOrigin={{
-                                                vertical: 'top',
-                                                horizontal: 'center',
-                                                }}
-                                            >
-                                                <Typography sx={{ p: 2 }}>
-                                                    เว็บไซต์นี้เป็นเว็บไซต์สำหรับลงทะเบียนกิจกรรมที่ท่านสนใจ <br />
-                                                    มีการลงทะเบียน2รูปแบบ คือ <br />
-                                                    First come First serve [ลงทะเบียนก่อนมีสิทธิ์ก่อน] <br />
-                                                    Candidate [ทางผู้จัดเป็นคนคัดเลือกผู้เข้าร่วม] 
-                                                </Typography>
-                                            </Popover>
-                                        </div>
-                                    )}
-                                </PopupState>
-                        </Box>
-
+                                    
+                                </Box>
                         {/* ปุ่มสมัครสมาชิก */}                        
-                        <Box sx={{ flexGrow: 0 }}>
-                        <Stack spacing={2} direction="row">
-                            <Box onClick={() => {navigate("/login");}}>
-                            <Button variant="contained">LOGIN</Button>
-                            </Box>
-                        </Stack>
+                        <Box sx={{ flexGrow: 0 }} position="right">
+                            <Stack spacing={2} direction="row">
+                                <Box onClick={() => {navigate("/login");}}>
+                                <Button variant="contained">LOGIN</Button>
+                                </Box>
+                            </Stack>
                         </Box>
                     </Toolbar>
                 </Container>
