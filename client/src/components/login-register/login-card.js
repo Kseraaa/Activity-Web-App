@@ -133,6 +133,7 @@ function LoginCard() {
                                     autoComplete="current-password"
                                     onChange={e => setPassword(e.target.value)}
                                 />
+                                <Typography sx={{ fontSize:10, color:'#e53935'}} >*รหัสผ่านต้องมีอย่างน้อย 8 ตัว ประกอบด้วยตัวอักษรภาษาอังกฤษ ตัวเลขและอักษรพิเศษ</Typography>
                                 <CardContent>
                                     <Stack spacing={2} direction="row">
                                         <Button variant="contained" onClick={handleSubmit}>เข้าสู่ระบบ</Button>
