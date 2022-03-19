@@ -11,40 +11,19 @@ import { Button } from "@mui/material";
 import { Dialog, DialogActions, DialogTitle } from "@mui/material"
 import { styled } from '@mui/material/styles';
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-
-        //  ประเภท 
-// const activitytype = [
-//   {
-//     value: 'FCFS',
-//     label: 'FirstComeFirstServe',
-//   },
-//   {
-//     value: 'C',
-//     label: 'Candidate',
-//   },
-
-// ];
 
         //  ปุ่มupload 
 const Input = styled('input')({
   display: 'none',
 });
 
-  
+// function errorMessage() {
+//     const error400 = () => {
+//       alert("ควย")
+//     }
+// };
 
 function CreateActivity() {
-
-        // ปุ่มsave
-  const [open, setOpen] = useState(false);
-
-  // const handleClickOpen = () => {
-  //   setOpen(true);
-  // };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
       //  info ต่างๆใน card   
   const [image, setImage] = useState(null);
@@ -166,11 +145,24 @@ function CreateActivity() {
   const activity_time_start = activity_time_start_date+'/'+activity_time_start_month+'/'+activity_time_start_year+' '+activity_time_start_hour+':'+activity_time_start_minute;
   const activity_time_end = activity_time_end_date+'/'+activity_time_end_month+'/'+activity_time_end_year+' '+activity_time_end_hour+':'+activity_time_end_minute;
 
-  const navigate = useNavigate();
+
 
   const CreateAdminInfo = async () => {
     let formField = new FormData()
-    
+
+    if ((name === "กิจกรรม") || (name === "")) {
+      return alert("กรุณาตรวจสอบชื่อกิจกรรมให้ถูกต้อง")
+    }
+    else if (activity_type !== "FCFS" && activity_type !== "C") {
+      return alert("กรุณาตรวจสอบประเภทกิจกรรมให้ถูกต้อง")
+    }
+    else if (max_participant.length > 5) {
+      return alert("กรุณาตรวจสอบจำนวนผู้เข้าร่วมสูงสุดให้ถูกต้อง")
+    }
+    else if ((regis_time_start_date.length !== 2) || (regis_time_start_month.length !== 2 ) || (regis_time_start_year.length !== 4 ) || (regis_time_start_hour.length !== 2 ) || (regis_time_start_minute.length !== 2 ) || (regis_time_end_date.length !== 2) || (regis_time_end_month.length !== 2 ) || (regis_time_end_year.length !== 4 ) || (regis_time_end_hour.length !== 2 ) || (regis_time_end_minute.length !== 2 ) || (activity_time_start_date.length !== 2) || (activity_time_start_month.length !== 2 ) || (activity_time_start_year.length !== 4 ) || (activity_time_start_hour.length !== 2 ) || (activity_time_start_minute.length !== 2 ) || (activity_time_end_date.length !== 2) || (activity_time_end_month.length !== 2 ) || (activity_time_end_year.length !== 4 ) || (activity_time_end_hour.length !== 2 ) || (activity_time_end_minute.length !== 2 )) {
+      return alert("กรุณาตรวจสอบวันที่และเวลาให้ถูกต้อง")
+    }
+
     if (image !== null) {
       formField.append('image', image)
     }
@@ -184,15 +176,19 @@ function CreateActivity() {
     formField.append('activity_time_start', activity_time_start)
     formField.append('activity_time_end', activity_time_end)
 
-    window.location.reload(false);
-
     await axios({
       method: 'post',
       url: 'http://localhost:8000/api/activities/',
       data: formField
+    }).catch(function (error) {
+      if (error.response.status === 400) {
+        return alert("กรุณากรอกข้อมูลให้ครบถ้วน")
+      }
+      console.log(error.response.status);
     }).then((response) => {
       console.log(response.data);
-      navigate("/createactivity");
+      alert("สร้างกิจกรรมสำเร็จ")
+      window.location.reload();
     })
   };
 
@@ -208,7 +204,7 @@ function CreateActivity() {
                     titleTypographyProps={{fontFamily:"Sarabun",fontSize: 36,}}
                     title="สำหรับการสร้างกิจกรรม"
                   />
-                  <CardContent sx={{ width:650 }}>
+                  <CardContent sx={{ width: 700 }}>
 
                   {/* กรอกข้อความชื่อกิจกรรม */}
                     <Typography 
@@ -228,13 +224,12 @@ function CreateActivity() {
                     >
                       <TextField 
                         required
-                        noValidate
                         id="outlined-basic" 
                         label="กรุณากรอกชื่อ" 
                         variant="outlined"
                         defaultValue="กิจกรรม"
                         />
-                    </Box><br/>
+                    </Box>
 
 
                   {/* กรอกข้อความรายละเอียด */}
@@ -246,7 +241,7 @@ function CreateActivity() {
                   <Box
                     component="form"
                     sx={{ m: 1, width: 'auto' }}
-                    noValidate
+                    
                     autoComplete="off"
                   >
                     <TextField
@@ -257,7 +252,7 @@ function CreateActivity() {
                       name="description"
                       value={description}
                       onChange={handleChangeDescription} />
-                  </Box><br/>
+                  </Box>
 
                   {/* ระบุจำนวนคน */}
                   <Typography 
@@ -268,9 +263,8 @@ function CreateActivity() {
                   <Box
                     component="form"
                     sx={{
-                      '& .MuiTextField-root': { m: 1, width: '25ch' },
+                      m: 1,
                     }}
-                    noValidate
                     autoComplete="off"
                   >
                     <div>
@@ -286,14 +280,14 @@ function CreateActivity() {
                         onChange={handleChangeMax_participant}
                       /> 
                     </div>
-                  </Box><br/>
+                  </Box>
 
 
                   {/* ระบุประเภท */}
                   <Typography 
                       variant="body1" 
                       sx={{ fontSize:20 }}>
-                      ประเภทของกิจกรรม
+                      ประเภทกิจกรรม
                   </Typography>
                   <Typography 
                     variant="body3"
@@ -307,7 +301,6 @@ function CreateActivity() {
                     sx={{
                       '& .MuiTextField-root': { m: 1, width: '25ch' },
                     }}
-                    noValidate
                     autoComplete="off"
                   >
                     <div>
@@ -320,7 +313,7 @@ function CreateActivity() {
                       />
                     </div>
                   </Box>
-                  <br/>
+                  
 
                   {/* กำหนดเวลา */}
                   <Typography 
@@ -330,21 +323,14 @@ function CreateActivity() {
                   </Typography>
                   
                   <Box sx={{ mb:2 }}>
-                    <Box sx={{ mb:1 }}>
+                    <Box sx={{ ml:1, mb:1 }}>
                       <Typography 
                         variant="body2"
                         color="#949494"
                         sx={{ fontSize:15 }}>
                         เริ่ม
                       </Typography>
-                      <br/>
-                      <TextField
-                        id="regis-time-start-year"
-                        type="number"
-                        label="YEAR"
-                        defaultValue="2022" 
-                        onChange={handleChangeRegis_time_start_year}
-                        /><br/>
+                      
                       <TextField
                         id="regis-time-start-date"
                         type="number"
@@ -357,8 +343,14 @@ function CreateActivity() {
                         label="MONTH" 
                         onChange={handleChangeRegis_time_start_month}
                         />
+                      <TextField
+                        id="regis-time-start-year"
+                        type="number"
+                        label="YEAR"
+                        onChange={handleChangeRegis_time_start_year}
+                        />
                     </Box>
-                    <Box sx={{ mb:2 }}>
+                    <Box sx={{ ml:1, mb:2 }}>
                       <TextField
                         id="regis-time-start-hour"
                         type="number"
@@ -372,21 +364,14 @@ function CreateActivity() {
                         onChange={handleChangeRegis_time_start_minute}
                         />
                     </Box>
-                    <Box sx={{ mb:1 }}>
+                    <Box sx={{ ml:1, mb:1 }}>
                       <Typography 
                         variant="body2"
                         color="#949494"
                         sx={{ fontSize:15 }}>
                         สิ้นสุด
                       </Typography>
-                      <br/>
-                      <TextField
-                        id="regis-time-end-year"
-                        type="number"
-                        label="YEAR"
-                        defaultValue="2022" 
-                        onChange={handleChangeRegis_time_end_year}
-                        /><br/>
+                      
                       <TextField
                         id="regis-time-end-date"
                         type="number"
@@ -399,8 +384,14 @@ function CreateActivity() {
                         label="MONTH" 
                         onChange={handleChangeRegis_time_end_month}
                         />
+                      <TextField
+                        id="regis-time-end-year"
+                        type="number"
+                        label="YEAR"
+                        onChange={handleChangeRegis_time_end_year}
+                        />
                     </Box>
-                    <Box>
+                    <Box sx={{ ml:1, mb:1 }}>
                       <TextField
                         id="regis-time-end-hour"
                         type="number"
@@ -414,7 +405,7 @@ function CreateActivity() {
                         onChange={handleChangeRegis_time_end_minute}
                         />
                     </Box>
-                  </Box><br/>
+                  </Box>
 
                   <Typography 
                     variant="body1" 
@@ -423,22 +414,14 @@ function CreateActivity() {
                   </Typography>
 
                   <Box sx={{ mb:2 }}>
-                    <Box sx={{ mb:1 }}>
+                    <Box sx={{ ml:1, mb:1 }}>
                       <Typography 
                         variant="body2"
                         color="#949494"
                         sx={{ fontSize:15 }}>
                         เริ่ม
                       </Typography>
-                      <br/>
-                      <TextField
-                        id="activity-time-start-year"
-                        type="number"
-                        label="YEAR"
-                        defaultValue="2022"
-                        onChange={handleChangeActivity_time_start_year}
-                        />
-                      <br/>
+                      
                       <TextField
                         id="activity-time-start-date"
                         type="number"
@@ -451,9 +434,14 @@ function CreateActivity() {
                         label="MONTH" 
                         onChange={handleChangeActivity_time_start_month}
                         />
-                        
+                      <TextField
+                        id="activity-time-start-year"
+                        type="number"
+                        label="YEAR"
+                        onChange={handleChangeActivity_time_start_year}
+                        />
                     </Box>
-                    <Box sx={{ mb:2 }}>
+                    <Box sx={{ ml:1, mb:2 }}>
                       <TextField
                         id="activity-time-start-hour"
                         type="number"
@@ -467,21 +455,14 @@ function CreateActivity() {
                         onChange={handleChangeActivity_time_start_minute}
                         />
                     </Box>
-                    <Box sx={{ mb:1 }}>
+                    <Box sx={{ ml:1, mb:1 }}>
                       <Typography 
                         variant="body2"
                         color="#949494"
                         sx={{ fontSize:15 }}>
                         สิ้นสุด
                       </Typography>
-                      <br/>
-                      <TextField
-                        id="activity-time-end-year"
-                        type="number"
-                        label="YEAR"
-                        defaultValue="2022" 
-                        onChange={handleChangeActivity_time_end_year}
-                        /><br/>
+                      
                       <TextField
                         id="activity-time-end-date"
                         type="number"
@@ -494,8 +475,14 @@ function CreateActivity() {
                         label="MONTH" 
                         onChange={handleChangeActivity_time_end_month}
                         />
+                      <TextField
+                        id="activity-time-end-year"
+                        type="number"
+                        label="YEAR"
+                        onChange={handleChangeActivity_time_end_year}
+                        />
                     </Box>
-                    <Box>
+                    <Box sx={{ ml:1, mb:1 }}>
                       <TextField
                         id="activity-time-end-hour"
                         type="number"
@@ -546,7 +533,7 @@ function CreateActivity() {
                           onClick={CreateAdminInfo}>
                             บันทึก
                         </Button>
-                        <Dialog
+                        {/* <Dialog
                           open={open}
                           onClose={handleClose}
                           aria-labelledby="alert-dialog-title"
@@ -555,13 +542,13 @@ function CreateActivity() {
                         >
                           <DialogTitle id="alert-dialog-title" gutterBottom variant="h1" sx={{color: '#4aad00'}}>
                             <Typography sx={{ fontFamily:"Sarabun",fontSize: '50px'}} >
-                              <h1>บันทึกสำเร็จ</h1>
+                              <h1>มีบางอย่างผิดพลาด</h1>
                             </Typography>
                           </DialogTitle>
                           <DialogActions >
                             <Button sx={{ fontSize: '30px',color: '#4aad00'}} onClick={handleClose} >ย้อนกลับ </Button>
                           </DialogActions>
-                        </Dialog>
+                        </Dialog> */}
                       </Stack>
                   </CardActions>
               </Box>
