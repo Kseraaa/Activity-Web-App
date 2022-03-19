@@ -155,8 +155,8 @@ function RegisterCard() {
                         </Box>
                         <br />
                         <Stack spacing={2} direction="row">
-                            <Link to="/login">
-                                <Button variant="contained" onClick={registerSubmit}>บันทึก</Button>
+                            <Link to="/login" style={{ textDecoration: 'none' }}>
+                                <Button variant="contained" onClick={registerSubmit} >บันทึก</Button>
                             </Link>
                             <Button variant="outLine" onClick={() => {navigate("/login");}}>ยกเลิก</Button>
                         </Stack> 
