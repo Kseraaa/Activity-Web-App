@@ -46,7 +46,7 @@ function RegisterCard() {
                         alt="logo"
                     />
                     <CardHeader
-                    titleTypographyProps={{fontFamily: 'Sarabun', fontSize: 36,}}
+                    titleTypographyProps={{fontFamily: 'Sarabun', fontSize: 36, textAlign: 'center'}}
                     title="สร้างบัญชี"
                     />
                     <CardContent sx={{ width:650 }}>
@@ -153,6 +153,7 @@ function RegisterCard() {
                                 onChange={e => setPassword2(e.target.value)}
                             />
                         </Box>
+                        <Typography sx={{ fontSize:10, color:'#e53935'}} >*รหัสผ่านต้องมีอย่างน้อย 8 ตัว ประกอบด้วยตัวอักษรภาษาอังกฤษ ตัวเลขและอักษรพิเศษ</Typography>
                         <br />
                         <Stack spacing={2} direction="row">
                             <Link to="/login" style={{ textDecoration: 'none' }}>
