@@ -12,7 +12,7 @@ import ActivityAdmin from './pages/activityadmin';
 import UserName from './pages/username';
 import OneUser from './pages/oneuser'
 import PubHome from './pages/pubhome';
-import Contact2 from './pages/contact2';
+import PublicContact from './pages/contact2';
 import Activityfcfs from './pages/activityfcfs';
 import Activitycdd from './pages/activitycdd';
 import { AuthProvider } from './auth';
@@ -35,7 +35,7 @@ function App(){
                 <Route path="/createactivity" element={<CreateActivityAdmin/>}/>
                 <Route path="/username" element={<UserName/>}/>
                 <Route path="/oneuser" element={<OneUser/>}/>
-                <Route path="/contact2" element={<Contact2/>}/>
+                <Route path="/publiccontact" element={<PublicContact/>}/>
 
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/register" element={<Register/>}/>
