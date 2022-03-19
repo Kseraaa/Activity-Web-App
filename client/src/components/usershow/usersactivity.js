@@ -19,7 +19,7 @@ function UserAct() {
 
 
           {/* การ์ดใบที่3 */}
-          <Card sx={{ mx:'auto', my:9,maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
+          <Card sx={{ mx:'auto', my:9,maxWidth: 1000 , display: 'flex' ,background: 'linear-gradient(45deg, #ffffff 30%, #dfe2e8  90%)'}} >
 
                 <Box >
                     <CardHeader
