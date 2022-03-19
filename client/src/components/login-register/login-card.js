@@ -68,7 +68,7 @@ function LoginCard() {
     return(
         <div>
         <Box>
-            <Card sx={{ mx:'auto', my: 13, maxWidth: 695 , display: 'flex' , bgcolor: 'grey'}} >
+            <Card sx={{ mx:'auto', my: 13, maxWidth: 695 , display: 'flex' ,background: 'linear-gradient(45deg, #ffffff 30%, #dfe2e8  90%)'}} >
                 <Box sx={{ display:'flex', flexDirection:'column' }}>
                     <CardMedia
                         component="img"
