@@ -234,7 +234,7 @@ function CreateActivity() {
                         variant="outlined"
                         defaultValue="กิจกรรม"
                         />
-                    </Box>
+                    </Box><br/>
 
 
                   {/* กรอกข้อความรายละเอียด */}
@@ -257,8 +257,7 @@ function CreateActivity() {
                       name="description"
                       value={description}
                       onChange={handleChangeDescription} />
-                  </Box>
-
+                  </Box><br/>
 
                   {/* ระบุจำนวนคน */}
                   <Typography 
@@ -287,7 +286,7 @@ function CreateActivity() {
                         onChange={handleChangeMax_participant}
                       /> 
                     </div>
-                  </Box>
+                  </Box><br/>
 
 
                   {/* ระบุประเภท */}
@@ -340,6 +339,13 @@ function CreateActivity() {
                       </Typography>
                       <br/>
                       <TextField
+                        id="regis-time-start-year"
+                        type="number"
+                        label="YEAR"
+                        defaultValue="2022" 
+                        onChange={handleChangeRegis_time_start_year}
+                        /><br/>
+                      <TextField
                         id="regis-time-start-date"
                         type="number"
                         label="ํDATE"
@@ -350,13 +356,6 @@ function CreateActivity() {
                         type="number"
                         label="MONTH" 
                         onChange={handleChangeRegis_time_start_month}
-                        />
-                      <TextField
-                        id="regis-time-start-year"
-                        type="number"
-                        label="YEAR"
-                        defaultValue="2022" 
-                        onChange={handleChangeRegis_time_start_year}
                         />
                     </Box>
                     <Box sx={{ mb:2 }}>
@@ -382,6 +381,13 @@ function CreateActivity() {
                       </Typography>
                       <br/>
                       <TextField
+                        id="regis-time-end-year"
+                        type="number"
+                        label="YEAR"
+                        defaultValue="2022" 
+                        onChange={handleChangeRegis_time_end_year}
+                        /><br/>
+                      <TextField
                         id="regis-time-end-date"
                         type="number"
                         label="ํDATE" 
@@ -392,13 +398,6 @@ function CreateActivity() {
                         type="number"
                         label="MONTH" 
                         onChange={handleChangeRegis_time_end_month}
-                        />
-                      <TextField
-                        id="regis-time-end-year"
-                        type="number"
-                        label="YEAR"
-                        defaultValue="2022" 
-                        onChange={handleChangeRegis_time_end_year}
                         />
                     </Box>
                     <Box>
@@ -415,7 +414,7 @@ function CreateActivity() {
                         onChange={handleChangeRegis_time_end_minute}
                         />
                     </Box>
-                  </Box>
+                  </Box><br/>
 
                   <Typography 
                     variant="body1" 
@@ -433,6 +432,14 @@ function CreateActivity() {
                       </Typography>
                       <br/>
                       <TextField
+                        id="activity-time-start-year"
+                        type="number"
+                        label="YEAR"
+                        defaultValue="2022"
+                        onChange={handleChangeActivity_time_start_year}
+                        />
+                      <br/>
+                      <TextField
                         id="activity-time-start-date"
                         type="number"
                         label="ํDATE" 
@@ -444,13 +451,7 @@ function CreateActivity() {
                         label="MONTH" 
                         onChange={handleChangeActivity_time_start_month}
                         />
-                      <TextField
-                        id="activity-time-start-year"
-                        type="number"
-                        label="YEAR"
-                        defaultValue="2022"
-                        onChange={handleChangeActivity_time_start_year}
-                        />
+                        
                     </Box>
                     <Box sx={{ mb:2 }}>
                       <TextField
@@ -475,6 +476,13 @@ function CreateActivity() {
                       </Typography>
                       <br/>
                       <TextField
+                        id="activity-time-end-year"
+                        type="number"
+                        label="YEAR"
+                        defaultValue="2022" 
+                        onChange={handleChangeActivity_time_end_year}
+                        /><br/>
+                      <TextField
                         id="activity-time-end-date"
                         type="number"
                         label="ํDATE" 
@@ -485,13 +493,6 @@ function CreateActivity() {
                         type="number"
                         label="MONTH" 
                         onChange={handleChangeActivity_time_end_month}
-                        />
-                      <TextField
-                        id="activity-time-end-year"
-                        type="number"
-                        label="YEAR"
-                        defaultValue="2022" 
-                        onChange={handleChangeActivity_time_end_year}
                         />
                     </Box>
                     <Box>
