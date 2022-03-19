@@ -138,56 +138,13 @@ return (
                         </Button>
 
                         {/* box for app bar buttons */}
-                        <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' } }}>
+                        <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' }}} className="hover-underline">
                                 
-                                <Button
-                                    onClick= {() => {navigate("/home");}}
-                                    sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
-                                >   
-                                    กิจกรรม
-                                </Button>
-
-                                <Button
-                                    onClick= {() => {navigate("/history");}}
-                                    sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
-                                >   
-                                    ประวัติการเข้าร่วม
-                                </Button>
-
-                                <Button
-                                    onClick= {() => {navigate("/contact");}}
-                                    sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
-                                >   
-                                    ติดต่อ
-                                </Button>
-
-                                <PopupState variant="popover" popupId="demo-popup-popover">
-                                    {(popupState) => (
-                                        <div>
-                                            <Button sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }} {...bindTrigger(popupState)}>
-                                                วิธีใช้
-                                            </Button>
-                                            <Popover
-                                                {...bindPopover(popupState)}
-                                                anchorOrigin={{
-                                                vertical: 'bottom',
-                                                horizontal: 'center',
-                                                }}
-                                                transformOrigin={{
-                                                vertical: 'top',
-                                                horizontal: 'center',
-                                                }}
-                                            >
-                                                <Typography sx={{ p: 2 }}>
-                                                    เว็บไซต์นี้เป็นเว็บไซต์สำหรับลงทะเบียนกิจกรรมที่ท่านสนใจ <br />
-                                                    มีการลงทะเบียน2รูปแบบ คือ <br />
-                                                    First come First serve [ลงทะเบียนก่อนมีสิทธิ์ก่อน] <br />
-                                                    Candidate [ทางผู้จัดเป็นคนคัดเลือกผู้เข้าร่วม] 
-                                                </Typography>
-                                            </Popover>
-                                        </div>
-                                    )}
-                                </PopupState>
+                                <nav>
+                                    <a href='/home'>Activities</a>
+                                    <a href='/history'>History</a>
+                                    <a href='/contact'>Contact</a>
+                                </nav>
                         </Box>
 
                         {/* box for user profile */}                        
