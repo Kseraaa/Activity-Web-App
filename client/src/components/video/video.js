@@ -1,5 +1,4 @@
 import ProjectClip from "../video/Project-Clip.mp4";
-
 function Video() {
     return(
         <video
@@ -19,5 +18,10 @@ function Video() {
         </video>
     );
 }
-
 export default Video ;
+
+
+
+
+
+

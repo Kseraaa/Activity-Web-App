@@ -4,7 +4,7 @@ import { CardHeader, CardMedia } from "@mui/material";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { Box } from "@mui/system";
+import { Box } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
@@ -68,12 +68,12 @@ function LoginCard() {
     return(
         <div>
         <Box>
-            <Card sx={{ mx:'auto', my: 1, maxWidth: 700 , display: 'flex' , bgcolor: 'grey'}} >
+            <Card sx={{ mx:'auto', my: 1, maxWidth: 695 , display: 'flex' , bgcolor: 'grey'}} >
                 <Box sx={{ display:'flex', flexDirection:'column' }}>
                     <CardMedia
                         component="img"
-                        height="40%"
-                        width="40%"
+                        height="42%"
+                        width="42%"
                         image="/img/123.png"
                         alt="logo"
                     />
@@ -81,10 +81,10 @@ function LoginCard() {
                     titleTypographyProps={{fontFamily: 'Sarabun', fontSize: 36}}
                     title="เข้าสู่ระบบ"
                     />
-                    <table width="100%" >
+                    <table width="100%">
                         <tr>
                             <td>
-                                <CardContent sx={{ width:320 }}>
+                                <CardContent sx={{ width:300 }}>
                                 <Typography 
                                     variant="body1" 
                                     sx={{ fontSize:16 }}>
@@ -136,7 +136,7 @@ function LoginCard() {
                                 <Typography sx={{ fontSize:10, color:'#e53935'}} >*รหัสผ่านต้องมีอย่างน้อย 8 ตัว ประกอบด้วยตัวอักษรภาษาอังกฤษ ตัวเลขและอักษรพิเศษ</Typography>
                                 <CardContent>
                                     <Stack spacing={2} direction="row">
-                                        <Button variant="contained" onClick={handleSubmit}>เข้าสู่ระบบ</Button>
+                                        <Button variant="contained" onClick={handleSubmit}>เข้าสู่ระบบ</Button><Typography><Button onClick={() => {navigate("/public");}}>ย้อนกลับ</Button></Typography>
                                     </Stack>
                                     <br />
                                     <Typography>หากไม่มีบัญชี <Button onClick={() => {navigate("/register");}}>สร้างบัญชี</Button></Typography>
@@ -145,21 +145,20 @@ function LoginCard() {
                                 </CardContent>
                                 </td>
                                 <td>
-                                    l
-                                    l
-                                    l
-                                    l
-                                    l
-                                    l
-                                    l
-                                    l
-                                    l
-                                    l
-                                    l
+                                <CardContent sx={{ width:50 }}>
+                                    <div className="decoration-inside"/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                </CardContent>
                                 </td>
                                 <td>
-                                <CardContent sx={{ width:320 }}>
-                                    <div>
+                                <CardContent sx={{ width:190 }}>
+                                    <Box>
+                                        <Typography variant="body1" textAlign='center'>Google</Typography>
                                         <GoogleLogin
                                             clientId="888881399412-spgq58e4cmhhs05icgb2uhct4584aenl.apps.googleusercontent.com"
                                             buttonText="Login with Google"
@@ -167,7 +166,21 @@ function LoginCard() {
                                             onFailure={responseGoogle}
                                             cookiePolicy={'single_host_origin'}
                                         />
-                                    </div>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                    </Box>
                                 </CardContent>
                             </td>
                         </tr>
