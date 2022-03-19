@@ -224,7 +224,6 @@ function CreateActivity() {
                     >
                       <TextField 
                         required
-                        noValidate
                         id="outlined-basic" 
                         label="กรุณากรอกชื่อ" 
                         variant="outlined"
@@ -242,7 +241,7 @@ function CreateActivity() {
                   <Box
                     component="form"
                     sx={{ m: 1, width: 'auto' }}
-                    noValidate
+                    
                     autoComplete="off"
                   >
                     <TextField
@@ -255,7 +254,6 @@ function CreateActivity() {
                       onChange={handleChangeDescription} />
                   </Box>
 
-
                   {/* ระบุจำนวนคน */}
                   <Typography 
                       variant="body1" 
@@ -265,9 +263,8 @@ function CreateActivity() {
                   <Box
                     component="form"
                     sx={{
-                      '& .MuiTextField-root': { m: 1, width: '25ch' },
+                      m: 1,
                     }}
-                    noValidate
                     autoComplete="off"
                   >
                     <div>
@@ -304,7 +301,6 @@ function CreateActivity() {
                     sx={{
                       '& .MuiTextField-root': { m: 1, width: '25ch' },
                     }}
-                    noValidate
                     autoComplete="off"
                   >
                     <div>
@@ -317,7 +313,7 @@ function CreateActivity() {
                       />
                     </div>
                   </Box>
-                  <br/>
+                  
 
                   {/* กำหนดเวลา */}
                   <Typography 
@@ -327,14 +323,14 @@ function CreateActivity() {
                   </Typography>
                   
                   <Box sx={{ mb:2 }}>
-                    <Box sx={{ mb:1 }}>
+                    <Box sx={{ ml:1, mb:1 }}>
                       <Typography 
                         variant="body2"
                         color="#949494"
                         sx={{ fontSize:15 }}>
                         เริ่ม
                       </Typography>
-                      <br/>
+                      
                       <TextField
                         id="regis-time-start-date"
                         type="number"
@@ -354,7 +350,7 @@ function CreateActivity() {
                         onChange={handleChangeRegis_time_start_year}
                         />
                     </Box>
-                    <Box sx={{ mb:2 }}>
+                    <Box sx={{ ml:1, mb:2 }}>
                       <TextField
                         id="regis-time-start-hour"
                         type="number"
@@ -368,14 +364,14 @@ function CreateActivity() {
                         onChange={handleChangeRegis_time_start_minute}
                         />
                     </Box>
-                    <Box sx={{ mb:1 }}>
+                    <Box sx={{ ml:1, mb:1 }}>
                       <Typography 
                         variant="body2"
                         color="#949494"
                         sx={{ fontSize:15 }}>
                         สิ้นสุด
                       </Typography>
-                      <br/>
+                      
                       <TextField
                         id="regis-time-end-date"
                         type="number"
@@ -395,7 +391,7 @@ function CreateActivity() {
                         onChange={handleChangeRegis_time_end_year}
                         />
                     </Box>
-                    <Box>
+                    <Box sx={{ ml:1, mb:1 }}>
                       <TextField
                         id="regis-time-end-hour"
                         type="number"
@@ -418,14 +414,14 @@ function CreateActivity() {
                   </Typography>
 
                   <Box sx={{ mb:2 }}>
-                    <Box sx={{ mb:1 }}>
+                    <Box sx={{ ml:1, mb:1 }}>
                       <Typography 
                         variant="body2"
                         color="#949494"
                         sx={{ fontSize:15 }}>
                         เริ่ม
                       </Typography>
-                      <br/>
+                      
                       <TextField
                         id="activity-time-start-date"
                         type="number"
@@ -445,7 +441,7 @@ function CreateActivity() {
                         onChange={handleChangeActivity_time_start_year}
                         />
                     </Box>
-                    <Box sx={{ mb:2 }}>
+                    <Box sx={{ ml:1, mb:2 }}>
                       <TextField
                         id="activity-time-start-hour"
                         type="number"
@@ -459,14 +455,14 @@ function CreateActivity() {
                         onChange={handleChangeActivity_time_start_minute}
                         />
                     </Box>
-                    <Box sx={{ mb:1 }}>
+                    <Box sx={{ ml:1, mb:1 }}>
                       <Typography 
                         variant="body2"
                         color="#949494"
                         sx={{ fontSize:15 }}>
                         สิ้นสุด
                       </Typography>
-                      <br/>
+                      
                       <TextField
                         id="activity-time-end-date"
                         type="number"
@@ -486,7 +482,7 @@ function CreateActivity() {
                         onChange={handleChangeActivity_time_end_year}
                         />
                     </Box>
-                    <Box>
+                    <Box sx={{ ml:1, mb:1 }}>
                       <TextField
                         id="activity-time-end-hour"
                         type="number"

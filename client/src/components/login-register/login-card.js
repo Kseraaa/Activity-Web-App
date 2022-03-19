@@ -46,11 +46,14 @@ function LoginCard() {
         });
         console.log("login success");
         if (result.status === 200 && result.data) {
+            localStorage.setItem('access', result.data.access);
+            localStorage.setItem('refresh', result.data.refresh);
             let response = await axios.get('http://localhost:8000/scauth/gglogin/', {
                 headers: {
                     'Authorization': `Bearer ${result.data.access}`
                 }
             })
+            localStorage.setItem('user', JSON.stringify(response.data));
             console.log(response.data)
             if ( response.data.is_staff === true ) {
                 console.log('Hi! Admin')
@@ -130,6 +133,7 @@ function LoginCard() {
                                     autoComplete="current-password"
                                     onChange={e => setPassword(e.target.value)}
                                 />
+                                <Typography sx={{ fontSize:10, color:'#e53935'}} >*รหัสผ่านต้องมีอย่างน้อย 8 ตัว ประกอบด้วยตัวอักษรภาษาอังกฤษ ตัวเลขและอักษรพิเศษ</Typography>
                                 <CardContent>
                                     <Stack spacing={2} direction="row">
                                         <Button variant="contained" onClick={handleSubmit}>เข้าสู่ระบบ</Button>

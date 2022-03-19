@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TextField from '@mui/material/TextField';
-import { CardHeader, CardMedia } from "@mui/material"
+import { CardHeader, CardMedia} from "@mui/material"
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -9,6 +9,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
+import { Link } from "react-router-dom";
 
 function RegisterCard() {
     
@@ -45,7 +46,7 @@ function RegisterCard() {
                         alt="logo"
                     />
                     <CardHeader
-                    titleTypographyProps={{fontFamily: 'Sarabun', fontSize: 36,}}
+                    titleTypographyProps={{fontFamily: 'Sarabun', fontSize: 36, textAlign: 'center'}}
                     title="สร้างบัญชี"
                     />
                     <CardContent sx={{ width:650 }}>
@@ -152,11 +153,12 @@ function RegisterCard() {
                                 onChange={e => setPassword2(e.target.value)}
                             />
                         </Box>
-
-
+                        <Typography sx={{ fontSize:10, color:'#e53935'}} >*รหัสผ่านต้องมีอย่างน้อย 8 ตัว ประกอบด้วยตัวอักษรภาษาอังกฤษ ตัวเลขและอักษรพิเศษ</Typography>
                         <br />
                         <Stack spacing={2} direction="row">
-                            <Button variant="contained" onClick={registerSubmit}>เสร็จสิ้น</Button>
+                            <Link to="/login" style={{ textDecoration: 'none' }}>
+                                <Button variant="contained" onClick={registerSubmit} >บันทึก</Button>
+                            </Link>
                             <Button variant="outLine" onClick={() => {navigate("/login");}}>ยกเลิก</Button>
                         </Stack> 
                     </CardContent>     
@@ -164,7 +166,6 @@ function RegisterCard() {
             </Card>
         </Box>
       </div>
-
   );
 }
 
