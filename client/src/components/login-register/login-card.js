@@ -93,7 +93,7 @@ function LoginCard() {
                                 <Box
                                     component="form"
                                     sx={{
-                                        '& > :not(style)': { m: 1, width: '25ch' },
+                                        m: 1,
                                     }}
                                     noValidate
                                     autoComplete="off"
@@ -133,7 +133,7 @@ function LoginCard() {
                                     autoComplete="current-password"
                                     onChange={e => setPassword(e.target.value)}
                                 />
-                                <Typography sx={{ fontSize:10, color:'#e53935'}} >*รหัสผ่านต้องมีอย่างน้อย 8 ตัว ประกอบด้วยตัวอักษรภาษาอังกฤษ ตัวเลขและอักษรพิเศษ</Typography>
+                                <Typography sx={{ fontSize:13, color:'#e53935'}} >*รหัสผ่านต้องมีอย่างน้อย 8 ตัว ประกอบด้วยตัวอักษรภาษาอังกฤษ ตัวเลขและอักษรพิเศษ</Typography>
                                 <CardContent>
                                     <Stack spacing={2} direction="row">
                                         <Button variant="contained" onClick={handleSubmit}>เข้าสู่ระบบ</Button><Typography><Button onClick={() => {navigate("/public");}}>ย้อนกลับ</Button></Typography>

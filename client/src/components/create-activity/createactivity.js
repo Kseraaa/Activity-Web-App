@@ -154,13 +154,13 @@ function CreateActivity() {
       return alert("กรุณาตรวจสอบชื่อกิจกรรมให้ถูกต้อง")
     }
     else if (activity_type !== "FCFS" && activity_type !== "C") {
-      return alert("กรุณาตรวจสอบประเภทกิจกรรมให้ถูกต้อง")
+      return alert("กรุณาตรวจสอบประเภทกิจกรรมให้ถูกต้อง\n FCFS or C")
     }
     else if (max_participant.length > 5) {
       return alert("กรุณาตรวจสอบจำนวนผู้เข้าร่วมสูงสุดให้ถูกต้อง")
     }
     else if ((regis_time_start_date.length !== 2) || (regis_time_start_month.length !== 2 ) || (regis_time_start_year.length !== 4 ) || (regis_time_start_hour.length !== 2 ) || (regis_time_start_minute.length !== 2 ) || (regis_time_end_date.length !== 2) || (regis_time_end_month.length !== 2 ) || (regis_time_end_year.length !== 4 ) || (regis_time_end_hour.length !== 2 ) || (regis_time_end_minute.length !== 2 ) || (activity_time_start_date.length !== 2) || (activity_time_start_month.length !== 2 ) || (activity_time_start_year.length !== 4 ) || (activity_time_start_hour.length !== 2 ) || (activity_time_start_minute.length !== 2 ) || (activity_time_end_date.length !== 2) || (activity_time_end_month.length !== 2 ) || (activity_time_end_year.length !== 4 ) || (activity_time_end_hour.length !== 2 ) || (activity_time_end_minute.length !== 2 )) {
-      return alert("กรุณาตรวจสอบวันที่และเวลาให้ถูกต้อง")
+      return alert("กรุณาตรวจสอบวันที่และเวลาให้ถูกต้อง\n dd/mm/yyyy\n hh:mm")
     }
 
     if (image !== null) {
