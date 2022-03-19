@@ -24,7 +24,7 @@ function ContactStudentCard() {
                     flexDirection:'row',
                     // border: '1px dashed grey',
                     align: "center",
-                    bgcolor: "#FFF",
+                    background: 'linear-gradient(45deg, #ffffff 30%, #dfe2e8  90%)',
                     mx: 2,
                     mt: 2,
                     mb: 2,
