@@ -46,7 +46,7 @@ function RegisterCard() {
                         alt="logo"
                     />
                     <CardHeader
-                    titleTypographyProps={{fontFamily: 'Sarabun', fontSize: 36, textAlign: 'center'}}
+                    titleTypographyProps={{fontFamily: 'Sarabun', fontSize: 36}}
                     title="สร้างบัญชี"
                     />
                     <CardContent sx={{ width:650 }}>

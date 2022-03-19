@@ -60,6 +60,7 @@ body.AnErrorHasOccured
   width: 100%;
   height: 5px;
 }
+
 .scroll-container .indicator {
   height: 100%;
   background: rgba(13, 82, 231, 0.8);
@@ -88,4 +89,12 @@ body.AnErrorHasOccured
   to {
       transform: translateY(-1px);
   }
+}
+
+.decoration-inside{
+  text-align:left; /* ตำแหน่งที่จะให้เส้นอยู่ Left/Right/Center */  
+  height: 270px; /* ความสูงของเส้น */
+  width: 3px; /* ความหนาของเส้น */
+  background-color: rgb(162, 159, 159); /* สีของเส้น */
+  display:block;
 }

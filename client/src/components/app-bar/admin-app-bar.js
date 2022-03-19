@@ -46,8 +46,8 @@ const AdminAppBar = () => {
         navigate("/login");
     }
 
-return (
-            <AppBar position="static" color='grey'>
+return ( 
+            <AppBar position="static" color='grey' >
                 <Container maxWidth="x1">
                     <Toolbar disableGutters>
                             <Button 

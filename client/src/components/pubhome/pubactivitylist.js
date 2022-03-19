@@ -11,6 +11,7 @@ import { Text, StyleSheet } from 'react-native';
 import Video from "../video/video";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { Grid } from "@mui/material";
 
 function PubActivateDisplayArea() {
 
@@ -60,8 +61,27 @@ function PubActivateDisplayArea() {
 
 return(
       <div>
-        <Video/>
-        <Box sx={{ mx: 'auto', mt: 115 }}>
+        <Box sx={{ 
+            border:'1px dashed grey',
+            mt: 10,
+          }}>
+          <Grid container justifyContent= "center">
+              <Card sx={{ 
+                  border:'1px dashed grey',
+                  height: 'auto',
+                  width: 'auto',
+                  bgcolor: "#021442",
+                }}>
+                <Grid container justifyContent= "center">
+                  <CardMedia sx={{ m:10 }}>
+                    <Video/>
+                  </CardMedia>
+                </Grid>
+              </Card>
+          </Grid>
+        </Box>
+        
+        <Box sx={{ mx: 'auto', my: 10 }}>
           {activitycards.map((activitycard) => (
             <Card key={activitycard.id} sx={{ mx:'auto', my:3,maxWidth: 1200 , display: 'flex' , bgcolor: 'grey'}} >
                   <CardMedia sx={{maxWidth: 500, maxHeight: 'auto'}}

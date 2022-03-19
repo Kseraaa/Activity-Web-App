@@ -19,7 +19,7 @@ function UserList() {
 
 
           {/* การ์ดใบที่3 */}
-          <Card sx={{ mx:'auto', my:9,maxWidth: 1000 , display: 'flex' , bgcolor: 'grey'}} >
+          <Card sx={{ mx:'auto', my:9,maxWidth: 1000 , display: 'flex' ,background: 'linear-gradient(217deg, #ffffff 30%, #d1d5de  90%)'}} >
 
                 <Box >
                     <CardHeader
