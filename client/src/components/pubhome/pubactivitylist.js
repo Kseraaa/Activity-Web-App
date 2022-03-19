@@ -70,7 +70,7 @@ return(
                   border:'1px dashed grey',
                   height: 'auto',
                   width: 'auto',
-                  bgcolor: "#021442",
+                  background: 'linear-gradient(336deg, #001b57 30%, #004af0  90%)',
                 }}>
                 <Grid container justifyContent= "center">
                   <CardMedia sx={{ m:10 }}>
