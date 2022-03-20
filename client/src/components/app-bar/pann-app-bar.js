@@ -151,7 +151,7 @@ return (
                                     <a href='/home'>Activities <FontAwesomeIcon icon={faAward}></FontAwesomeIcon></a>
                                     <a href='/history'>History <FontAwesomeIcon icon={faCalendarDays}></FontAwesomeIcon></a>
                                     <a href='/contact'>Contact <FontAwesomeIcon icon={faUsers}></FontAwesomeIcon></a>
-                                    <a href='/abouthomepage'>About <FontAwesomeIcon icon={faComment}></FontAwesomeIcon></a>
+                                    <a href='/abouthome'>About <FontAwesomeIcon icon={faComment}></FontAwesomeIcon></a>
                                 </nav>
                         </Box>
 

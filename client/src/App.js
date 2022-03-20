@@ -12,10 +12,11 @@ import UserName from './pages/username';
 import OneUser from './pages/oneuser'
 import PubHome from './pages/pubhome';
 import PublicContact from './pages/contact2';
-import ActivityInfoPage from './pages/activityinfopage';
+import ActivityInfoPage from './pages/activityinfo';
 import { AuthProvider } from './auth';
-import Aboutpublicpage from './pages/aboutpublicpage';
-import Abouthomepage from './pages/abouthomepage';
+import Abouthome from './pages/abouthome';
+import AboutAdmin from './pages/aboutadmin';
+import Aboutpublic from './pages/aboutpublic';
 
 function App(){
   return(
@@ -26,22 +27,26 @@ function App(){
         <AuthProvider>
           <BrowserRouter>
             <Routes>
+              {/* User */}
               <Route path="/" element={<Navigate replace to="/public"/>}/>
               <Route path="/public" element={<PubHome/>}/>
               <Route path="/home" element={<Home/>}/>
               <Route path="/history" element={<History/>}/>
               <Route path="/contact" element={<Contact/>}/>
 
+              {/* Admin */}
+              <Route path="/activityadmin" element={<ActivityInfoPage/>}/>
               <Route path="/createactivity" element={<CreateActivityAdmin/>}/>
               <Route path="/username" element={<UserName/>}/>
               <Route path="/oneuser" element={<OneUser/>}/>
               <Route path="/publiccontact" element={<PublicContact/>}/>
-              <Route path="/aboutpublicpage" element={<Aboutpublicpage/>}/>
-              <Route path="/abouthomepage" element={<Abouthomepage/>}/>
-
+              <Route path="/aboutpublic" element={<Aboutpublic/>}/>
+              <Route path="/abouthome" element={<Abouthome/>}/>
+              <Route path="/aboutadmin" element={<AboutAdmin/>}/>
+ 
+              {/* Web */}
               <Route path="/login" element={<Login/>}/>
               <Route path="/register" element={<Register/>}/>
-              <Route path="/activityadmin" element={<ActivityInfoPage/>}/>
             </Routes>
           </BrowserRouter>
         </AuthProvider>
