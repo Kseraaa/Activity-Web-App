@@ -65,12 +65,38 @@ function PubActivateDisplayArea() {
 return(
       <div>
         <Box sx={{ 
+          border:'1px dashed grey',
+          display: "flex",
+          flexDirection: "row",
+          mt: 5,
+          }}>
+          <Box sx={{ 
             border:'1px dashed grey',
+            width: 1000,
+            }}>
+            <Typography sx={{ fontSize: 140, fontWeight: 600, ml: 13 }} color="#FFF">
+              FANCIER
+            </Typography>
+            <Typography sx={{ fontSize: 30, fontWeight: 100, ml: 13 }} color="#FFF">
+              The best place to find indoor & outdoor activities <br/>
+              easy to use and register
+            </Typography>
+          </Box>
+          <Box sx={{ 
+            border:'1px dashed grey',
+            width: 1000,
+            }}>
+            รูปแมว
+          </Box>
+        </Box>
+
+        <Box sx={{ 
+            // border:'1px dashed grey',
             mt: 10,
           }}>
           <Grid container justifyContent= "center">
               <Card sx={{ 
-                  border:'1px dashed grey',
+                  // border:'1px dashed grey',
                   height: 'auto',
                   width: 'auto',
                   background: ' linear-gradient(217deg, rgba(182, 62, 238, 0.8), rgba(255,0,0,0) 100%),linear-gradient(127deg, rgba(0, 195, 255, 0.8), rgba(0,255,0,0) 100%),linear-gradient(336deg, rgb(63, 43, 245, 0.8), rgba(0,0,255,0) 100%);'

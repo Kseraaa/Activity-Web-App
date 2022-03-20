@@ -106,24 +106,24 @@ return (
                             >
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {navigate("/home");}}>
-                                        <Typography textAlign="center" color="black">กิจกรรม</Typography>
+                                        <Typography textAlign="center" color="black">Activities</Typography>
                                     </Box>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {navigate("/history");}}>
-                                        <Typography textAlign="center" color="black">ประวัติการเข้าร่วม</Typography>
+                                        <Typography textAlign="center" color="black">History</Typography>
                                     </Box>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {navigate("/contact");}}>
-                                        <Typography textAlign="center" color="black">ติดต่อ</Typography>
+                                        <Typography textAlign="center" color="black">Contact</Typography>
                                     </Box>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
-                                    <Box onClick={() => {navigate("/abouthomepage");}}>
+                                    <Box onClick={() => {navigate("/abouthome");}}>
                                         <Typography textAlign="center" color="black">About</Typography>
                                     </Box>
                                 </MenuItem>

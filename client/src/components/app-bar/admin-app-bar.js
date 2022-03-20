@@ -123,20 +123,26 @@ return (
                                 }}
                             >
                                 <MenuItem onClick={handleCloseNavMenu}>
-                                    <Box onClick={() => {navigate("/adminhome");}}>
-                                        <Typography textAlign="center" color="black">สร้าง</Typography>
+                                    <Box onClick={() => {navigate("/createactivity");}}>
+                                        <Typography textAlign="center" color="black">Create</Typography>
                                     </Box>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {navigate("/activityadmin");}}>
-                                        <Typography textAlign="center" color="black">รายชื่อกิจกรรม</Typography>
+                                        <Typography textAlign="center" color="black">List</Typography>
                                     </Box>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {navigate("/username");}}>
-                                        <Typography textAlign="center" color="black">รายชื่อผู้ใช้</Typography>
+                                        <Typography textAlign="center" color="black">User</Typography>
+                                    </Box>
+                                </MenuItem>
+
+                                <MenuItem onClick={handleCloseNavMenu}>
+                                    <Box onClick={() => {navigate("/aboutadmin");}}>
+                                        <Typography textAlign="center" color="black">About</Typography>
                                     </Box>
                                 </MenuItem>
                             </Menu>
