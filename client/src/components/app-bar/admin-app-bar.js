@@ -144,30 +144,13 @@ return (
                         </Box>
 
                         {/* box for app bar buttons */}
-                        <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' } }}>
+                        <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' }}} className="hover-underline">
                                 
-                                <Button
-                                    onClick= {() => {navigate("/createactivity");}}
-                                    sx={{fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
-                                >   
-                                    สร้าง
-                                </Button>
-
-                                <Button
-                                    onClick= {() => {navigate("/activityadmin");}}
-                                    sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
-                                >   
-                                    รายชื่อกิจกรรม
-                                </Button>
-
-                                <Button
-                                    onClick= {() => {navigate("/username");}}
-                                    sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
-                                >   
-                                    รายชื่อผู้ใช้
-                                </Button>
-
-                                
+                                <nav>
+                                    <a href='/createactivity'>Create</a>
+                                    <a href='/activityadmin'>List</a>
+                                    <a href='/username'>user</a>
+                                </nav>
                         </Box>
                         
                         {/* box for user profile */}                        

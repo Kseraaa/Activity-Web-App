@@ -128,24 +128,8 @@ return (
                                     <a href='/publiccontact'>Contact</a>
                                     <a href='/aboutpublicpage'>About</a>
                                 </nav>
+                            </Box>
 
-                                    {/* <Button
-                                        onClick= {() => {navigate("/public");}}
-                                        sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
-                                    >   
-                                        กิจกรรม
-                                    </Button>
-
-
-                                    <Button
-                                        onClick= {() => {navigate("/publiccontact");}}
-                                        sx={{ fontSize: 23, fontWeight: 500, mx: 2 ,my: 2, color: 'black', display: 'block' }}
-                                    >   
-                                        ติดต่อ
-                                    </Button> */}
-
-                                    
-                                </Box>
                         {/* ปุ่มสมัครสมาชิก */}                        
                         <Box sx={{ flexGrow: 0 }} position="right">
                             <Stack spacing={2} direction="row">
