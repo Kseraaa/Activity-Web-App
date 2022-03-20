@@ -14,6 +14,29 @@ import { useNavigate } from "react-router-dom";
 import styled from '@emotion/styled';
 import { TextField } from '@mui/material';
 
+const CssTextField = styled(TextField)({
+  '& label': {
+    color: 'black',
+  },
+  '& label.Mui-focused': {
+    color: 'white',
+  },
+  '& .MuiInput-underline:after': {
+    borderBottomColor: 'white',
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: 'black',
+    },
+    '&:hover fieldset': {
+      borderColor: 'white',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: 'white',
+    },
+  },
+});
+
 function PubActivateDisplayArea() {
 
   const [open, setOpen] = React.useState(false);
@@ -43,29 +66,6 @@ function PubActivateDisplayArea() {
   const handleClose = () => {
     setOpen(false);
   };
-
-  // const CssTextField = styled(TextField)({
-  //   '& label': {
-  //     color: 'white',
-  //   },
-  //   '& label.Mui-focused': {
-  //     color: 'white',
-  //   },
-  //   '& .MuiInput-underline:after': {
-  //     borderBottomColor: 'white',
-  //   },
-  //   '& .MuiOutlinedInput-root': {
-  //     '& fieldset': {
-  //       borderColor: 'black',
-  //     },
-  //     '&:hover fieldset': {
-  //       borderColor: 'white',
-  //     },
-  //     '&.Mui-focused fieldset': {
-  //       borderColor: 'white',
-  //     },
-  //   },
-  // });
 
   const styles = StyleSheet.create({
     baseText: {
@@ -154,7 +154,7 @@ return(
           </Grid>
 
               <Grid container justifyContent= "center">
-                <TextField
+                <CssTextField
                   id="search" 
                   label="Search" 
                   variant="outlined"
