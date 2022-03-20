@@ -78,8 +78,9 @@ function RegisterCard() {
                         <Typography 
                             variant="body1" 
                             sx={{ fontSize:16 }}>
-                            บัญชีผู้ใช้
+                            ชื่อบัญชีผู้ใช้
                         </Typography>
+                        
                         <Box
                             component="form"
                             sx={{'& > :not(style)': { m: 1, width: '25ch' }}}
@@ -88,11 +89,12 @@ function RegisterCard() {
                         >
                             <TextField 
                                 id="outlined-basic" 
-                                label="บัญชีผู้ใช้" 
+                                label="ชื่อบัญชีผู้ใช้" 
                                 variant="outlined" 
                                 onChange={e => setUsername(e.target.value)}
                             />
                         </Box>
+                        <Typography sx={{ fontSize:10, color:'#e53935'}} >* ชื่อบัญชีผู้ใช้ต้องเป็นภาษาอังกฤษ</Typography>
 
 
                         <Typography 
@@ -113,7 +115,7 @@ function RegisterCard() {
                                 onChange={e => setEmail(e.target.value)}   
                             />
                         </Box>
-
+                        <Typography sx={{ fontSize:10, color:'#e53935'}} >* ไม่สามารถใช้อีเมลเดิมในการลงทะเบียน</Typography>
 
                         <Typography 
                             variant="body1" 
