@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPencil, faUserGroup, faBook } from '@fortawesome/free-solid-svg-icons'
+import { faPencil, faUserGroup, faBook, faComment } from '@fortawesome/free-solid-svg-icons'
 
 document.body.className = "AnErrorHasOccured";
   
@@ -149,6 +149,7 @@ return (
                                     <a href='/createactivity'>Create <FontAwesomeIcon icon={faPencil}></FontAwesomeIcon></a>
                                     <a href='/activityadmin'>List <FontAwesomeIcon icon={faBook}></FontAwesomeIcon></a>
                                     <a href='/username'>User <FontAwesomeIcon icon={faUserGroup}></FontAwesomeIcon></a>
+                                    <a href='/aboutadmin'>About <FontAwesomeIcon icon={faComment}></FontAwesomeIcon></a>
                                 </nav>
                         </Box>
                         

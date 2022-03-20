@@ -3,7 +3,7 @@ import FooterBar from "../components/footer/footer-bar";
 import About from "../components/about/adout";
 import PannAppBar from "../components/app-bar/pann-app-bar";
 
-function Abouthomepage() {
+function Abouthome() {
     return(
         <Box sx={{ flexGrow: 1}}>
             <PannAppBar/>
@@ -13,4 +13,4 @@ function Abouthomepage() {
     )
 };
 
-export default Abouthomepage;
+export default Abouthome;

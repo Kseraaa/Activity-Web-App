@@ -3,7 +3,7 @@ import PublicAppBar from "../components/app-bar/public-app-bar";
 import About from "../components/about/adout";
 import PubFooterBar from "../components/footer/pubfooter-bar";
 
-function Aboutpublicpage() {
+function Aboutpublic() {
     return(
         <Box sx={{ flexGrow: 1}}>
             <PublicAppBar/>
@@ -13,4 +13,4 @@ function Aboutpublicpage() {
     )
 }
 
-export default Aboutpublicpage;
+export default Aboutpublic;

@@ -126,7 +126,7 @@ return (
                                 <nav>
                                     <a href='/public'>Activities <FontAwesomeIcon icon={faAward}></FontAwesomeIcon></a>
                                     <a href='/publiccontact'>Contact <FontAwesomeIcon icon={faUsers}></FontAwesomeIcon></a>
-                                    <a href='/aboutpublicpage'>About <FontAwesomeIcon icon={faComment}></FontAwesomeIcon></a>
+                                    <a href='/aboutpublic'>About <FontAwesomeIcon icon={faComment}></FontAwesomeIcon></a>
                                 </nav>
                             </Box>
 

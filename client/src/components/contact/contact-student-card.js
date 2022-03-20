@@ -39,10 +39,10 @@ function ContactStudentCard() {
                                     alt="1"
                                 />
                                 <CardContent>
-                                    <Typography variant="body1" color="black">
+                                    <Typography sx={{fontFamily:'Inconsolata',fontSize: 18}}variant="body1" color="black"  >
                                         Name: Nattapong Naksri <br />
-                                        Email: 6410110154@psu.ac.th <br />
                                         Phone: 098 0170180 <br />
+                                        Email: 6410110154@psu.ac.th <br />
                                         Department of Computer Engineering 
                                     </Typography>
                                 </CardContent>
@@ -50,7 +50,7 @@ function ContactStudentCard() {
                         </Card>
                     </Grid>
 
-                    <Grid item xs={2.38}>
+                    <Grid item xs={2.38 } >
                         <Card>
                             <CardActionArea>
                                 <CardMedia
@@ -61,7 +61,7 @@ function ContactStudentCard() {
                                     alt="2"
                                 />
                                 <CardContent>
-                                    <Typography variant="body1" color="black">
+                                    <Typography sx={{fontFamily:'Inconsolata',fontSize: 18}}variant="body1" color="black">
                                         Name: Thanapat Duongkaew <br />
                                         Phone: 091 8618713 <br />
                                         Email: 6410110204@psu.ac.th <br />
@@ -83,7 +83,7 @@ function ContactStudentCard() {
                                     alt="3"
                                 />
                                 <CardContent>
-                                    <Typography variant="body1" color="black">
+                                    <Typography sx={{fontFamily:'Inconsolata',fontSize: 18}}variant="body1" color="black">
                                         Name: Theeravee Pathomthaninphat <br/>
                                         Phone: 099 2310215 <br />
                                         Email: 6410110238@psu.ac.th <br />
@@ -105,7 +105,7 @@ function ContactStudentCard() {
                                     alt="4"
                                 />
                                 <CardContent>
-                                    <Typography variant="body1" color="black">
+                                    <Typography sx={{fontFamily:'Inconsolata',fontSize: 18}}variant="body1" color="black">
                                         Name: Patinya Limhao <br/>
                                         Phone: 061 1855153 <br />
                                         Email: 6410110294@psu.ac.th <br />
@@ -127,7 +127,7 @@ function ContactStudentCard() {
                                     alt="5"
                                 />
                                 <CardContent>
-                                    <Typography variant="body1" color="black">
+                                    <Typography sx={{fontFamily:'Inconsolata',fontSize: 18}}variant="body1" color="black">
                                         Name: Pattarachai Boriboon <br/>
                                         Phone: 062 3302875 <br />
                                         Email: 6410110384@psu.ac.th <br/>
@@ -176,7 +176,7 @@ function ContactStudentCard() {
                 <IconButton aria-label='phone' sx={{ mx: 'auto', color: "#FFF"}}>
                     <PhoneIcon/>
                 </IconButton>
-                <Typography sx={{ textAlign: 'center', color: "#FFF" }}>
+                <Typography sx={{ fontFamily:'Inconsolata',textAlign: 'center', color: "#FFF" }}>
                     Phone: 098 7654321
                 </Typography>
             </Box>
@@ -193,7 +193,7 @@ function ContactStudentCard() {
                 <IconButton aria-label='phone' sx={{ mx: 'auto', color: "#FFF" }}>
                     <EmailIcon/>
                 </IconButton>
-                <Typography sx={{ textAlign: 'center', color: "#FFF" }}>
+                <Typography sx={{ fontFamily:'Inconsolata',textAlign: 'center', color: "#FFF" }}>
                     Email: 6410110xxx@psu.ac.th
                 </Typography>
             </Box>
