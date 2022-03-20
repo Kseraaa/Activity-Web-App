@@ -89,18 +89,18 @@ return (
                             >
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {navigate("/public");}}>
-                                        <Typography textAlign="center" color="black">กิจกรรม</Typography>
+                                        <Typography textAlign="center" color="black">Activities</Typography>
                                     </Box>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {navigate("/publiccontact");}}>
-                                        <Typography textAlign="center" color="black">ติดต่อ</Typography>
+                                        <Typography textAlign="center" color="black">Contact</Typography>
                                     </Box>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
-                                    <Box onClick={() => {navigate("/aboutpublicpage");}}>
+                                    <Box onClick={() => {navigate("/aboutpublic");}}>
                                         <Typography textAlign="center" color="black">About</Typography>
                                     </Box>
                                 </MenuItem>
