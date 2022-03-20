@@ -14,6 +14,8 @@ import PubHome from './pages/pubhome';
 import PublicContact from './pages/contact2';
 import ActivityInfoPage from './pages/activityinfopage';
 import { AuthProvider } from './auth';
+import Aboutpublicpage from './pages/aboutpublicpage';
+import Abouthomepage from './pages/abouthomepage';
 
 function App(){
   return(
@@ -34,6 +36,8 @@ function App(){
               <Route path="/username" element={<UserName/>}/>
               <Route path="/oneuser" element={<OneUser/>}/>
               <Route path="/publiccontact" element={<PublicContact/>}/>
+              <Route path="/aboutpublicpage" element={<Aboutpublicpage/>}/>
+              <Route path="/abouthomepage" element={<Abouthomepage/>}/>
 
               <Route path="/login" element={<Login/>}/>
               <Route path="/register" element={<Register/>}/>

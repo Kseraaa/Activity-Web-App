@@ -99,6 +99,12 @@ return (
                                     </Box>
                                 </MenuItem>
 
+                                <MenuItem onClick={handleCloseNavMenu}>
+                                    <Box onClick={() => {navigate("/aboutpublicpage");}}>
+                                        <Typography textAlign="center" color="black">About</Typography>
+                                    </Box>
+                                </MenuItem>
+
                             </Menu>
                         </Box>
 
@@ -120,6 +126,7 @@ return (
                                 <nav>
                                     <a href='/public'>Activities</a>
                                     <a href='/publiccontact'>Contact</a>
+                                    <a href='/aboutpublicpage'>About</a>
                                 </nav>
 
                                     {/* <Button

@@ -121,6 +121,12 @@ return (
                                     </Box>
                                 </MenuItem>
 
+                                <MenuItem onClick={handleCloseNavMenu}>
+                                    <Box onClick={() => {navigate("/abouthomepage");}}>
+                                        <Typography textAlign="center" color="black">About</Typography>
+                                    </Box>
+                                </MenuItem>
+
                             </Menu>
                         </Box>
 
@@ -144,6 +150,7 @@ return (
                                     <a href='/home'>Activities</a>
                                     <a href='/history'>History</a>
                                     <a href='/contact'>Contact</a>
+                                    <a href='/abouthomepage'>About</a>
                                 </nav>
                         </Box>
 
