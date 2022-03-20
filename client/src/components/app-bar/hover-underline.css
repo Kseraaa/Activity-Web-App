@@ -6,7 +6,7 @@
 
 nav{
     width: auto;
-    min-width: 350px;
+    min-width: 550px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -19,7 +19,7 @@ a{
     color: black;
     font-size: 23px;
     font-weight: 500;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
     padding: 0 10px;
 }
 a::after{
