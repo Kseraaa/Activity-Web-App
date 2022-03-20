@@ -147,12 +147,7 @@ function LoginCard() {
                                     <td>
                                     <CardContent sx={{ width:50 }}>
                                         <div className="decoration-inside"/>
-                                        <br/>
-                                        <br/>
-                                        <br/>
-                                        <br/>
-                                        <br/>
-                                        <br/>
+                                        <br/><br/><br/><br/><br/><br/>
                                     </CardContent>
                                     </td>
                                     <td>
@@ -166,20 +161,7 @@ function LoginCard() {
                                                 onFailure={responseGoogle}
                                                 cookiePolicy={'single_host_origin'}
                                             />
-                                            <br/>
-                                            <br/>
-                                            <br/>
-                                            <br/>
-                                            <br/>
-                                            <br/>
-                                            <br/>
-                                            <br/>
-                                            <br/>
-                                            <br/>
-                                            <br/>
-                                            <br/>
-                                            <br/>
-                                            <br/>
+                                            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                                         </Box>
                                     </CardContent>
                                 </td>
