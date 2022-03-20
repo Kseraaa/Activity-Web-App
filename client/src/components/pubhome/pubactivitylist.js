@@ -170,13 +170,14 @@ return(
                             </Dialog>
                           </Stack>
                       </CardActions>
-           
+                      
+                      <CardContent sx={{ width:700 }}>
                       <Typography variant="h6" color='error.main' sx={{ fontFamily:'Mali',fontSize: 16 }}>
                         จำนวนที่นั่งเหลือ 0 ท่านยังสามารถลงทะเบียนเป็นที่นั่งสำรองได้
                         <br />
                         หากต้องการสละสิทธิ์ กรุณาติดต่อช่องทางใดช่องทางหนึ่ง
                       </Typography>
-                                        
+                      </CardContent>               
                   </Box>
             </Card>
             )
