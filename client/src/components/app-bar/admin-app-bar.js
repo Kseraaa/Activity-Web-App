@@ -149,7 +149,7 @@ return (
                                 <nav>
                                     <a href='/createactivity'>Create</a>
                                     <a href='/activityadmin'>List</a>
-                                    <a href='/username'>user</a>
+                                    <a href='/username'>User</a>
                                 </nav>
                         </Box>
                         

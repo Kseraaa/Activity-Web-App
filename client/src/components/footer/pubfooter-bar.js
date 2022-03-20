@@ -15,7 +15,7 @@ function PubFooterBar() {
                             <td>
                             <Container maxWidth="auto">
                                     <div className='col'>
-                                        <h3>Contact Us</h3>
+                                        <h2>Contact Us</h2>
                                         <ul className='list-unstyled'>
                                             <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' } }}>
                                                 <Avatar
@@ -42,9 +42,11 @@ function PubFooterBar() {
                             <td>
                             <Container maxWidth="auto">
                                 <Box sx={{fontSize:25,fontFamily:"Sarabun" ,mx: "auto" }}>
-                                    อยากลอง อยากทำ</Box>
+                                    อยากลอง อยากทำ
+                                </Box><br/>
                                 <Box sx={{fontSize:25,mx: "auto" ,fontFamily:"Sarabun"}}>
-                                    เลือกกิจกรรมที่ Fancier</Box>
+                                    เลือกกิจกรรมที่ Fancier
+                                </Box>
                             </Container>
                             </td>
 
@@ -52,7 +54,7 @@ function PubFooterBar() {
                             <td>
                             <FooterContainer maxWidth="auto">
                                 <div className='col'>
-                                    <h3>About Us</h3>
+                                    <h2>About Us</h2>
                                     <ul className='list-unstyled'>
                                         <div style={{ textDecoration: 'none' }}><a href='/public'>Activites</a></div><br/>
                                         <div style={{ textDecoration: 'none' }}><a href='/publiccontact'>Contact</a></div>
