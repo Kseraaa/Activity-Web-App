@@ -43,7 +43,7 @@ function PubFooterBar() {
                             <Container maxWidth="auto">
                                 <Box sx={{fontSize:25,fontFamily:"Sarabun" ,mx: "auto" }}>
                                     อยากลอง อยากทำ</Box>
-                                <Box sx={{fontSize:25,mx: "auto" }}>
+                                <Box sx={{fontSize:25,mx: "auto" ,fontFamily:"Sarabun"}}>
                                     เลือกกิจกรรมที่ Fancier</Box>
                             </Container>
                             </td>
