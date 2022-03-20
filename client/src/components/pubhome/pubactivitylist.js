@@ -35,25 +35,29 @@ function PubActivateDisplayArea() {
     baseText: {
       fontSize: '18px',
       fontWeight: 'bold',
-      color:'#0B46FF'
+      color:'#0B46FF',
+      fontFamily:'Mali',
       
     },
     passText: {
       fontSize: '18px',
       fontWeight: 'bold',
-      color:'green'
+      color:'green',
+      fontFamily:'Mali',
     },
 
     notpassText: {
       fontSize: '18px',
       fontWeight: 'bold',
-      color:'red'
+      color:'red',
+      fontFamily:'Mali',
     },
 
     waitText: {
       fontSize: '18px',
       fontWeight: 'bold',
-      color:'grey'
+      color:'grey',
+      fontFamily:'Mali',
     },
   });
 
@@ -95,22 +99,22 @@ return(
                   />
                   <Box sx={{ display:'flex', flexDirection:'column' ,background: 'linear-gradient(45deg, #ffffff 30%, #dfe2e8  90%)'}}>
                       <CardHeader
-                        titleTypographyProps={{fontSize: 36}}
+                        titleTypographyProps={{fontSize: 36,fontFamily:'Mali'}}
                         title={activitycard.name}
-                        subheaderTypographyProps={{fontSize: 18}}
+                        subheaderTypographyProps={{fontSize: 18,fontFamily:'Mali'}}
                         subheader={activitycard.description}
                       />
                       <CardContent sx={{ width:700 }}>
                         <Typography 
                           variant="body1" 
-                          sx={{ fontSize:18 }}>
+                          sx={{ fontSize:16 ,fontFamily:'Mali'}}>
                           ลงทะเบียน : เริ่ม {activitycard.register_time_start} | สิ้นสุด {activitycard.register_time_end}<br />
                           กิจกรรม : เริ่ม {activitycard.activity_time_start}  | สิ้นสุด {activitycard.activity_time_end}<br />
                           จำนวนผู้เข้าร่วมสูงสุด : {activitycard.max_participant} คน <br/>
                           ประเภท: {activitycard.activity_type.replace('FCFS','First come first serve').replace('C', 'Candidate')} <br/>
                         </Typography>
                     
-                        <Text style={styles.baseText}>
+                        <Text style={styles.baseText} >
                           สถานะ :
                           <Text style={styles.waitText}> รอการพิจารณา</Text>
                         </Text>  
@@ -119,7 +123,7 @@ return(
                       {/* ปุ่มลงทะเบียนและป็อปอัพ */}
                       <CardActions>
                           <Stack spacing={2} direction="row">
-                              <Button variant="contained" onClick={() => {navigate("/login");}}>
+                              <Button  sx={{ fontFamily:'Mali',fontSize: 15 }} variant="contained" onClick={() => {navigate("/login");}}>
                               ลงทะเบียน
                               </Button>
                             <Dialog
@@ -141,7 +145,7 @@ return(
                           </Stack>
                       </CardActions>
            
-                      <Typography variant="h6" color='error.main' sx={{ fontSize:16 }}>
+                      <Typography variant="h6" color='error.main' sx={{ fontFamily:'Mali',fontSize: 16 }}>
                         จำนวนที่นั่งเหลือ 0 ท่านยังสามารถลงทะเบียนเป็นที่นั่งสำรองได้
                         <br />
                         หากต้องการสละสิทธิ์ กรุณาติดต่อช่องทางใดช่องทางหนึ่ง
