@@ -11,6 +11,8 @@ import { Text, StyleSheet } from 'react-native';
 import Video from "../video/video";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import styled from '@emotion/styled';
+import { TextField } from '@mui/material';
 
 function PubActivateDisplayArea() {
 
@@ -27,9 +29,43 @@ function PubActivateDisplayArea() {
     getActivityCards();
   }, []);
 
+  const [filteredActivitycards, setFilteredActivitycards] = useState([])
+    const [search, setSearch] = useState("")
+
+  useEffect(() => {
+      setFilteredActivitycards(
+          activitycards.filter( activitycard => {
+              return activitycard.name.includes(search)
+          })
+      )
+  }, [search, activitycards])
+
   const handleClose = () => {
     setOpen(false);
   };
+
+  // const CssTextField = styled(TextField)({
+  //   '& label': {
+  //     color: 'white',
+  //   },
+  //   '& label.Mui-focused': {
+  //     color: 'white',
+  //   },
+  //   '& .MuiInput-underline:after': {
+  //     borderBottomColor: 'white',
+  //   },
+  //   '& .MuiOutlinedInput-root': {
+  //     '& fieldset': {
+  //       borderColor: 'black',
+  //     },
+  //     '&:hover fieldset': {
+  //       borderColor: 'white',
+  //     },
+  //     '&.Mui-focused fieldset': {
+  //       borderColor: 'white',
+  //     },
+  //   },
+  // });
 
   const styles = StyleSheet.create({
     baseText: {
@@ -59,8 +95,8 @@ function PubActivateDisplayArea() {
       color:'grey',
       fontFamily:'Mali',
     },
+    
   });
-
 
 return(
       <div>
@@ -117,67 +153,78 @@ return(
             </Typography>
           </Grid>
 
-          {activitycards.map((activitycard) => (
-            <Card key={activitycard.id} sx={{ mx:'auto', my:3,maxWidth: 1200 , display: 'flex' , bgcolor: 'grey'}} >
-                  <CardMedia sx={{maxWidth: 500, maxHeight: 'auto'}}
-                      component="img"
-                      image={activitycard.image}
-                  />
-                  <Box sx={{ display:'flex', flexDirection:'column' ,background: 'linear-gradient(45deg, #ffffff 30%, #dfe2e8  90%)'}}>
-                      <CardHeader
-                        titleTypographyProps={{fontSize: 36,fontFamily:'Mali'}}
-                        title={activitycard.name}
-                        subheaderTypographyProps={{fontSize: 18,fontFamily:'Mali'}}
-                        subheader={activitycard.description}
-                      />
-                      <CardContent sx={{ width:700 }}>
-                        <Typography 
-                          variant="body1" 
-                          sx={{ fontSize:18 ,fontFamily:'Mali'}}>
-                          ลงทะเบียน : เริ่ม {activitycard.register_time_start} | สิ้นสุด {activitycard.register_time_end}<br />
-                          กิจกรรม : เริ่ม {activitycard.activity_time_start}  | สิ้นสุด {activitycard.activity_time_end}<br />
-                          จำนวนผู้เข้าร่วมสูงสุด : {activitycard.max_participant} คน <br/>
-                          ประเภท: {activitycard.activity_type.replace('FCFS','First come first serve').replace('C', 'Candidate')} <br/>
-                        </Typography>
-                    
-                        <Text style={styles.baseText} >
-                          สถานะ :
-                          <Text style={styles.waitText}> รอการพิจารณา</Text>
-                        </Text>  
-                      </CardContent>
+              <Grid container justifyContent= "center">
+                <TextField
+                  id="search" 
+                  label="Search" 
+                  variant="outlined"
+                  sx={{ mx: "0%", my: "auto", width:1000 }}
+                  onChange={e => setSearch(e.target.value)}
+                />  
+              </Grid>
 
-                      {/* ปุ่มลงทะเบียนและป็อปอัพ */}
-                      <CardActions>
-                          <Stack spacing={2} direction="row">
-                              <Button  sx={{ fontFamily:'Mali',fontSize: 15 }} variant="contained" onClick={() => {navigate("/login");}}>
-                              ลงทะเบียน
-                              </Button>
-                            <Dialog
-                              open={open}
-                              onClose={handleClose}
-                              aria-labelledby="alert-dialog-title"
-                              aria-describedby="alert-dialog-description"
-                              maxWidth= 'md'
-                            >
-                              <DialogTitle id="alert-dialog-title" gutterBottom variant="h1" sx={{color: '#004AAD'}}>
-                                <Typography sx={{ fontSize: '50px'}} >
-                                  <h1>ลงทะเบียนสำเร็จ!!</h1>
-                                </Typography>
-                              </DialogTitle>
-                              <DialogActions >
-                                <Button sx={{ fontSize: '30px'}} onClick={handleClose} >กลับสู่หน้าหลัก </Button>
-                              </DialogActions>
-                            </Dialog>
-                          </Stack>
-                      </CardActions>
+      
+            {filteredActivitycards.map((activitycard) => (
+              <Card key={activitycard.id} sx={{ mx:'auto', my:3,maxWidth: 1200 , display: 'flex' , bgcolor: 'grey'}} >
+                    <CardMedia sx={{maxWidth: 500, maxHeight: 'auto'}}
+                        component="img"
+                        image={activitycard.image}
+                    />
+                    <Box sx={{ display:'flex', flexDirection:'column' ,background: 'linear-gradient(45deg, #ffffff 30%, #dfe2e8  90%)'}}>
+                        <CardHeader
+                          titleTypographyProps={{fontSize: 36,fontFamily:'Mali'}}
+                          title={activitycard.name}
+                          subheaderTypographyProps={{fontSize: 18,fontFamily:'Mali'}}
+                          subheader={activitycard.description}
+                        />
+                        <CardContent sx={{ width:700 }}>
+                          <Typography 
+                            variant="body1" 
+                            sx={{ fontSize:18 ,fontFamily:'Mali'}}>
+                            ลงทะเบียน : เริ่ม {activitycard.register_time_start} | สิ้นสุด {activitycard.register_time_end}<br />
+                            กิจกรรม : เริ่ม {activitycard.activity_time_start}  | สิ้นสุด {activitycard.activity_time_end}<br />
+                            จำนวนผู้เข้าร่วมสูงสุด : {activitycard.max_participant} คน <br/>
+                            ประเภท: {activitycard.activity_type.replace('FCFS','First come first serve').replace('C', 'Candidate')} <br/>
+                          </Typography>
                       
-                      <CardContent sx={{ width:700 }}>
-                      <Typography variant="h6" color='error.main' sx={{ fontFamily:'Mali',fontSize: 16 }}>
-                        จำนวนที่นั่งเหลือ 0 ท่านยังสามารถลงทะเบียนเป็นที่นั่งสำรองได้
-                        <br />
-                        หากต้องการสละสิทธิ์ กรุณาติดต่อช่องทางใดช่องทางหนึ่ง
-                      </Typography>
-                      </CardContent>               
+                          <Text style={styles.baseText} >
+                            สถานะ :
+                            <Text style={styles.waitText}> รอการพิจารณา</Text>
+                          </Text>  
+                        </CardContent>
+
+                        {/* ปุ่มลงทะเบียนและป็อปอัพ */}
+                        <CardActions>
+                            <Stack spacing={2} direction="row">
+                                <Button  sx={{ fontFamily:'Mali',fontSize: 15 }} variant="contained" onClick={() => {navigate("/login");}}>
+                                ลงทะเบียน
+                                </Button>
+                              <Dialog
+                                open={open}
+                                onClose={handleClose}
+                                aria-labelledby="alert-dialog-title"
+                                aria-describedby="alert-dialog-description"
+                                maxWidth= 'md'
+                              >
+                                <DialogTitle id="alert-dialog-title" gutterBottom variant="h1" sx={{color: '#004AAD'}}>
+                                  <Typography sx={{ fontSize: '50px'}} >
+                                    <h1>ลงทะเบียนสำเร็จ!!</h1>
+                                  </Typography>
+                                </DialogTitle>
+                                <DialogActions >
+                                  <Button sx={{ fontSize: '30px'}} onClick={handleClose} >กลับสู่หน้าหลัก </Button>
+                                </DialogActions>
+                              </Dialog>
+                            </Stack>
+                        </CardActions>
+                        
+                        <CardContent sx={{ width:700 }}>
+                        <Typography variant="h6" color='error.main' sx={{ fontFamily:'Mali',fontSize: 16 }}>
+                          จำนวนที่นั่งเหลือ 0 ท่านยังสามารถลงทะเบียนเป็นที่นั่งสำรองได้
+                          <br />
+                          หากต้องการสละสิทธิ์ กรุณาติดต่อช่องทางใดช่องทางหนึ่ง
+                        </Typography>
+                        </CardContent>               
                   </Box>
             </Card>
             )
