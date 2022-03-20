@@ -133,7 +133,7 @@ return(
                       <CardContent sx={{ width:700 }}>
                         <Typography 
                           variant="body1" 
-                          sx={{ fontSize:16 ,fontFamily:'Mali'}}>
+                          sx={{ fontSize:18 ,fontFamily:'Mali'}}>
                           ลงทะเบียน : เริ่ม {activitycard.register_time_start} | สิ้นสุด {activitycard.register_time_end}<br />
                           กิจกรรม : เริ่ม {activitycard.activity_time_start}  | สิ้นสุด {activitycard.activity_time_end}<br />
                           จำนวนผู้เข้าร่วมสูงสุด : {activitycard.max_participant} คน <br/>

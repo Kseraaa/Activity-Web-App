@@ -38,25 +38,29 @@ function ActivateDisplayArea() {
     baseText: {
       fontSize: '18px',
       fontWeight: 'bold',
-      color:'#0B46FF'
+      color:'#0B46FF',
+      fontFamily:'Mali',
       
     },
     passText: {
       fontSize: '18px',
       fontWeight: 'bold',
-      color:'green'
+      color:'green',
+      fontFamily:'Mali',
     },
 
     notpassText: {
       fontSize: '18px',
       fontWeight: 'bold',
-      color:'red'
+      color:'red',
+      fontFamily:'Mali',
     },
 
     waitText: {
       fontSize: '18px',
       fontWeight: 'bold',
-      color:'grey'
+      color:'grey',
+      fontFamily:'Mali',
     },
   });
 
@@ -91,15 +95,15 @@ return(
                     />
                     <Box sx={{ display:'flex', flexDirection:'column'  ,background: 'linear-gradient(45deg, #ffffff 30%, #dfe2e8  90%)'}}>
                         <CardHeader
-                          titleTypographyProps={{ fontFamily: 'Sarabun', fontSize: 36}}
+                          titleTypographyProps={{ fontFamily: 'Mali', fontSize: 36}}
                           title={activitycard.name}
-                          subheaderTypographyProps={{fontSize: 18}}
+                          subheaderTypographyProps={{fontSize: 18,fontFamily:'Mali'}}
                           subheader={activitycard.description}
                         />
                         <CardContent sx={{ width:700 }}>
                           <Typography 
                             variant="body1" 
-                            sx={{ fontSize:18 }}>
+                            sx={{ fontFamily:'Mali',fontSize:18 }}>
                             ลงทะเบียน : เริ่ม {activitycard.register_time_start} | สิ้นสุด {activitycard.register_time_end}<br />
                             กิจกรรม : เริ่ม {activitycard.activity_time_start}  | สิ้นสุด {activitycard.activity_time_end}<br />
                             จำนวนผู้เข้าร่วมสูงสุด : {activitycard.max_participant} คน <br/>
@@ -115,7 +119,7 @@ return(
                         {/* ปุ่มลงทะเบียนและป็อปอัพ */}
                         <CardActions>
                             <Stack spacing={2} direction="row">
-                              <Button variant="contained" onClick={handleClickOpen}>
+                              <Button sx={{ fontFamily:'Mali',fontSize: 15 }}variant="contained" onClick={handleClickOpen}>
                                 ลงทะเบียน
                               </Button>
                               <Dialog
@@ -138,8 +142,8 @@ return(
 
                         </CardActions>
             
-                        <Typography variant="h6" color='error.main' sx={{ fontSize:16 }}>
-                          <br />
+                        <Typography variant="h6" color='error.main' sx={{ fontFamily:'Mali',fontSize:16 }}>
+
                           หากต้องการสละสิทธิ์ กรุณาติดต่อช่องทางใดช่องทางหนึ่ง
                         </Typography>                     
                   </Box>
