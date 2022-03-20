@@ -12,6 +12,8 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from "react-router-dom";
 import './hover-underline.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAward, faUsers, faComment } from '@fortawesome/free-solid-svg-icons'
 
 import Stack from '@mui/material/Stack';
 
@@ -122,9 +124,9 @@ return (
                         {/* box for app bar buttons */}
                             <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' } }} className="hover-underline">
                                 <nav>
-                                    <a href='/public'>Activities</a>
-                                    <a href='/publiccontact'>Contact</a>
-                                    <a href='/aboutpublicpage'>About</a>
+                                    <a href='/public'>Activities <FontAwesomeIcon icon={faAward}></FontAwesomeIcon></a>
+                                    <a href='/publiccontact'>Contact <FontAwesomeIcon icon={faUsers}></FontAwesomeIcon></a>
+                                    <a href='/aboutpublicpage'>About <FontAwesomeIcon icon={faComment}></FontAwesomeIcon></a>
                                 </nav>
                             </Box>
 
@@ -133,6 +135,7 @@ return (
                             <Stack spacing={2} direction="row">
                                 <Box onClick={() => {navigate("/login");}}>
                                 <Button variant="contained">LOGIN</Button>
+                                <FontAwesomeIcon icon="fa-solid fa-bone" />
                                 </Box>
                             </Stack>
                         </Box>

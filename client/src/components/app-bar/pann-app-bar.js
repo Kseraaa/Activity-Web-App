@@ -12,8 +12,9 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from "react-router-dom";
-import Popover from '@mui/material/Popover';
-import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAward, faUsers, faComment, faCalendarDays } from '@fortawesome/free-solid-svg-icons'
+
 
 document.body.className = "AnErrorHasOccured";
 
@@ -147,10 +148,10 @@ return (
                         <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' }}} className="hover-underline">
                                 
                                 <nav>
-                                    <a href='/home'>Activities</a>
-                                    <a href='/history'>History</a>
-                                    <a href='/contact'>Contact</a>
-                                    <a href='/abouthomepage'>About</a>
+                                    <a href='/home'>Activities <FontAwesomeIcon icon={faAward}></FontAwesomeIcon></a>
+                                    <a href='/history'>History <FontAwesomeIcon icon={faCalendarDays}></FontAwesomeIcon></a>
+                                    <a href='/contact'>Contact <FontAwesomeIcon icon={faUsers}></FontAwesomeIcon></a>
+                                    <a href='/abouthomepage'>About <FontAwesomeIcon icon={faComment}></FontAwesomeIcon></a>
                                 </nav>
                         </Box>
 

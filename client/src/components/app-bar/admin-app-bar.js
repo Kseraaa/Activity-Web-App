@@ -11,11 +11,10 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from "react-router-dom";
-import TextField from '@mui/material/TextField';
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import { Card } from '@mui/material';
-import { CardContent } from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPencil, faUserGroup, faBook } from '@fortawesome/free-solid-svg-icons'
 
 document.body.className = "AnErrorHasOccured";
   
@@ -147,9 +146,9 @@ return (
                         <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' }}} className="hover-underline">
                                 
                                 <nav>
-                                    <a href='/createactivity'>Create</a>
-                                    <a href='/activityadmin'>List</a>
-                                    <a href='/username'>User</a>
+                                    <a href='/createactivity'>Create <FontAwesomeIcon icon={faPencil}></FontAwesomeIcon></a>
+                                    <a href='/activityadmin'>List <FontAwesomeIcon icon={faBook}></FontAwesomeIcon></a>
+                                    <a href='/username'>User <FontAwesomeIcon icon={faUserGroup}></FontAwesomeIcon></a>
                                 </nav>
                         </Box>
                         
