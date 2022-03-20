@@ -12,6 +12,8 @@ import React, { useEffect, useState } from "react";
 import { TextField } from '@mui/material';
 import { Grid } from '@mui/material';
 import styled from '@emotion/styled';
+import { Button } from '@mui/material';
+import { useParams } from 'react-router-dom';
 
 function renderRow1(props) {
   const { index, style } = props;
@@ -44,9 +46,6 @@ const CssTextField = styled(TextField)({
   '& label.Mui-focused': {
     color: 'white',
   },
-  '& .MuiInput-underline:after': {
-    borderBottomColor: 'white',
-  },
   '& .MuiOutlinedInput-root': {
     '& fieldset': {
       borderColor: 'black',
@@ -63,7 +62,6 @@ const CssTextField = styled(TextField)({
 export default function ActivityInfo() {
 
   const [activitycards, setActivitycards] = useState([])
-  const navigate = useNavigate()
 
   const getActivityCards = async () => {
       const response = await axios.get('http://localhost:8000/api/activities/')
@@ -74,16 +72,30 @@ export default function ActivityInfo() {
       getActivityCards();
   }, []);
 
+  // search
   const [filteredActivitycards, setFilteredActivitycards] = useState([])
-    const [search, setSearch] = useState("")
+  const [search, setSearch] = useState("")
 
   useEffect(() => {
       setFilteredActivitycards(
-          activitycards.filter( activitycard => {
-              return activitycard.name.includes(search)
+          activitycards.filter( searchcard => {
+              return searchcard.name.includes(search)
           })
       )
   }, [search, activitycards])
+  
+  // delete
+  const deleteCard = async (id, name) => {
+    const singlecardurl = 'http://localhost:8000/api/activities/'+id+'/'
+    const confirmation = window.confirm("ต้องการจะลบ"+name+"หรือไม่")
+    
+    if (confirmation == true) {
+      await axios.delete(singlecardurl)
+      alert(name + "ถูกลบเรียบร้อยแล้ว")
+      window.location.reload();
+      // console.log(id+"has been deleted")
+    }
+  }
 
   return (
       <Box>
@@ -97,8 +109,8 @@ export default function ActivityInfo() {
           />  
         </Grid>
 
-        {filteredActivitycards.map((activitycard) => (
-          <Card key={activitycard.id} sx={{ mx:'auto', my:2, maxWidth: 1000 , display: 'flex' , bgcolor: 'grey' }} >
+        {filteredActivitycards.map((searchcard) => (
+          <Card key={searchcard.id} sx={{ mx:'auto', my:2, maxWidth: 1000 , display: 'flex' , bgcolor: 'grey' }} >
             <Box sx={{ display:'flex', flexDirection:'column' }}>
               <CardContent sx={{ width:1000, pt: 1 }} >
                 <Typography
@@ -109,7 +121,7 @@ export default function ActivityInfo() {
                     ml: 2, 
                     mt: 1,
                   }}>
-                  {activitycard.name}
+                  {searchcard.name}
                 </Typography>
 
                 <Box sx={{ ml: 2, mb: 1 }}>
@@ -117,11 +129,11 @@ export default function ActivityInfo() {
                     variant="body1" 
                     sx={{ fontFamily: 'Sarabun', fontSize:16 }}
                   >
-                      ประเภทกิจกรรม: {activitycard.activity_type.replace("FCFS", "First come first serve")} <br />
-                      รายละเอียดกิจกรรม: {activitycard.description} <br />
-                      จำนวนคนเข้าร่วมสูงสุด: {activitycard.max_participant} <br />
-                      ระยะเวลาเปิดลงทะเบียน: {activitycard.register_time_start} - {activitycard.register_time_end} <br />
-                      ระยะเวลากิจกรรม: {activitycard.activity_time_start} - {activitycard.activity_time_end} <br />
+                      ประเภทกิจกรรม: {searchcard.activity_type.replace("FCFS", "First come first serve").replace("C", "Candidate")} <br />
+                      รายละเอียดกิจกรรม: {searchcard.description} <br />
+                      จำนวนคนเข้าร่วมสูงสุด: {searchcard.max_participant} <br />
+                      ระยะเวลาเปิดลงทะเบียน: {searchcard.register_time_start} - {searchcard.register_time_end} <br />
+                      ระยะเวลากิจกรรม: {searchcard.activity_time_start} - {searchcard.activity_time_end} <br />
                   </Typography>
                 </Box>
                   <Typography color="black" variant="body1" sx={{ fontFamily: 'Sarabun', fontSize:20 }} >
@@ -160,6 +172,14 @@ export default function ActivityInfo() {
                   {renderRow2}
                   </FixedSizeList>
                 </Box>
+
+                <Button 
+                  variant="contained" 
+                  color="error"
+                  onClick={() => deleteCard(searchcard.id, searchcard.name)}
+                >
+                  ลบกิจกรรม
+                </Button>
               </CardContent>
             </Box>
           </Card> ))}
