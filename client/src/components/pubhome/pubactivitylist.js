@@ -88,14 +88,14 @@ return(
                       component="img"
                       image={activitycard.image}
                   />
-                  <Box sx={{ display:'flex', flexDirection:'column' }}>
+                  <Box sx={{ display:'flex', flexDirection:'column' ,background: 'linear-gradient(45deg, #ffffff 30%, #dfe2e8  90%)'}}>
                       <CardHeader
                         titleTypographyProps={{fontSize: 36}}
                         title={activitycard.name}
                         subheaderTypographyProps={{fontSize: 18}}
                         subheader={activitycard.description}
                       />
-                      <CardContent sx={{ width:650 }}>
+                      <CardContent sx={{ width:700 }}>
                         <Typography 
                           variant="body1" 
                           sx={{ fontSize:18 }}>
