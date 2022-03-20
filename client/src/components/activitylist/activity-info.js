@@ -13,7 +13,7 @@ import { TextField } from '@mui/material';
 import { Grid } from '@mui/material';
 import styled from '@emotion/styled';
 import { Button } from '@mui/material';
-import { useParams } from 'react-router-dom';
+
 
 function renderRow1(props) {
   const { index, style } = props;
@@ -89,7 +89,7 @@ export default function ActivityInfo() {
     const singlecardurl = 'http://localhost:8000/api/activities/'+id+'/'
     const confirmation = window.confirm("ต้องการจะลบ"+name+"หรือไม่")
     
-    if (confirmation == true) {
+    if (confirmation === true) {
       await axios.delete(singlecardurl)
       alert(name + "ถูกลบเรียบร้อยแล้ว")
       window.location.reload();
