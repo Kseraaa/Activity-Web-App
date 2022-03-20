@@ -82,7 +82,7 @@ return(
               </Card>
           </Grid>
         </Box>
-        <Box sx={{ mx: 'auto', mt: 115 }}>
+        <Box sx={{ mx: 'auto', mt: 10 }}>
             {activitycards.map((activitycard) => (
               <Card key={activitycard.id} sx={{ mx:'auto', my:3 ,maxWidth: 1200 , display: 'flex' , bgcolor: 'grey'}} >
                 <CardMedia sx={{maxWidth: 500, maxHeight: 'auto'}}
