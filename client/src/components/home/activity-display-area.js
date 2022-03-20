@@ -130,12 +130,12 @@ return(
                                 maxWidth= 'md'
                               >
                                 <DialogTitle id="alert-dialog-title" gutterBottom variant="h1" sx={{color: '#004AAD'}}>
-                                  <Typography sx={{ fontSize: '50px'}} >
+                                  <Typography sx={{ fontFamily:'Mali',fontSize: '50px'}} >
                                     <h1>ลงทะเบียนสำเร็จ!!</h1>
                                   </Typography>
                                 </DialogTitle>
                                 <DialogActions >
-                                  <Button sx={{ fontSize: '30px'}} onClick={handleClose} >กลับสู่หน้าหลัก </Button>
+                                  <Button sx={{ fontFamily:'Mali',fontSize: '30px'}} onClick={handleClose} >กลับสู่หน้าหลัก </Button>
                                 </DialogActions>
                               </Dialog>
                             </Stack>
