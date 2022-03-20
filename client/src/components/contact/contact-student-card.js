@@ -5,16 +5,8 @@ import EmailIcon from '@mui/icons-material/Email';
 function ContactStudentCard() {
     return(
         <div>
-            {/* <Card sx={{ bgcolor:"#000000" }}>
-                <CardContent>
-                    <Typography  mx="40rem"sx={{ fontSize: 100 }} color="#FFF" gutterBottom>
-                    สมาชิกในทีม
-                    </Typography>
-                </CardContent>
-
-            </Card> */}
             <Grid container justifyContent= "center">
-                <Typography sx={{ fontSize: 100, fontWeight: 600, mx: 'auto' }} color="#FFF">
+                <Typography sx={{ fontSize: 100, fontWeight: 600, mx: 'auto', mt: 2}} color="#FFF">
                     MEMBERS
                 </Typography>
             </Grid>

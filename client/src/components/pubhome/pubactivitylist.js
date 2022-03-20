@@ -1,4 +1,4 @@
-import { CardHeader, Dialog, DialogActions, DialogTitle, Stack } from "@mui/material"
+import { CardHeader, Dialog, DialogActions, DialogTitle, Grid, Stack } from "@mui/material"
 import React, { useEffect, useState } from "react";
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
@@ -11,7 +11,6 @@ import { Text, StyleSheet } from 'react-native';
 import Video from "../video/video";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import { Grid } from "@mui/material";
 
 function PubActivateDisplayArea() {
 
@@ -82,6 +81,12 @@ return(
         </Box>
         
         <Box sx={{ mx: 'auto', my: 10 }}>
+          <Grid container justifyContent= "center">
+            <Typography sx={{ fontSize: 100, fontWeight: 600, mx: 'auto' }} color="#FFF">
+              ACTIVITIES
+            </Typography>
+          </Grid>
+
           {activitycards.map((activitycard) => (
             <Card key={activitycard.id} sx={{ mx:'auto', my:3,maxWidth: 1200 , display: 'flex' , bgcolor: 'grey'}} >
                   <CardMedia sx={{maxWidth: 500, maxHeight: 'auto'}}
