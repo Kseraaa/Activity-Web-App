@@ -54,9 +54,9 @@ function FooterBar() {
                                 <div className='col'>
                                     <h3>About Us</h3>
                                     <ul className='list-unstyled'>
-                                        <div style={{ textDecoration: 'none' }}><a href='/home'>กิจกรรม</a></div><br/>
-                                        <div style={{ textDecoration: 'none' }}><a href='/history'>ประวัติการเข้าร่วมกิจกรรม</a></div><br/>
-                                        <div style={{ textDecoration: 'none' }}><a href='/contact'>ติดต่อ</a></div>
+                                        <div style={{ textDecoration: 'none' }}><a href='/home'>Activites</a></div><br/>
+                                        <div style={{ textDecoration: 'none' }}><a href='/history'>History</a></div><br/>
+                                        <div style={{ textDecoration: 'none' }}><a href='/contact'>Contact</a></div>
                                     </ul>
                                 </div>
                             </FooterContainer>
