@@ -13,11 +13,26 @@ import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from "react-router-dom";
 import './hover-underline.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { makeStyles } from '@mui/styles';
 import { faAward, faUsers, faComment } from '@fortawesome/free-solid-svg-icons'
 
 import Stack from '@mui/material/Stack';
 
 document.body.className = "AnErrorHasOccured";
+
+const useStyles = makeStyles({
+    root: {
+      background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+      border: 0,
+      borderRadius: 3,
+      boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+      color: 'white',
+      height: 48,
+      padding: '0 30px',
+    },
+  });
+
+
 
 const PublicAppBar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -31,6 +46,8 @@ const PublicAppBar = () => {
     };
 
     const navigate = useNavigate();
+
+    const classes = useStyles();
         
 return (
             <AppBar position="static" color='grey'>
@@ -134,7 +151,7 @@ return (
                         <Box sx={{ flexGrow: 0 }} position="right">
                             <Stack spacing={2} direction="row">
                                 <Box onClick={() => {navigate("/login");}}>
-                                <Button variant="contained">LOGIN</Button>
+                                <Button className={classes.root}>LOGIN</Button>
                                 <FontAwesomeIcon icon="fa-solid fa-bone" />
                                 </Box>
                             </Stack>
