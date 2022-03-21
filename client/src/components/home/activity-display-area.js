@@ -10,6 +10,31 @@ import { Button, Grid } from "@mui/material";
 import { Text, StyleSheet } from 'react-native';
 import Video from "../video/video";
 import axios from 'axios';
+import styled from '@emotion/styled';
+import { TextField } from '@mui/material';
+
+const CssTextField = styled(TextField)({
+  '& label': {
+    color: 'black',
+  },
+  '& label.Mui-focused': {
+    color: 'white',
+  },
+  '& .MuiInput-underline:after': {
+    borderBottomColor: 'white',
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: 'black',
+    },
+    '&:hover fieldset': {
+      borderColor: 'white',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: 'white',
+    },
+  },
+});
 
 function ActivateDisplayArea() {
 
@@ -33,6 +58,17 @@ function ActivateDisplayArea() {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const [filteredActivitycards, setFilteredActivitycards] = useState([])
+    const [search, setSearch] = useState("")
+
+  useEffect(() => {
+      setFilteredActivitycards(
+          activitycards.filter( activitycard => {
+              return activitycard.name.includes(search)
+          })
+      )
+  }, [search, activitycards])
 
   const styles = StyleSheet.create({
     baseText: {
@@ -129,8 +165,27 @@ return(
               </Card>
           </Grid>
         </Box>
+
+        <Box sx={{ mx: 'auto', my: 10 }}>
+          <Grid container justifyContent= "center">
+            <Typography sx={{ fontSize: 100, fontWeight: 600, mx: 'auto' }} color="#FFF">
+              ACTIVITIES
+            </Typography>
+          </Grid>
+
+            <Grid container justifyContent= "center">
+                  <CssTextField
+                    id="search" 
+                    label="Search" 
+                    variant="outlined"
+                    sx={{ mx: "0%", my: "auto", width:1000 }}
+                    onChange={e => setSearch(e.target.value)}
+                  />  
+                </Grid> 
+        </Box>
+
         <Box sx={{ mx: 'auto', mt: 10 }}>
-            {activitycards.map((activitycard) => (
+            {filteredActivitycards.map((activitycard) => (
               <Card key={activitycard.id} sx={{ mx:'auto', my:3 ,maxWidth: 1200 , display: 'flex' , bgcolor: 'grey'}} >
                 <CardMedia sx={{maxWidth: 500, maxHeight: 'auto'}}
                         component="img"
