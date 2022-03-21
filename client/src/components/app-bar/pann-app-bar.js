@@ -121,25 +121,25 @@ return (
                             >
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {navigate("/home");}}>
-                                        <Typography textAlign="center" color="black">Activities</Typography>
+                                        <Typography textAlign="center" color="black"><FontAwesomeIcon icon={faAward}></FontAwesomeIcon> Activities</Typography>
                                     </Box>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {navigate("/history");}}>
-                                        <Typography textAlign="center" color="black">History</Typography>
+                                        <Typography textAlign="center" color="black"><FontAwesomeIcon icon={faCalendarDays}></FontAwesomeIcon> History</Typography>
                                     </Box>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {navigate("/contact");}}>
-                                        <Typography textAlign="center" color="black">Contact</Typography>
+                                        <Typography textAlign="center" color="black"><FontAwesomeIcon icon={faUsers}></FontAwesomeIcon> Contact</Typography>
                                     </Box>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {navigate("/abouthome");}}>
-                                        <Typography textAlign="center" color="black">About</Typography>
+                                        <Typography textAlign="center" color="black"><FontAwesomeIcon icon={faComment}></FontAwesomeIcon> About</Typography>
                                     </Box>
                                 </MenuItem>
 
