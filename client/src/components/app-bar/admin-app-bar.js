@@ -14,9 +14,22 @@ import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPencil, faUserGroup, faBook, faComment } from '@fortawesome/free-solid-svg-icons'
+import { makeStyles } from '@mui/styles';
+import { faPencil, faUserGroup, faBook, faComment, faUser, faCircleUser} from '@fortawesome/free-solid-svg-icons'
 
 document.body.className = "AnErrorHasOccured";
+
+const useStyles = makeStyles({
+    root: {
+      background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+      border: 0,
+      borderRadius: 3,
+      boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+      color: 'white',
+      height: 48,
+      padding: '0 30px',
+    },
+  });
   
 export default function AdminAppBar(props) {
 
@@ -69,6 +82,8 @@ export default function AdminAppBar(props) {
             })
         )
     }, [search, activitycards])
+
+    const classes = useStyles();
 
 return ( 
             <AppBar position="static" color='grey' >
@@ -163,7 +178,7 @@ return (
                         <Box sx={{ flexGrow: 0 }}>
                             <Tooltip title="Menu">
                                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 1.5 }}>
-                                    <Avatar alt="Admin" src="/static/images/avatar/2.jpg" />
+                                    <FontAwesomeIcon icon={faCircleUser}></FontAwesomeIcon>
                                 </IconButton>
                             </Tooltip>
                             
@@ -186,7 +201,7 @@ return (
                                 <MenuItem onClick={handleCloseUserMenu}>
                                     <Typography textAlign="center">
                                         {/* name : {user.username} <br /> */}
-                                        <Button onClick= {handleLogout}>Logout</Button>
+                                        <Button onClick= {handleLogout} className={classes.root}>Logout</Button>
                                     </Typography>
                                 </MenuItem>
                             </Menu>
