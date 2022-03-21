@@ -68,6 +68,49 @@ function ActivateDisplayArea() {
 return(
       <div>
           <Box sx={{ 
+            display: "flex",
+            flexDirection: "row",
+            mt: 5,
+            }}>
+            <Box sx={{ 
+              width: 1200,
+              }}>
+              <Typography sx={{ fontSize: 140, fontWeight: 600, ml: '35%' }} color="#FFF">
+                FANCIER
+              </Typography>
+              <Typography sx={{ fontSize: 30, fontWeight: 100, ml: '35%' }} color="#FFF">
+                Activity Registration
+              </Typography>
+            </Box>
+            <Box sx={{ 
+              width: 1000,
+              }}>
+              <div class="container">
+                  <div class="kitty">
+                      <div class="face">
+                          <div class="ear"></div>
+                          <div class="eye"></div>
+                          <div class="mouth">
+                              <div class="nose"></div>
+                              <div class="whisker-1"></div>
+                              <div class="whisker-2"></div>
+                          </div>
+                          <div class="body">
+                              <div class="hand">
+                                  <div class="hand-l"></div>
+                                  <div class="hand-r"></div>
+                              </div>
+                          </div>
+                          <div class="tail"></div>
+                      </div>
+                      <div class="laptop">
+                          <div class="logo"></div>
+                      </div>
+                  </div>
+              </div>
+            </Box>
+          </Box>
+          <Box sx={{ 
             border:'1px dashed grey',
             mt: 10,
           }}>
