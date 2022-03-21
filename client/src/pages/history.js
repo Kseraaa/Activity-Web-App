@@ -8,6 +8,7 @@ function History(){
         <Box sx={{ flexGrow: 1}}>
             <PannAppBar/><br/>
             <HistoryCard/>
+            <br/><br/><br/><br/><br/><br/>
             <FooterBar/>
         </Box>
     )

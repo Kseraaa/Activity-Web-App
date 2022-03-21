@@ -8,6 +8,7 @@ function Aboutpublic() {
         <Box sx={{ flexGrow: 1}}>
             <PublicAppBar/>
             <About/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/>
             <PubFooterBar/>
         </Box>
     )

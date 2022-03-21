@@ -8,6 +8,7 @@ function Abouthome() {
         <Box sx={{ flexGrow: 1}}>
             <PannAppBar/>
             <About/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/>
             <FooterBar/>
         </Box>
     )

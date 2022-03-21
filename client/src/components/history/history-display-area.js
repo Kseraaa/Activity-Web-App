@@ -20,8 +20,8 @@ export default function RowAndColumnSpacing() {
         <Grid container rowSpacing={ 4 } columnSpacing={{ xs: 1, sm: 2, md: 4 }}>
           <Grid item xs={3}>
             <Item><HistoryCard/></Item>
-            </Grid>         
-          </Grid><br/ >
+            </Grid>
+          </Grid>
         </Container>
     );
 } 
