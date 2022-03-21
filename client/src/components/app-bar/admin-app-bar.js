@@ -139,25 +139,25 @@ return (
                             >
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {navigate("/createactivity");}}>
-                                        <Typography textAlign="center" color="black"><FontAwesomeIcon icon={faPencil}></FontAwesomeIcon> Create</Typography>
+                                        <Typography textAlign="center" color="black">Create <FontAwesomeIcon icon={faPencil}></FontAwesomeIcon></Typography>
                                     </Box>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {navigate("/activityadmin");}}>
-                                        <Typography textAlign="center" color="black"><FontAwesomeIcon icon={faBook}></FontAwesomeIcon> List</Typography>
+                                        <Typography textAlign="center" color="black">List <FontAwesomeIcon icon={faBook}></FontAwesomeIcon></Typography>
                                     </Box>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {navigate("/username");}}>
-                                        <Typography textAlign="center" color="black"><FontAwesomeIcon icon={faUserGroup}></FontAwesomeIcon> User</Typography>
+                                        <Typography textAlign="center" color="black">User <FontAwesomeIcon icon={faUserGroup}></FontAwesomeIcon></Typography>
                                     </Box>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {navigate("/aboutadmin");}}>
-                                        <Typography textAlign="center" color="black"><FontAwesomeIcon icon={faComment}></FontAwesomeIcon> About</Typography>
+                                        <Typography textAlign="center" color="black">About <FontAwesomeIcon icon={faComment}></FontAwesomeIcon></Typography>
                                     </Box>
                                 </MenuItem>
                             </Menu>

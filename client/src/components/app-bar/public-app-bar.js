@@ -106,19 +106,19 @@ return (
                             >
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {navigate("/public");}}>
-                                        <Typography textAlign="center" color="black"><FontAwesomeIcon icon={faAward}></FontAwesomeIcon> Activities</Typography>
+                                        <Typography textAlign="center" color="black">Activities <FontAwesomeIcon icon={faAward}></FontAwesomeIcon></Typography>
                                     </Box>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {navigate("/publiccontact");}}>
-                                        <Typography textAlign="center" color="black"><FontAwesomeIcon icon={faUsers}></FontAwesomeIcon> Contact</Typography>
+                                        <Typography textAlign="center" color="black">Contact <FontAwesomeIcon icon={faUsers}></FontAwesomeIcon></Typography>
                                     </Box>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Box onClick={() => {navigate("/aboutpublic");}}>
-                                        <Typography textAlign="center" color="black"><FontAwesomeIcon icon={faComment}></FontAwesomeIcon> About</Typography>
+                                        <Typography textAlign="center" color="black">About <FontAwesomeIcon icon={faComment}></FontAwesomeIcon></Typography>
                                     </Box>
                                 </MenuItem>
 
