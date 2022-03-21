@@ -13,6 +13,7 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import styled from '@emotion/styled';
 import { TextField } from '@mui/material';
+import '../kittyanimation/kitty-style.css'
 
 const CssTextField = styled(TextField)({
   '& label': {
@@ -101,28 +102,47 @@ function PubActivateDisplayArea() {
 return(
       <div>
         <Box sx={{ 
-          border:'1px dashed grey',
+          
           display: "flex",
           flexDirection: "row",
           mt: 5,
           }}>
           <Box sx={{ 
-            border:'1px dashed grey',
-            width: 1000,
+            width: 1200,
             }}>
-            <Typography sx={{ fontSize: 140, fontWeight: 600, ml: 13 }} color="#FFF">
+            <Typography sx={{ fontSize: 140, fontWeight: 600, ml: '35%' }} color="#FFF">
               FANCIER
             </Typography>
-            <Typography sx={{ fontSize: 30, fontWeight: 100, ml: 13 }} color="#FFF">
-              The best place to find indoor & outdoor activities <br/>
-              easy to use and register
+            <Typography sx={{ fontSize: 30, fontWeight: 100, ml: '35%' }} color="#FFF">
+              Activity Registration
             </Typography>
           </Box>
           <Box sx={{ 
-            border:'1px dashed grey',
             width: 1000,
             }}>
-            รูปแมว
+            <div class="container">
+                <div class="kitty">
+                    <div class="face">
+                        <div class="ear"></div>
+                        <div class="eye"></div>
+                        <div class="mouth">
+                            <div class="nose"></div>
+                            <div class="whisker-1"></div>
+                            <div class="whisker-2"></div>
+                        </div>
+                        <div class="body">
+                            <div class="hand">
+                                <div class="hand-l"></div>
+                                <div class="hand-r"></div>
+                            </div>
+                        </div>
+                        <div class="tail"></div>
+                    </div>
+                    <div class="laptop">
+                        <div class="logo"></div>
+                    </div>
+                </div>
+            </div>
           </Box>
         </Box>
 
