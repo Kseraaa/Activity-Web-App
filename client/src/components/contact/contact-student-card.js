@@ -2,6 +2,8 @@ import { Box, Card, CardContent, CardActionArea, CardMedia, Typography, Grid, Ic
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 
+import '../kittyanimation/owl.css'
+
 function ContactStudentCard() {
     return(
         <div>
@@ -17,7 +19,27 @@ function ContactStudentCard() {
                 <Typography sx={{ fontSize: 100, fontWeight: 600, mx: 'auto' }} color="#FFF">
                     MEMBERS
                 </Typography>
+                <div className="thecontainer">
+                <div className='branch'>
+                    <div></div>
+                </div>
+                <div className='owl'>
+                    <div className='ear-l'></div>
+                    <div className='ear-r'></div>
+                    <div className='wing-l'></div>
+                    <div className='wing-r'></div>
+                    <div className='eye-l'>
+                        <div className='eyeball'></div>
+                        <div className='eyelid'></div>
+                    </div>
+                    <div className='eye-r'>
+                        <div className='eyeball'></div>
+                        <div className='eyelid'></div>
+                    </div>
+                </div>
+            </div>
             </Grid>
+
             <Box
                 sx={{
                     display: 'flex',
