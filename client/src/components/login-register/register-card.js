@@ -90,6 +90,7 @@ function RegisterCard() {
                             <TextField 
                                 id="outlined-basic" 
                                 label="ชื่อบัญชีผู้ใช้" 
+                                type="text"
                                 variant="outlined" 
                                 onChange={e => setUsername(e.target.value)}
                             />

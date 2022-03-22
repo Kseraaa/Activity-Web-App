@@ -53,7 +53,7 @@ function LoginCard() {
                     'Authorization': `Bearer ${result.data.access}`
                 }
             })
-            localStorage.setItem('user', JSON.stringify(response.data));
+            localStorage.setItem('guessuser', JSON.stringify(response.data));
             console.log(response.data)
             if ( response.data.is_staff === true ) {
                 console.log('Hi! Admin')

@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import { Box } from "@mui/system";
 import CardActions from '@mui/material/CardActions';
 import { Button } from "@mui/material";
-import { Dialog, DialogActions, DialogTitle } from "@mui/material"
 import { styled } from '@mui/material/styles';
 import axios from "axios";
 
@@ -16,12 +15,6 @@ import axios from "axios";
 const Input = styled('input')({
   display: 'none',
 });
-
-// function errorMessage() {
-//     const error400 = () => {
-//       alert("ควย")
-//     }
-// };
 
 function CreateActivity() {
 
@@ -334,19 +327,19 @@ function CreateActivity() {
                       <TextField
                         id="regis-time-start-date"
                         type="number"
-                        label="ํDATE"
+                        label="ํDATE : dd"
                         onChange={handleChangeRegis_time_start_date}
                         />
                       <TextField
                         id="regis-time-start-month"
                         type="number"
-                        label="MONTH" 
+                        label="MONTH : MM" 
                         onChange={handleChangeRegis_time_start_month}
                         />
                       <TextField
                         id="regis-time-start-year"
                         type="number"
-                        label="YEAR"
+                        label="YEAR : yyyy"
                         onChange={handleChangeRegis_time_start_year}
                         />
                     </Box>
@@ -354,13 +347,13 @@ function CreateActivity() {
                       <TextField
                         id="regis-time-start-hour"
                         type="number"
-                        label="ํHOUR" 
+                        label="ํHOUR : hh" 
                         onChange={handleChangeRegis_time_start_hour}
                         />
                       <TextField
                         id="regis-time-start-minute"
                         type="number"
-                        label="ํMINUTE" 
+                        label="ํMINUTE : mm" 
                         onChange={handleChangeRegis_time_start_minute}
                         />
                     </Box>
@@ -375,19 +368,19 @@ function CreateActivity() {
                       <TextField
                         id="regis-time-end-date"
                         type="number"
-                        label="ํDATE" 
+                        label="ํDATE : dd" 
                         onChange={handleChangeRegis_time_end_date}
                         />
                       <TextField
                         id="regis-time-end-month"
                         type="number"
-                        label="MONTH" 
+                        label="MONTH : MM" 
                         onChange={handleChangeRegis_time_end_month}
                         />
                       <TextField
                         id="regis-time-end-year"
                         type="number"
-                        label="YEAR"
+                        label="YEAR : yyyy"
                         onChange={handleChangeRegis_time_end_year}
                         />
                     </Box>
@@ -395,13 +388,13 @@ function CreateActivity() {
                       <TextField
                         id="regis-time-end-hour"
                         type="number"
-                        label="ํHOUR" 
+                        label="ํHOUR : hh" 
                         onChange={handleChangeRegis_time_end_hour}
                         />
                       <TextField
                         id="regis-time-end-minute"
                         type="number"
-                        label="ํMINUTE"
+                        label="ํMINUTE : mm"
                         onChange={handleChangeRegis_time_end_minute}
                         />
                     </Box>
@@ -425,19 +418,19 @@ function CreateActivity() {
                       <TextField
                         id="activity-time-start-date"
                         type="number"
-                        label="ํDATE" 
+                        label="ํDATE : dd" 
                         onChange={handleChangeActivity_time_start_date}
                         />
                       <TextField
                         id="activity-time-start-month"
                         type="number"
-                        label="MONTH" 
+                        label="MONTH : MM" 
                         onChange={handleChangeActivity_time_start_month}
                         />
                       <TextField
                         id="activity-time-start-year"
                         type="number"
-                        label="YEAR"
+                        label="YEAR : yyyy"
                         onChange={handleChangeActivity_time_start_year}
                         />
                     </Box>
@@ -445,13 +438,13 @@ function CreateActivity() {
                       <TextField
                         id="activity-time-start-hour"
                         type="number"
-                        label="ํHOUR" 
+                        label="ํHOUR : hh" 
                         onChange={handleChangeActivity_time_start_hour}
                         />
                       <TextField
                         id="activity-time-start-minute"
                         type="number"
-                        label="ํMINUTE" 
+                        label="ํMINUTE : mm" 
                         onChange={handleChangeActivity_time_start_minute}
                         />
                     </Box>
@@ -466,19 +459,19 @@ function CreateActivity() {
                       <TextField
                         id="activity-time-end-date"
                         type="number"
-                        label="ํDATE" 
+                        label="ํDATE : dd" 
                         onChange={handleChangeActivity_time_end_date}
                         />
                       <TextField
                         id="activity-time-end-month"
                         type="number"
-                        label="MONTH" 
+                        label="MONTH : MM" 
                         onChange={handleChangeActivity_time_end_month}
                         />
                       <TextField
                         id="activity-time-end-year"
                         type="number"
-                        label="YEAR"
+                        label="YEAR : yyyy"
                         onChange={handleChangeActivity_time_end_year}
                         />
                     </Box>
@@ -486,13 +479,13 @@ function CreateActivity() {
                       <TextField
                         id="activity-time-end-hour"
                         type="number"
-                        label="ํHOUR" 
+                        label="ํHOUR : hh" 
                         onChange={handleChangeActivity_time_end_hour}
                         />
                       <TextField
                         id="activity-time-end-minute"
                         type="number"
-                        label="ํMINUTE" 
+                        label="ํMINUTE : mm" 
                         onChange={handleChangeActivity_time_end_minute}
                         />
                     </Box>

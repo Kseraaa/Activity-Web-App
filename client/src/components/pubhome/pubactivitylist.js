@@ -114,7 +114,7 @@ return(
               FANCIER
             </Typography>
             <Typography sx={{ fontSize: 30, fontWeight: 100, ml: '35%' }} color="#FFF">
-              Activity Registration
+              Activity Registration เว็บลงทะเบียนกิจกรรม
             </Typography>
           </Box>
           <Box sx={{ 
