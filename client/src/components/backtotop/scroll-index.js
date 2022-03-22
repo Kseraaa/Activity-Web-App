@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useWindowScroll } from "react-use";
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import '../../App.css'
 
 const ScrollToTop = () => {
     const { y: pageYOffset } = useWindowScroll();
@@ -25,7 +27,7 @@ const ScrollToTop = () => {
             className="scroll-to-top cursor-pointer text-center"
             onClick={scrollToTop}
         >
-            <ArrowDropUpIcon/>
+            <div className="icon"><FontAwesomeIcon icon={faChevronUp}></FontAwesomeIcon></div>
         </div>
     );
 };

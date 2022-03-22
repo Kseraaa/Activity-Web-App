@@ -11,8 +11,7 @@ const ScrollIndicator = () => {
 
     }, [y])
     return <div className="scroll-container">
-            <div className="indicator" style={{ width: `${scrolled}%` }}></div>
-                
+                <div className="indicator" style={{ width: `${scrolled}%` }}></div>    
             </div>;
 };
 

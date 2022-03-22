@@ -15,7 +15,7 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { makeStyles } from '@mui/styles';
-import { faPencil, faUserGroup, faBook, faComment, faUser, faCircleUser} from '@fortawesome/free-solid-svg-icons'
+import { faPencil, faUserGroup, faBook, faComment, faCircleUser} from '@fortawesome/free-solid-svg-icons'
 
 document.body.className = "AnErrorHasOccured";
 
