@@ -23,7 +23,7 @@ function RegisterCard() {
 
     const registerSubmit = async () => {
 
-        if ((password.length < 9)) {
+        if ((password.length < 8)) {
             return alert("รหัสผ่านสั้นเกินไป")
           }
 
@@ -41,7 +41,7 @@ function RegisterCard() {
             }
             console.log(error.response.status);
           }).then((response) => {
-            console.log(result);
+            console.log(response.data);
             alert("สร้างบัญชีผู้ใช้สำเร็จ")
             navigate('/login')
           })
