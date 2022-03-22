@@ -23,6 +23,7 @@ function LoginCard() {
     const [ password, setPassword ] = useState();
 
     let auth = useAuth();
+
     
     const responseGoogle = async (response) => {
         auth.signin(response.tokenId, (newUser) => {
@@ -40,10 +41,18 @@ function LoginCard() {
     }
 
     const handleSubmit = async () => {
+        
         let result = await axios.post("http://localhost:8000/auth/login/", {
           username: username,
           password: password,
-        });
+        }).catch(function (error) {
+            if (error.response.status === 401) {
+                return alert("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง")
+            }
+            else if (error.response.status === 400) {
+                return alert("กรุณาใส่ชื่อผู้ใช้หรือรหัสผ่าน")
+            }
+        })
         console.log("login success");
         if (result.status === 200 && result.data) {
             localStorage.setItem('access', result.data.access);
@@ -58,11 +67,11 @@ function LoginCard() {
             if ( response.data.is_staff === true ) {
                 console.log('Hi! Admin')
                 navigate('/createactivity', { replace: true })
-            }else {
+            }else if ( response.data.is_staff === false ){
                 console.log('Hi! User')
                 navigate('/home', { replace: true })
             }
-        } 
+        }
     };
     
     return(
