@@ -122,7 +122,7 @@ return(
                 </Box>
             </Box>
           <Box sx={{ width: 500}}>
-          <Box sx={{ mx:1}}>
+          <Box sx={{ mx:1,mt:-5}}>
             <div className="container">
                 <div className="kitty">
                     <div className="face">
