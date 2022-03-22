@@ -9,7 +9,6 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
-import { Link } from "react-router-dom";
 
 function RegisterCard() {
     
@@ -23,6 +22,11 @@ function RegisterCard() {
     const [ password2, setPassword2 ] = useState();
 
     const registerSubmit = async () => {
+
+        if ((password.length < 9)) {
+            return alert("รหัสผ่านสั้นเกินไป")
+          }
+
         let result = await axios.post('http://localhost:8000/auth/register/', {
             first_name: firstname,
             last_name: lastname,
@@ -30,8 +34,17 @@ function RegisterCard() {
             email: email,
             password: password,
             password2: password2,
-        });
-        console.log(result)
+
+        }).catch(function (error) {
+            if (error.response.status === 400) {
+              return alert("กรุณาตรวจสอบข้อมูล")
+            }
+            console.log(error.response.status);
+          }).then((response) => {
+            console.log(result);
+            alert("สร้างบัญชีผู้ใช้สำเร็จ")
+            navigate('/login')
+          })
     };
     return(
         <div>
@@ -159,9 +172,8 @@ function RegisterCard() {
                         <Typography sx={{ fontSize:10, color:'#e53935'}} >*รหัสผ่านต้องมีอย่างน้อย 8 ตัว ประกอบด้วยตัวอักษรภาษาอังกฤษ ตัวเลขและอักษรพิเศษ</Typography>
                         <br />
                         <Stack spacing={2} direction="row">
-                            <Link to="/login" style={{ textDecoration: 'none' }}>
                                 <Button variant="contained" onClick={registerSubmit} >บันทึก</Button>
-                            </Link>
+
                             <Button variant="outLine" onClick={() => {navigate("/login");}}>ยกเลิก</Button>
                         </Stack> 
                     </CardContent>     
