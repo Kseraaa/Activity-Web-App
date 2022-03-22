@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ActivityCard
+from .models import ActivityCard, UserList
 
 class DesignCardAdmin(admin.ModelAdmin):
     list_display=["name","activity_type"]
@@ -8,5 +8,6 @@ class DesignCardAdmin(admin.ModelAdmin):
     search_fields=["name"]
 
 admin.site.register(ActivityCard,DesignCardAdmin)
+admin.site.register(UserList)
 
 

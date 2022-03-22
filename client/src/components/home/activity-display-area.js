@@ -41,6 +41,15 @@ function ActivateDisplayArea() {
   const [open, setOpen] = React.useState(false);
   const [activitycards, setActivitycards] = useState([])
 
+  const guessuser = JSON.parse(localStorage.getItem('guessuser'));
+  const gguser = JSON.parse(localStorage.getItem('gguser'));
+  let user = null
+  if (guessuser === null) {
+      user = gguser
+  } else if (gguser === null) {
+      user = guessuser
+  }
+
   const getActivityCards = async () => {
     const response = await axios.get('http://localhost:8000/api/activities/')
     console.log(response.data)
@@ -51,8 +60,25 @@ function ActivateDisplayArea() {
     getActivityCards();
   }, []);
 
-  const handleClickOpen = () => {
-    setOpen(true);
+  const handleClickOpen = async (id) => {
+    const singlecardurl = 'http://localhost:8000/api/activities/'+id+'/'
+    const singleCard = await axios.get(singlecardurl)
+    console.log("yeeha")
+    console.log(singleCard.data.user_list[0])
+    console.log(singleCard.data)
+    await axios.put(singlecardurl, {
+      name: singleCard.data.name,
+      description: singleCard.data.description,
+      max_participant: singleCard.data.max_participant,
+      activity_type: singleCard.data.activity_type,
+      register_time_start: singleCard.data.register_time_start,
+      register_time_end: singleCard.data.register_time_end,
+      activity_time_start: singleCard.data.activity_time_start,
+      activity_time_end: singleCard.data.activity_time_end,
+      user_list: user.first_name
+    })
+    // setOpen(true);
+    // console.log(user.username)
   };
 
   const handleClose = () => {
@@ -224,7 +250,7 @@ return(
                         {/* ปุ่มลงทะเบียนและป็อปอัพ */}
                         <CardActions>
                             <Stack spacing={2} direction="row">
-                              <Button sx={{ fontFamily:'Mali',fontSize: 15 }}variant="contained" onClick={handleClickOpen}>
+                              <Button sx={{ fontFamily:'Mali',fontSize: 15 }}variant="contained" onClick={() => handleClickOpen(activitycard.id)}>
                                 ลงทะเบียน
                               </Button>
                               <Dialog

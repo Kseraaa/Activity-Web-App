@@ -13,7 +13,7 @@ class ActivityCard(models.Model):
         ('C', 'Candidate'),
     ]
 
-    image = models.ImageField(upload_to='uploads/images', blank=False)
+    image = models.ImageField(upload_to='uploads/images', blank=True)
     name = models.CharField(max_length=150, blank=False)
     description = models.TextField()
     max_participant = models.DecimalField(max_digits=3, decimal_places=0)
