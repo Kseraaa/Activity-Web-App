@@ -61,7 +61,7 @@ body.AnErrorHasOccured
 
 .scroll-container .indicator {
   height: 100%;
-  background: rgba(13, 82, 231, 0.8);
+  background: rgb(83, 81, 235);
 }
 
 .scroll-to-top {

@@ -50,7 +50,7 @@ function LoginCard() {
                 return alert("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง")
             }
             else if (error.response.status === 400) {
-                return alert("กรุณาใส่ชื่อผู้ใช้หรือรหัสผ่าน")
+                return alert("กรุณาใส่ชื่อผู้ใช้และรหัสผ่านให้ครบถ้วน")
             }
         })
         console.log("login success");

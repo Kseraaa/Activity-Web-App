@@ -37,10 +37,7 @@ export default function AdminAppBar(props) {
     const gguser = JSON.parse(localStorage.getItem('gguser'));
 
     const handleLogout = () => {
-        localStorage.removeItem('guessuser');
-        localStorage.removeItem('gguser');
-        localStorage.removeItem('access');
-        localStorage.removeItem('refresh');
+        localStorage.clear()
         navigate("/login");
     }
 
