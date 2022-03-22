@@ -1,4 +1,3 @@
-import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -15,6 +14,8 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { makeStyles } from '@mui/styles';
 import { faAward, faUsers, faComment, faCalendarDays, faCircleUser } from '@fortawesome/free-solid-svg-icons'
+import React, { useEffect, useState } from "react";
+import { AirlineSeatIndividualSuiteRounded } from '@mui/icons-material';
 
 
 document.body.className = "AnErrorHasOccured";
@@ -42,8 +43,8 @@ const PannAppBar = () => {
         navigate("/login");
     }
 
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
+    const [anchorElNav, setAnchorElNav] = useState(null);
+    const [anchorElUser, setAnchorElUser] = useState(null);
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -63,6 +64,16 @@ const PannAppBar = () => {
     const navigate = useNavigate();
 
     const classes = useStyles();
+
+    let user = null
+    if (guessuser === null) {
+        console.log("login from gg")
+        user = gguser
+    } else if (gguser === null) {
+        console.log("login from guess")
+        user = guessuser
+    }
+    console.log(user)
 
 return (
             <AppBar position="static" color='grey'>
@@ -197,7 +208,7 @@ return (
                             >
                                 <MenuItem onClick={handleCloseUserMenu}>
                                     <Typography textAlign="center">
-                                        {/* name : {user.username} <br /> */}
+                                        {user.first_name + " " + user.last_name}  <br />
                                         <Button onClick= {handleLogout} className={classes.root} >Logout</Button>
                                     </Typography>
                                 </MenuItem>  
@@ -207,5 +218,5 @@ return (
                 </Container>
             </AppBar>
     );
-};
+}
 export default PannAppBar;
