@@ -103,49 +103,56 @@ function ActivateDisplayArea() {
 
 return(
       <div>
-          <Box sx={{ 
-            display: "flex",
-            flexDirection: "row",
-            mt: 5,
-            }}>
+        <Box sx={{ 
+          
+          display: "flex",
+          flexDirection: "row",
+          mt: 5,
+          }}>
             <Box sx={{ 
               width: 1200,
               }}>
-              <Typography sx={{ fontSize: 140, fontWeight: 600, ml: '35%' }} color="#FFF">
-                FANCIER
-              </Typography>
-              <Typography sx={{ fontSize: 30, fontWeight: 100, ml: '35%' }} color="#FFF">
-                Activity Registration
-              </Typography>
+                <Box sx={{ mx:-30}}>
+                  <Typography sx={{ fontSize: 140, fontWeight: 600, ml: '35%' }} color="#FFF">
+                    FANCIER
+                  </Typography>
+                  <Box sx={{ mx:50}}>
+                    <Typography sx={{fontSize: 30, fontWeight: 100, ml: '35%' }} color="#FFF" >
+                      Activity Registration เว็บลงทะเบียนกิจกรรม
+                    </Typography>
+                  </Box>
+                </Box>
             </Box>
-            <Box sx={{ 
-              width: 1000,
-              }}>
-              <div className="container">
-                  <div className="kitty">
-                      <div className="face">
-                          <div className="ear"></div>
-                          <div className="eye"></div>
-                          <div className="mouth">
-                              <div className="nose"></div>
-                              <div className="whisker-1"></div>
-                              <div className="whisker-2"></div>
-                          </div>
-                          <div className="body">
-                              <div className="hand">
-                                  <div className="hand-l"></div>
-                                  <div className="hand-r"></div>
-                              </div>
-                          </div>
-                          <div className="tail"></div>
-                      </div>
-                      <div className="laptop">
-                          <div className="logo"></div>
-                      </div>
-                  </div>
-              </div>
+          <Box sx={{ width: 500}}>
+          <Box sx={{ mx:1,mt:-5}}>
+            <div className="container">
+                <div className="kitty">
+                    <div className="face">
+                        <div className="ear"></div>
+                        <div className="eye"></div>
+                        <div className="mouth">
+                            <div className="nose"></div>
+                            <div className="whisker-1"></div>
+                            <div className="whisker-2"></div>
+                        </div>
+                        <div className="body">
+                            <div className="hand">
+                                <div className="hand-l"></div>
+                                <div className="hand-r"></div>
+                            </div>
+                        </div>
+                        <div className="tail"></div>
+                    </div>
+                    <div className="laptop">
+                        <div className="logo"></div>
+                    </div>
+                </div>
+            </div>
             </Box>
           </Box>
+        </Box>
+
+
           <Box sx={{ 
             border:'1px dashed grey',
             mt: 10,

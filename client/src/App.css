@@ -81,7 +81,7 @@ body.AnErrorHasOccured
   place-items: center;
   margin-top: -8px;
   font-size: 30px;
-  animation: scrollTop 0.5s alternate ease infinite;
+  animation: scrollTop 0.3s alternate ease infinite;
 }
 @keyframes scrollTop {
   from {
