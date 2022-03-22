@@ -19,12 +19,12 @@ function FooterBar() {
                                         <ul className='list-unstyled'>
                                             <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' } }}>
                                                 <Avatar
-                                                    sx={{ width: 70, height: 65 }}
+                                                    sx={{ width: 100, height: 100 }}
                                                     variant="square"
                                                     src="/img/fancierlogo1.png"
                                                 />
                                                 <Avatar
-                                                    sx={{ width: 130, height: 65 }}
+                                                    sx={{ width: 160, height: 100 }}
                                                     variant=""
                                                     src="/img/fancierlogo2.png"
                                                 />
