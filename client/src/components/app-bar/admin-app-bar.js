@@ -21,10 +21,10 @@ document.body.className = "AnErrorHasOccured";
 
 const useStyles = makeStyles({
     root: {
-      background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+      background: 'linear-gradient(45deg, rgba(0, 195, 255, 0.8), rgba(182, 62, 238, 0.8))',
       border: 0,
       borderRadius: 3,
-      boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+      boxShadow: '0 3px 5px 2px rgba(25, 0, 255, 0.2)',
       color: 'white',
       height: 48,
       padding: '0 30px',
@@ -83,6 +83,16 @@ export default function AdminAppBar(props) {
     }, [search, activitycards])
 
     const classes = useStyles();
+
+    let user = null
+    if (guessuser === null) {
+        console.log("login from gg")
+        user = gguser
+    } else if (gguser === null) {
+        console.log("login from guess")
+        user = guessuser
+    }
+    console.log(user)
 
 return ( 
             <AppBar position="static" color='grey' >
@@ -198,9 +208,8 @@ return (
                                 onClose={handleCloseUserMenu}
                             >
                                 <MenuItem onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">
-                                        {/* name : {user.username} <br /> */}
-                                        
+                                    <Typography textAlign="center" fontSize = '14px'>
+                                        {user.first_name + " " + user.last_name}  <br />
                                         <Button onClick= {handleLogout} className={classes.root}>Logout</Button>
                                     </Typography>
                                 </MenuItem>
