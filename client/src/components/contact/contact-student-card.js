@@ -2,8 +2,6 @@ import { Box, Card, CardContent, CardActionArea, CardMedia, Typography, Grid, Ic
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 
-import '../kittyanimation/owl.css'
-
 function ContactStudentCard() {
     return(
         <div>
