@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { makeStyles } from '@mui/styles';
-import { faAward, faUsers, faComment, faCalendarDays, faUser, faCircleUser } from '@fortawesome/free-solid-svg-icons'
+import { faAward, faUsers, faComment, faCalendarDays, faCircleUser } from '@fortawesome/free-solid-svg-icons'
 
 
 document.body.className = "AnErrorHasOccured";
@@ -31,13 +31,16 @@ const useStyles = makeStyles({
     },
   });
 
+
 const PannAppBar = () => {
 
-    const user = JSON.parse(localStorage.getItem('user'));
+    const guessuser = JSON.parse(localStorage.getItem('guessuser'));
+    const gguser = JSON.parse(localStorage.getItem('gguser'));
 
     const handleLogout = () => {
+        localStorage.removeItem('guessuser');
+        localStorage.removeItem('gguser');
         localStorage.removeItem('access');
-        localStorage.removeItem('user');
         localStorage.removeItem('refresh');
         navigate("/login");
     }
@@ -181,6 +184,7 @@ return (
                             <Menu
                                 sx={{ mt: '45px' }}
                                 id="menu-appbar"
+
                                 anchorEl={anchorElUser}
                                 anchorOrigin={{
                                     vertical: 'top',
@@ -197,9 +201,9 @@ return (
                                 <MenuItem onClick={handleCloseUserMenu}>
                                     <Typography textAlign="center">
                                         {/* name : {user.username} <br /> */}
-                                        <Button onClick= {handleLogout} className={classes.root}>Logout</Button>
-                                    </Typography><br />
-                                </MenuItem>
+                                        <Button onClick= {handleLogout} className={classes.root} >Logout</Button>
+                                    </Typography>
+                                </MenuItem>  
                             </Menu>
                         </Box>
                     </Toolbar>

@@ -62,7 +62,7 @@ function LoginCard() {
                 console.log('Hi! User')
                 navigate('/home', { replace: true })
             }
-        }
+        } 
     };
     
     return(

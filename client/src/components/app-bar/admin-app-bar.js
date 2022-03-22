@@ -33,7 +33,16 @@ const useStyles = makeStyles({
   
 export default function AdminAppBar(props) {
 
-    const user = JSON.parse(localStorage.getItem('user'));
+    const guessuser = JSON.parse(localStorage.getItem('guessuser'));
+    const gguser = JSON.parse(localStorage.getItem('gguser'));
+
+    const handleLogout = () => {
+        localStorage.removeItem('guessuser');
+        localStorage.removeItem('gguser');
+        localStorage.removeItem('access');
+        localStorage.removeItem('refresh');
+        navigate("/login");
+    }
 
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -52,13 +61,6 @@ export default function AdminAppBar(props) {
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
     };
-
-    const handleLogout = () => {
-        localStorage.removeItem('access');
-        localStorage.removeItem('user');
-        localStorage.removeItem('refresh');
-        navigate("/login");
-    }
 
     const [activitycards, setActivitycards] = useState([])
     const navigate = useNavigate()
@@ -201,6 +203,7 @@ return (
                                 <MenuItem onClick={handleCloseUserMenu}>
                                     <Typography textAlign="center">
                                         {/* name : {user.username} <br /> */}
+                                        
                                         <Button onClick= {handleLogout} className={classes.root}>Logout</Button>
                                     </Typography>
                                 </MenuItem>
