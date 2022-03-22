@@ -1,6 +1,12 @@
 from distutils.command.upload import upload
 from django.db import models
 
+class UserList(models.Model):
+    name = models.CharField(max_length=70)
+
+    def __str__(self):
+        return self.name
+
 class ActivityCard(models.Model):
     ACTIVITY_CHOICES = [
         ('FCFS', 'FirstComeFirstServe'),
@@ -16,6 +22,7 @@ class ActivityCard(models.Model):
     register_time_end = models.CharField(max_length=150, blank=False)
     activity_time_start = models.CharField(max_length=150, blank=False)
     activity_time_end = models.CharField(max_length=150, blank=False)
+    user_list = models.ManyToManyField(UserList, blank=True)
     
     def __str__(self):
         return self.name
