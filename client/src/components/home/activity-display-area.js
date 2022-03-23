@@ -61,24 +61,24 @@ function ActivateDisplayArea() {
   }, []);
 
   const handleClickOpen = async (id) => {
-    const singlecardurl = 'http://localhost:8000/api/activities/'+id+'/'
-    const singleCard = await axios.get(singlecardurl)
-    console.log("yeeha")
-    console.log(singleCard.data.user_list[0])
-    console.log(singleCard.data)
-    await axios.put(singlecardurl, {
-      name: singleCard.data.name,
-      description: singleCard.data.description,
-      max_participant: singleCard.data.max_participant,
-      activity_type: singleCard.data.activity_type,
-      register_time_start: singleCard.data.register_time_start,
-      register_time_end: singleCard.data.register_time_end,
-      activity_time_start: singleCard.data.activity_time_start,
-      activity_time_end: singleCard.data.activity_time_end,
-      user_list: user.first_name
-    })
-    // setOpen(true);
-    // console.log(user.username)
+    // const singlecardurl = 'http://localhost:8000/api/activities/'+id+'/'
+    // const singleCard = await axios.get(singlecardurl)
+    // console.log("yeeha")
+    // console.log(singleCard.data.user_list[0])
+    // console.log(singleCard.data)
+    // await axios.put(singlecardurl, {
+    //   name: singleCard.data.name,
+    //   description: singleCard.data.description,
+    //   max_participant: singleCard.data.max_participant,
+    //   activity_type: singleCard.data.activity_type,
+    //   register_time_start: singleCard.data.register_time_start,
+    //   register_time_end: singleCard.data.register_time_end,
+    //   activity_time_start: singleCard.data.activity_time_start,
+    //   activity_time_end: singleCard.data.activity_time_end,
+    //   user_list: user.first_name
+    // })
+    setOpen(true);
+    console.log(user.username)
   };
 
   const handleClose = () => {
