@@ -9,7 +9,6 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
-import Shpass from "./password";
 
 function RegisterCard() {
     
@@ -156,7 +155,6 @@ function RegisterCard() {
                             sx={{ fontSize:16 }}>
                             ยืนยันรหัสผ่าน
                         </Typography>
-                        <Shpass/>
                         <Box
                             component="form"
                             sx={{'& > :not(style)': { m: 1, width: '25ch' }}}
