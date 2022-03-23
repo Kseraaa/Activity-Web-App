@@ -12,7 +12,6 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { makeStyles } from '@mui/styles';
 import { faPencil, faUserGroup, faBook, faComment, faCircleUser} from '@fortawesome/free-solid-svg-icons'
@@ -36,6 +35,8 @@ export default function AdminAppBar(props) {
     const guessuser = JSON.parse(sessionStorage.getItem('guessuser'));
     const gguser = JSON.parse(sessionStorage.getItem('gguser'));
 
+    const navigate = useNavigate()
+
     const handleLogout = () => {
         sessionStorage.clear()
         navigate("/login");
@@ -58,29 +59,6 @@ export default function AdminAppBar(props) {
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
     };
-
-    const [activitycards, setActivitycards] = useState([])
-    const navigate = useNavigate()
-
-    const getActivityCards = async () => {
-        const response = await axios.get('http://localhost:8000/api/activities/')
-        setActivitycards(response.data)
-    }
-
-    useEffect(() => {
-        getActivityCards();
-    }, []);
-
-    const [filteredActivitycards, setFilteredActivitycards] = useState([])
-    const [search, setSearch] = useState("")
-
-    useEffect(() => {
-        setFilteredActivitycards(
-            activitycards.filter( activitycard => {
-                return activitycard.name.includes(search)
-            })
-        )
-    }, [search, activitycards])
 
     const classes = useStyles();
 
