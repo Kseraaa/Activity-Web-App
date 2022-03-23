@@ -1,12 +1,11 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import { Card, CardContent, CardHeader, Stack, Button } from "@mui/material"
+import { Card, CardContent, CardHeader, Stack, Button, Link } from "@mui/material"
 import Typography from '@mui/material/Typography';
 
 function Adminabout () {
 
     return(
-        <div>
             <Card sx={{ mx:'auto', my:9,maxWidth: 1000 , display: 'flex' ,background: 'linear-gradient(45deg, #ffffff 30%, #dfe2e8  90%)'}} >
 
                 <Box >
@@ -19,16 +18,19 @@ function Adminabout () {
 
                         <Box>
                             <Typography  color="black" variant="body1" sx={{ fontSize:25 }} >
-                                About ของ แอดมิน
+                                เว็บไซต์นี้ เป็นเว็บไซต์สำหรับลงทะเบียนกิจกรรมที่ท่านสนใจ มีการลงทะเบียน 2 รูปแบบ คือ <br />
+                                First come First serve [ลงทะเบียนก่อนมีสิทธิ์ก่อน] <br />
+                                Candidate [ทางผู้จัดเป็นคนคัดเลือกผู้เข้าร่วม]
+                            </Typography>
+                            <br/>
+                            <Typography  color="black" variant="body1" sx={{ fontSize:20 }} >
+                                 รายละเอียดเพิ่มเติม : <Link underline="none" href='https://drive.google.com/file/d/1DEckPj7E5uFPCj8lWDrB8t-DnsSfyWgQ/view?usp=sharing'>คลิกที่นี่</Link>
                             </Typography>
                         </Box>
-
                     </CardContent>
 
                 </Box>
             </Card>
-
-        </div>
 
     );
 }
