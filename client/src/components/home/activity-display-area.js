@@ -258,12 +258,16 @@ return(
                                 maxWidth= 'md'
                               >
                                 <DialogTitle id="alert-dialog-title" gutterBottom variant="h1" sx={{color: '#004AAD'}}>
-                                  <Typography sx={{ fontFamily:'Sarabun',fontSize: '50px'}} >
-                                    <h1>ลงทะเบียนสำเร็จ!!</h1>
+                                  <Typography sx={{ fontFamily:'Sarabun',fontSize: '30px', textAlign: 'center'}} >
+                                    <h1>" {activitycard.name} "</h1>
+                                  </Typography>
+                                  <Typography sx={{ fontFamily:'Sarabun',fontSize: '30px'}} >
+                                    <h1>ยืนยันการลงทะเบียนหรือไม่</h1>
                                   </Typography>
                                 </DialogTitle>
                                 <DialogActions >
-                                  <Button sx={{ fontFamily:'Sarabun',fontSize: '30px'}} onClick={handleClose} >กลับสู่หน้าหลัก </Button>
+                                  <Button sx={{ fontFamily:'Sarabun',fontSize: '30px'}} variant="contained" onClick={handleClose} >ยืนยัน</Button>
+                                  <Button sx={{ fontFamily:'Sarabun',fontSize: '30px'}} onClick={handleClose} >ยกเลิก</Button>
                                 </DialogActions>
                               </Dialog>
                             </Stack>
