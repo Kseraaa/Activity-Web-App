@@ -73,28 +73,28 @@ function PubActivateDisplayArea() {
       fontSize: '18px',
       fontWeight: 'bold',
       color:'#0B46FF',
-      fontFamily:'Mali',
+      fontFamily:'Sarabun',
       
     },
     passText: {
       fontSize: '18px',
       fontWeight: 'bold',
       color:'green',
-      fontFamily:'Mali',
+      fontFamily:'Sarabun',
     },
 
     notpassText: {
       fontSize: '18px',
       fontWeight: 'bold',
       color:'red',
-      fontFamily:'Mali',
+      fontFamily:'Sarabun',
     },
 
     waitText: {
       fontSize: '18px',
       fontWeight: 'bold',
       color:'grey',
-      fontFamily:'Mali',
+      fontFamily:'Sarabun',
     },
     
   });
@@ -196,15 +196,15 @@ return(
                     />
                     <Box sx={{ display:'flex', flexDirection:'column' ,background: 'linear-gradient(45deg, #ffffff 30%, #dfe2e8  90%)'}}>
                         <CardHeader
-                          titleTypographyProps={{fontSize: 36,fontFamily:'Mali'}}
+                          titleTypographyProps={{fontSize: 36,fontFamily:'Sarabun'}}
                           title={activitycard.name}
-                          subheaderTypographyProps={{fontSize: 18,fontFamily:'Mali'}}
+                          subheaderTypographyProps={{fontSize: 18,fontFamily:'Sarabun'}}
                           subheader={activitycard.description}
                         />
                         <CardContent sx={{ width:700 }}>
                           <Typography 
                             variant="body1" 
-                            sx={{ fontSize:18 ,fontFamily:'Mali'}}>
+                            sx={{ fontSize:18 ,fontFamily:'Sarabun'}}>
                             ลงทะเบียน : เริ่ม {activitycard.register_time_start} | สิ้นสุด {activitycard.register_time_end}<br />
                             กิจกรรม : เริ่ม {activitycard.activity_time_start}  | สิ้นสุด {activitycard.activity_time_end}<br />
                             จำนวนผู้เข้าร่วมสูงสุด : {activitycard.max_participant} คน <br/>
@@ -220,7 +220,7 @@ return(
                         {/* ปุ่มลงทะเบียนและป็อปอัพ */}
                         <CardActions>
                             <Stack spacing={2} direction="row">
-                                <Button  sx={{ fontFamily:'Mali',fontSize: 15 }} variant="contained" onClick={() => {navigate("/login");}}>
+                                <Button  sx={{ fontFamily:'Sarabun',fontSize: 15 }} variant="contained" onClick={() => {navigate("/login");}}>
                                 ลงทะเบียน
                                 </Button>
                               <Dialog
@@ -243,7 +243,7 @@ return(
                         </CardActions>
                         
                         <CardContent sx={{ width:700 }}>
-                        <Typography variant="h6" color='error.main' sx={{ fontFamily:'Mali',fontSize: 16 }}>
+                        <Typography variant="h6" color='error.main' sx={{ fontFamily:'Sarabun',fontSize: 16 }}>
                           จำนวนที่นั่งเหลือ 0 ท่านยังสามารถลงทะเบียนเป็นที่นั่งสำรองได้
                           <br />
                           หากต้องการสละสิทธิ์ กรุณาติดต่อช่องทางใดช่องทางหนึ่ง
