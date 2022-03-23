@@ -39,6 +39,7 @@ export default function AdminAppBar(props) {
 
     const handleLogout = () => {
         sessionStorage.clear()
+        localStorage.clear();
         navigate("/login");
     }
 

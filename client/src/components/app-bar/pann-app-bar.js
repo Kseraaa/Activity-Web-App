@@ -14,9 +14,7 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { makeStyles } from '@mui/styles';
 import { faAward, faUsers, faComment, faCalendarDays, faCircleUser } from '@fortawesome/free-solid-svg-icons'
-import React, { useEffect, useState } from "react";
-import { AirlineSeatIndividualSuiteRounded } from '@mui/icons-material';
-
+import React, { useState } from "react";
 
 document.body.className = "AnErrorHasOccured";
 
@@ -40,6 +38,7 @@ const PannAppBar = () => {
 
     const handleLogout = () => {
         sessionStorage.clear();
+        localStorage.clear();
         navigate("/login");
     }
 
