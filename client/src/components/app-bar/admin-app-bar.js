@@ -161,7 +161,12 @@ return (
                                 </nav>
                         </Box>
                         
-                        {/* box for user profile */}                        
+                        {/* box for user profile */}     
+                        <Box>
+                            <Typography>
+                                {user.first_name + " " + user.last_name}
+                            </Typography>
+                        </Box>                   
                         <Box sx={{ flexGrow: 0 }}>
                             <Tooltip title="Menu">
                                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 1.5 }}>
@@ -186,10 +191,7 @@ return (
                                 onClose={handleCloseUserMenu}
                             >
                                 <MenuItem onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center" fontSize = '14px' fontWeight={600}>
-                                        {user.first_name + " " + user.last_name}  <br />
-                                        <Button onClick= {handleLogout} className={classes.root}>Logout</Button>
-                                    </Typography>
+                                    <Button onClick= {handleLogout} className={classes.root}>Logout</Button>
                                 </MenuItem>
                             </Menu>
                         </Box>
