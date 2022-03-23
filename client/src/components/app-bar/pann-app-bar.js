@@ -207,7 +207,7 @@ return (
                                 onClose={handleCloseUserMenu}
                             >
                                 <MenuItem onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center" fontSize = '14px' >
+                                    <Typography textAlign="center" fontSize = '15px' fontWeight={600} >
                                         {user.first_name + " " + user.last_name}  <br />
                                         <Button onClick= {handleLogout} className={classes.root} >Logout</Button>
                                     </Typography>

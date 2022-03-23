@@ -61,24 +61,24 @@ function ActivateDisplayArea() {
   }, []);
 
   const handleClickOpen = async (id) => {
-    const singlecardurl = 'http://localhost:8000/api/activities/'+id+'/'
-    const singleCard = await axios.get(singlecardurl)
-    console.log("yeeha")
-    console.log(singleCard.data.user_list[0])
-    console.log(singleCard.data)
-    await axios.put(singlecardurl, {
-      name: singleCard.data.name,
-      description: singleCard.data.description,
-      max_participant: singleCard.data.max_participant,
-      activity_type: singleCard.data.activity_type,
-      register_time_start: singleCard.data.register_time_start,
-      register_time_end: singleCard.data.register_time_end,
-      activity_time_start: singleCard.data.activity_time_start,
-      activity_time_end: singleCard.data.activity_time_end,
-      user_list: user.first_name
-    })
-    // setOpen(true);
-    // console.log(user.username)
+    // const singlecardurl = 'http://localhost:8000/api/activities/'+id+'/'
+    // const singleCard = await axios.get(singlecardurl)
+    // console.log("yeeha")
+    // console.log(singleCard.data.user_list[0])
+    // console.log(singleCard.data)
+    // await axios.put(singlecardurl, {
+    //   name: singleCard.data.name,
+    //   description: singleCard.data.description,
+    //   max_participant: singleCard.data.max_participant,
+    //   activity_type: singleCard.data.activity_type,
+    //   register_time_start: singleCard.data.register_time_start,
+    //   register_time_end: singleCard.data.register_time_end,
+    //   activity_time_start: singleCard.data.activity_time_start,
+    //   activity_time_end: singleCard.data.activity_time_end,
+    //   user_list: user.first_name
+    // })
+    setOpen(true);
+    console.log(user.username)
   };
 
   const handleClose = () => {
@@ -101,28 +101,28 @@ function ActivateDisplayArea() {
       fontSize: '18px',
       fontWeight: 'bold',
       color:'#0B46FF',
-      fontFamily:'Mali',
+      fontFamily:'Sarabun',
       
     },
     passText: {
       fontSize: '18px',
       fontWeight: 'bold',
       color:'green',
-      fontFamily:'Mali',
+      fontFamily:'Sarabun',
     },
 
     notpassText: {
       fontSize: '18px',
       fontWeight: 'bold',
       color:'red',
-      fontFamily:'Mali',
+      fontFamily:'Sarabun',
     },
 
     waitText: {
       fontSize: '18px',
       fontWeight: 'bold',
       color:'grey',
-      fontFamily:'Mali',
+      fontFamily:'Sarabun',
     },
   });
 
@@ -130,7 +130,6 @@ function ActivateDisplayArea() {
 return(
       <div>
         <Box sx={{ 
-          
           display: "flex",
           flexDirection: "row",
           mt: 5,
@@ -179,13 +178,11 @@ return(
         </Box>
 
 
-          <Box sx={{ 
-            border:'1px dashed grey',
+          <Box sx={{
             mt: 10,
           }}>
           <Grid container justifyContent= "center">
               <Card sx={{ 
-                  border:'1px dashed grey',
                   height: 'auto',
                   width: 'auto',
                   background: ' linear-gradient(217deg, rgba(182, 62, 238, 0.8), rgba(255,0,0,0) 100%),linear-gradient(127deg, rgba(0, 195, 255, 0.8), rgba(0,255,0,0) 100%),linear-gradient(336deg, rgb(63, 43, 245, 0.8), rgba(0,0,255,0) 100%);'
@@ -226,15 +223,15 @@ return(
                     />
                     <Box sx={{ display:'flex', flexDirection:'column'  ,background: 'linear-gradient(45deg, #ffffff 30%, #dfe2e8  90%)'}}>
                         <CardHeader
-                          titleTypographyProps={{ fontFamily: 'Mali', fontSize: 36}}
+                          titleTypographyProps={{ fontFamily: 'Sarabun', fontSize: 36}}
                           title={activitycard.name}
-                          subheaderTypographyProps={{fontSize: 18,fontFamily:'Mali'}}
+                          subheaderTypographyProps={{fontSize: 18,fontFamily:'Sarabun'}}
                           subheader={activitycard.description}
                         />
                         <CardContent sx={{ width:700 }}>
                           <Typography 
                             variant="body1" 
-                            sx={{ fontFamily:'Mali',fontSize:18 }}>
+                            sx={{ fontFamily:'Sarabun',fontSize:18 }}>
                             ลงทะเบียน : เริ่ม {activitycard.register_time_start} | สิ้นสุด {activitycard.register_time_end}<br />
                             กิจกรรม : เริ่ม {activitycard.activity_time_start}  | สิ้นสุด {activitycard.activity_time_end}<br />
                             จำนวนผู้เข้าร่วมสูงสุด : {activitycard.max_participant} คน <br/>
@@ -250,7 +247,7 @@ return(
                         {/* ปุ่มลงทะเบียนและป็อปอัพ */}
                         <CardActions>
                             <Stack spacing={2} direction="row">
-                              <Button sx={{ fontFamily:'Mali',fontSize: 15 }}variant="contained" onClick={() => handleClickOpen(activitycard.id)}>
+                              <Button sx={{ fontFamily:'Sarabun',fontSize: 15 }}variant="contained" onClick={() => handleClickOpen(activitycard.id)}>
                                 ลงทะเบียน
                               </Button>
                               <Dialog
@@ -261,12 +258,16 @@ return(
                                 maxWidth= 'md'
                               >
                                 <DialogTitle id="alert-dialog-title" gutterBottom variant="h1" sx={{color: '#004AAD'}}>
-                                  <Typography sx={{ fontFamily:'Mali',fontSize: '50px'}} >
-                                    <h1>ลงทะเบียนสำเร็จ!!</h1>
+                                  <Typography sx={{ fontFamily:'Sarabun',fontSize: '30px', textAlign: 'center'}} >
+                                    <h1>" {activitycard.name} "</h1>
+                                  </Typography>
+                                  <Typography sx={{ fontFamily:'Sarabun',fontSize: '30px'}} >
+                                    <h1>ยืนยันการลงทะเบียนหรือไม่</h1>
                                   </Typography>
                                 </DialogTitle>
                                 <DialogActions >
-                                  <Button sx={{ fontFamily:'Mali',fontSize: '30px'}} onClick={handleClose} >กลับสู่หน้าหลัก </Button>
+                                  <Button sx={{ fontFamily:'Sarabun',fontSize: '30px'}} variant="contained" onClick={handleClose} >ยืนยัน</Button>
+                                  <Button sx={{ fontFamily:'Sarabun',fontSize: '30px'}} onClick={handleClose} >ยกเลิก</Button>
                                 </DialogActions>
                               </Dialog>
                             </Stack>
@@ -274,7 +275,7 @@ return(
                         </CardActions>
             
                       <CardContent sx={{ width:700 }}>
-                      <Typography variant="h6" color='error.main' sx={{ fontFamily:'Mali',fontSize: 16 }}>
+                      <Typography variant="h6" color='error.main' sx={{ fontFamily:'Sarabun',fontSize: 16 }}>
                         จำนวนที่นั่งเหลือ 0 ท่านยังสามารถลงทะเบียนเป็นที่นั่งสำรองได้
                         <br />
                         หากต้องการสละสิทธิ์ กรุณาติดต่อช่องทางใดช่องทางหนึ่ง
