@@ -35,11 +35,11 @@ const useStyles = makeStyles({
 
 const PannAppBar = () => {
 
-    const guessuser = JSON.parse(localStorage.getItem('guessuser'));
-    const gguser = JSON.parse(localStorage.getItem('gguser'));
+    const guessuser = JSON.parse(sessionStorage.getItem('guessuser'));
+    const gguser = JSON.parse(sessionStorage.getItem('gguser'));
 
     const handleLogout = () => {
-        localStorage.clear();
+        sessionStorage.clear();
         navigate("/login");
     }
 

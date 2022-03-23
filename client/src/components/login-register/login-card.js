@@ -55,14 +55,14 @@ function LoginCard() {
         })
         console.log("login success");
         if (result.status === 200 && result.data) {
-            localStorage.setItem('access', result.data.access);
-            localStorage.setItem('refresh', result.data.refresh);
+            sessionStorage.setItem('access', result.data.access);
+            sessionStorage.setItem('refresh', result.data.refresh);
             let response = await axios.get('http://localhost:8000/scauth/gglogin/', {
                 headers: {
                     'Authorization': `Bearer ${result.data.access}`
                 }
             })
-            localStorage.setItem('guessuser', JSON.stringify(response.data));
+            sessionStorage.setItem('guessuser', JSON.stringify(response.data));
             console.log(response.data)
             if ( response.data.is_staff === true ) {
                 console.log('Hi! Admin')
