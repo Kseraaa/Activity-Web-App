@@ -14,31 +14,6 @@ import { Grid } from '@mui/material';
 import styled from '@emotion/styled';
 import { Button } from '@mui/material';
 
-
-function renderRow1(props) {
-  const { index, style } = props;
-
-  return (
-    <ListItem style={style} key={index} component="div" disablePadding>
-      <ListItemButton>
-        <ListItemText primary={`${index + 1} นายภัทรชัย  บริบูรณ์ `} />
-      </ListItemButton>
-    </ListItem>
-  );
-}
-
-function renderRow2(props) {
-  const { index, style } = props;
-
-  return (
-    <ListItem style={style} key={index} component="div" disablePadding>
-      <ListItemButton>
-        <ListItemText primary={`${index + 1} นายธีรวีร์ ปฐมธนินพัฒน์`} />
-      </ListItemButton>
-    </ListItem>
-  );
-}
-
 const CssTextField = styled(TextField)({
   '& label': {
     color: 'black',
@@ -140,19 +115,20 @@ export default function ActivityInfo() {
                       รายชื่อคนผ่าน
                   </Typography>
                 
-                <Box
-                  sx={{ width: '100%', height: 470, maxWidth: 900, bgcolor: 'background.paper' }}
-                >
-                  <FixedSizeList
-                  height={200}
-                  width={900}
-                  itemSize={46}
-                  itemCount={50}
-                  overscanCount={5}
-                  >
-                  {renderRow1}
-                  </FixedSizeList>
-                  <br />
+                  <Typography>
+                    1. Nattapong Naksri<br/>
+                    2. Thanapat Duongkaew<br/>
+                    3. Theeravee Pathomthaninphat<br/>
+                    4. Pattarachai Boriboon<br/>
+                    5. Patinya Limhao<br/>
+                    6. Xez IIV<br/>
+                    7. <br/>
+                    8. <br/>
+                    9. <br/>
+                    10. <br/>
+                  </Typography>
+
+
                 <Typography 
                   color="black" 
                   variant="body1" 
@@ -162,17 +138,19 @@ export default function ActivityInfo() {
                   }} >
                   คิวสำรอง
                 </Typography>
-                  <FixedSizeList
-                  height={200}
-                  width={900}
-                  itemSize={46}
-                  itemCount={50}
-                  overscanCount={5}
-                  >
-                  {renderRow2}
-                  </FixedSizeList>
-                </Box>
-
+                <Typography>
+                    1. <br/>
+                    2. <br/>
+                    3. <br/>
+                    4. <br/>
+                    5. <br/>
+                    6. <br/>
+                    7. <br/>
+                    8. <br/>
+                    9. <br/>
+                    10.<br/>
+                  </Typography>
+                  
                 <Button 
                   variant="contained" 
                   color="error"
