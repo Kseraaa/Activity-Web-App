@@ -14,7 +14,7 @@ const appAuthProvider =  {
             appAuthProvider.accessToken = result.data.access
             appAuthProvider.refreshToken = result.data.refresh
             let user_result = await axios.get('http://localhost:8000/scauth/gglogin/' )
-            localStorage.setItem('gguser', JSON.stringify(user_result.data));
+            sessionStorage.setItem('gguser', JSON.stringify(user_result.data));
             callback(user_result.data)
         }else{
             callback(null)
