@@ -27,7 +27,13 @@ function UserAct() {
                     <Stack  alignItems="center"  >
                       <Box>
                         <Button sx={{ fontSize:18 }}>
-                              กิจกรรมวิ่ง
+                              กิจกรรมวิ่งเพื่อสุขภาพ <br/>
+                        </Button><br />
+                        <Button sx={{ fontSize:18 }}>
+                              กิจกรรมปั่นจักรยานเพื่อสุขภาพ <br/>
+                        </Button><br />
+                        <Button sx={{ fontSize:18 }}>
+                              กิจกรรมนั่งสมาธิ จิตสงบ <br/>
                         </Button><br />
                       </Box>
                     </Stack>
