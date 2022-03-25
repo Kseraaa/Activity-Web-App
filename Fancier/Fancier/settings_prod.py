@@ -1,6 +1,6 @@
 from .settings import *
 
-# run manage.py with --setting=book_store.settings_prod
+# run manage.py with --setting=Fancier.settings_prod
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
