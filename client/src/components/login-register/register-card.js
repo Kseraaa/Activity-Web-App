@@ -27,7 +27,7 @@ function RegisterCard() {
             return alert("รหัสผ่านสั้นเกินไป")
           }
 
-        let result = await axios.post('http://localhost:8000/auth/register/', {
+        let result = await axios.post('https://wd0103.coe.psu.ac.th/auth/register/', {
             first_name: firstname,
             last_name: lastname,
             username: username,

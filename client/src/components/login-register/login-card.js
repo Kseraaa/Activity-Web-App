@@ -42,7 +42,7 @@ function LoginCard() {
 
     const handleSubmit = async () => {
         
-        let result = await axios.post("http://localhost:8000/auth/login/", {
+        let result = await axios.post("/auth/login/", {
           username: username,
           password: password,
         }).catch(function (error) {
@@ -57,7 +57,7 @@ function LoginCard() {
         if (result.status === 200 && result.data) {
             sessionStorage.setItem('access', result.data.access);
             sessionStorage.setItem('refresh', result.data.refresh);
-            let response = await axios.get('http://localhost:8000/scauth/gglogin/', {
+            let response = await axios.get('https://wd0103.coe.psu.ac.th/scauth/gglogin/', {
                 headers: {
                     'Authorization': `Bearer ${result.data.access}`
                 }

@@ -7,13 +7,13 @@ const appAuthProvider =  {
     refreshToken: null,
     async signin(token, callback) {
         appAuthProvider.isAuthenticated = true;
-        let result = await axios.post('http://localhost:8000/api2/token/', {
+        let result = await axios.post('/api2/token/', {
             token
         })
         if(result.status === 200 && result.data){
             appAuthProvider.accessToken = result.data.access
             appAuthProvider.refreshToken = result.data.refresh
-            let user_result = await axios.get('http://localhost:8000/scauth/gglogin/' )
+            let user_result = await axios.get('https://wd0103.coe.psu.ac.th/scauth/gglogin/' )
             sessionStorage.setItem('gguser', JSON.stringify(user_result.data));
             callback(user_result.data)
         }else{
