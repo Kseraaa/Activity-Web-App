@@ -1,4 +1,1 @@
-#venv\Scripts\activate
-#cd client
-#npm i
-#npm start
+venv\Scripts\activate
